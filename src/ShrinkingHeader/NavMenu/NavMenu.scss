@@ -1,0 +1,21 @@
+.NavMenu-container {
+  display: flex;
+}
+
+.nav-menu a,
+.nav-menu NavLink{
+  color: #000;
+  transition: color 0.5s ease;
+  box-sizing: border-box;
+}
+
+.nav-menu a:hover,
+.nav-menu NavLink:hover{
+  color: #ff3366;
+  text-decoration: underline;
+}
+
+.nav-menu .selected {
+  color: #ff3366;
+  text-decoration: underline;
+}
