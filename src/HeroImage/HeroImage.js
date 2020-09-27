@@ -5,13 +5,15 @@ import './HeroImage.scss';
 class HeroImage extends Component {
 
   render() {
-    const { heroImageSrc, heroImageAlt, pageName, navIsOpen } = this.props
+    const { heroImageSrc, heroImageAlt, pageName, navIsOpen, sectionId } = this.props
     return (
       <section
         className={ navIsOpen
           ? "HeroImage-container blurred" :
           "HeroImage-container"}
-        id="home">
+        id = { sectionId
+          ? sectionId
+          : ""}>
         <img src={ heroImageSrc } alt={ heroImageAlt } className="HeroImage"/>
         <div className="HeroImage-overlay">
           {pageName

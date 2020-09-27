@@ -1,8 +1,25 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom'
 import './CallToAction.scss';
 
 
 class CallToAction extends Component {
+
+  handleResize = () => {
+    const topOfHome = +ReactDOM.findDOMNode(this).offsetTop
+    const heightOfHome =
+      +ReactDOM.findDOMNode(this).getBoundingClientRect().height
+    const bottomOfHome = topOfHome + heightOfHome
+    this.props.updateHome(Math.round(bottomOfHome))
+  }
+
+  handleScroll = () => {
+    const heightOfHome =
+      +ReactDOM.findDOMNode(this).getBoundingClientRect().height
+    if (this.props.bottomOfHome !== heightOfHome) {
+      this.handleResize()
+    }
+  }
 
   render() {
     const { navIsOpen } = this.props
@@ -11,21 +28,35 @@ class CallToAction extends Component {
           ? "CallToAction-container blurred"
           : "CallToAction-container"}>
         <h3>
-          Have an offer your audience <strong>
-            <em>can't refuse?</em>
+          Want to bring your business into <strong>
+            <em>focus?</em>
           </strong>
         </h3>
         <div className="button-container">
-          <button>Let them sign up, <strong>now!</strong></button>
-            <div className="arrow-container">
-              <div className="RightArrow">
-                <div className="line"></div>
-                <div className="point"></div>
-              </div>
+          <button>Create your website, <strong>today!</strong></button>
+          <div className="arrow-container">
+            <div className="RightArrow">
+              <div className="line"></div>
+              <div className="point"></div>
             </div>
+          </div>
         </div>
       </section>
     );
+  }
+
+  componentDidMount() {
+    const { debounce } = this.props
+    window.addEventListener("DOMContentLoaded", this.handleResize)
+    window.addEventListener('resize', debounce(this.handleResize, 32))
+    window.addEventListener('scroll', debounce(this.handleScroll, 32))
+  }
+
+  componentWillUnmount() {
+    const { debounce } = this.props
+    window.removeEventListener("DOMContentLoaded", this.handleResize)
+    window.removeEventListener('resize', debounce(this.handleResize, 32))
+    window.removeEventListener('scroll', debounce(this.handleScroll, 32))
   }
 }
 

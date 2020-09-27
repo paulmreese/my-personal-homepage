@@ -6,9 +6,7 @@
   flex-direction: column;
   justify-content:space-between;
   position: relative;
-  border-bottom: 1px dotted #000;
   padding-bottom: 20px;
-  background: #fff;
 }
 
 .CallToAction-container h3 {
@@ -33,14 +31,24 @@
 
 .button-container:hover button{
   color: #f36;
-  box-shadow: 0 0 10px #000;
+  box-shadow: 0 0 8px #000;
+  background-color: rgba(255, 255, 255, 0.8);
+  transform: scale(1.02);
 }
 
-.button-container:hover .RightArrow{
+.button-container button:hover, .button-container button:focus{
+  color: #f36;
+  box-shadow: 0 0 8px #f36;
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: scale(1.05);
+  border: 2px solid #000;
+}
+
+.button-container:hover .RightArrow, .button-container button:focus + .arrow-container .RightArrow{
   animation: Stretch-arrow 1s infinite ease;
 }
 
-.button-container:hover .RightArrow .line{
+.button-container:hover .RightArrow .line, .button-container button:focus + .arrow-container .RightArrow .line{
 
 }
 
@@ -48,7 +56,7 @@
   margin: 0 20px;
   padding: 10px 20px;
   border: 2px solid #000;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.6);
   color: #000;
   font-size: 1.15em;
   font-weight: 400;
@@ -64,9 +72,7 @@
 }
 
 .arrow-container {
-  width: 90%;
-  display: flex;
-  justify-content: flex-start;
+  display: none;
 }
 
 .RightArrow {
@@ -121,5 +127,49 @@ p {
   to {
 
     width: 97%;
+  }
+}
+
+@media screen and (min-width: 442px) {
+  .arrow-container {
+    width: 45%;
+    display: flex;
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (min-width: 483px) {
+  .arrow-container {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 511px) {
+  .arrow-container {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 538px) {
+  .arrow-container {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 564px) {
+  .arrow-container {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .CallToAction-container {
+    padding-top: 5px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .CallToAction-container {
+    padding-top: 10px;
   }
 }

@@ -4,9 +4,9 @@ import Header from './Header/Header'
 import StickyHeader from './StickyHeader/StickyHeader'
 
 //Import shared images and pass them as props to children
-import smallLogo from './img/130px-black-logo.png'
-import smallTitle from './img/360px-black-title.png'
-import hamburgerButton from './img/if-black-hamburger-icon.png'
+import smallLogo from './img/130px-Headshot.png'
+import smallTitle from './img/360px-Sunset-Title-light-border.png'
+import hamburgerButton from './img/if-black-hamburger-icon2.png'
 
 class ShrinkingHeader extends Component {
 
@@ -14,7 +14,9 @@ class ShrinkingHeader extends Component {
 
     const {
       scrollPositionY, windowWidth, bottomOfStationaryHeader, navIsOpen,
-      bottomOfHome, debounce, updateStationaryHeader, handleNavClick
+      bottomOfHome, debounce, updateStationaryHeader, handleNavClick,
+      updateHeightOfStickyHeader, heightOfStickyHeader, bottomOfAbout,
+      bottomOfNews, bottomOfProjects
     } = this.props
 
     return (
@@ -24,11 +26,14 @@ class ShrinkingHeader extends Component {
           windowWidth = { windowWidth }
           bottomOfStationaryHeader = { bottomOfStationaryHeader }
           bottomOfHome = { bottomOfHome }
+          bottomOfAbout = { bottomOfAbout }
+          bottomOfNews = { bottomOfNews }
+          bottomOfProjects = { bottomOfProjects }
           debounce = { debounce }
           updateStationaryHeader = { updateStationaryHeader }
           navIsOpen = { navIsOpen }
           handleNavClick = { handleNavClick }
-
+          heightOfStickyHeader = { heightOfStickyHeader }
           smallLogo = { smallLogo }
           smallTitle = { smallTitle }
           hamburgerButton = { hamburgerButton }
@@ -38,11 +43,15 @@ class ShrinkingHeader extends Component {
           windowWidth = { windowWidth }
           bottomOfStationaryHeader = { bottomOfStationaryHeader }
           bottomOfHome = { bottomOfHome }
+          bottomOfNews = { bottomOfNews }
+          bottomOfProjects = { bottomOfProjects }
           debounce = { debounce }
           updateStationaryHeader = { updateStationaryHeader }
+          updateHeightOfStickyHeader = { updateHeightOfStickyHeader }
+          heightOfStickyHeader = { heightOfStickyHeader }
           navIsOpen = { navIsOpen }
           handleNavClick = { handleNavClick }
-
+          bottomOfAbout = { bottomOfAbout }
           smallLogo = { smallLogo }
           smallTitle = { smallTitle }
           hamburgerButton = { hamburgerButton }

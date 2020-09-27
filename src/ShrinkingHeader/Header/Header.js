@@ -6,8 +6,8 @@ import NavMenu from '../NavMenu/NavMenu'
 
 import './Header.scss';
 
-import logo from './img/350px-black-logo.png'
-import title from './img/720px-title-with-slogan-black.png'
+import logo from './img/350px-Headshot.png'
+import title from './img/720px-440px-square-PMR-FEND-no-border.png'
 
 class Header extends Component {
 
@@ -24,19 +24,24 @@ class Header extends Component {
     const {
       scrollPositionY, windowWidth, smallLogo, smallTitle, hamburgerButton,
       handleNavClick, navIsOpen, bottomOfStationaryHeader, bottomOfHome,
-      bottomOfClasses, bottomOfAbout
+      bottomOfClasses, bottomOfAbout, bottomOfNews, bottomOfProjects,
+      heightOfStickyHeader
     } = this.props
 
     return (
       windowWidth > 600 ? (
-        <div className="nav-container">
+        <div className="nav-container" id="home">
           <div className="Header-container">
-            <header className={scrollPositionY < bottomOfStationaryHeader ?
-                "Header shown" : "Header hidden"}>
+            <header className={scrollPositionY < bottomOfStationaryHeader
+              ? navIsOpen
+                ? "Header shown blurred"
+                : "Header shown"
+              : "Header hidden"}>
 
               <NavLink
                 smooth
                 to="#home"
+                className="round"
                 activeClassName="selected">
                 <img
                   src={logo}
@@ -56,17 +61,23 @@ class Header extends Component {
                   bottomOfHome = { bottomOfHome }
                   bottomOfClasses = { bottomOfClasses }
                   bottomOfAbout = { bottomOfAbout }
-                  windowWidth = { windowWidth }/>
+                  bottomOfNews = { bottomOfNews }
+                  bottomOfProjects = { bottomOfProjects }
+                  windowWidth = { windowWidth }
+                  heightOfStickyHeader = { heightOfStickyHeader }/>
 
               </div>
             </header>
           </div>
         </div>
       ) : (
-        <div className="nav-container">
+        <div className="nav-container" id="home">
           <div className="Header-container">
-            <header className={scrollPositionY < bottomOfStationaryHeader ?
-                "Header shown" : "Header hidden"}>
+            <header className={scrollPositionY < bottomOfStationaryHeader
+              ? navIsOpen
+                ? "Header shown blurred"
+                : "Header shown"
+              : "Header hidden"}>
 
               <NavLink
                 smooth
@@ -99,7 +110,11 @@ class Header extends Component {
             scrollPositionY = { scrollPositionY }
             bottomOfHome = { bottomOfHome }
             bottomOfClasses = { bottomOfClasses }
-            bottomOfAbout = { bottomOfAbout }/>
+            bottomOfAbout = { bottomOfAbout }
+            bottomOfNews = { bottomOfNews }
+            bottomOfProjects = { bottomOfProjects }
+            windowWidth = { windowWidth }
+            heightOfStickyHeader = { heightOfStickyHeader }/>
 
         </div>
       )

@@ -4,10 +4,21 @@ import { NavHashLink as NavLink } from 'react-router-hash-link';
 import './NavMenu.scss'
 
 class NavMenu extends Component {
+
   render() {
+
+    const scrollWithOffset = (el, offset) => {
+      const elementPosition = el.offsetTop - offset;
+      window.scroll({
+        top: elementPosition,
+        left: 0,
+        behavior: "smooth"
+      });
+    }
+
     const {
-      navIsOpen, handleNavClick, scrollPositionY, bottomOfHome, bottomOfClasses,
-      bottomOfAbout, windowWidth
+      navIsOpen, handleNavClick, scrollPositionY, bottomOfHome, bottomOfAbout,
+      bottomOfNews, bottomOfProjects, windowWidth, heightOfStickyHeader
     } = this.props
 
     return (
@@ -20,40 +31,48 @@ class NavMenu extends Component {
           <NavLink
             smooth
             to="#home"
-            className={(scrollPositionY < bottomOfHome - 50) ? "selected" : "" }
+            className={(scrollPositionY < bottomOfHome - heightOfStickyHeader) ? "selected" : "" }
             onClick={windowWidth > 600 ? null : () => handleNavClick()}>
             Home
           </NavLink>
           <NavLink
             smooth
-            to="#classes"
-            className={
-              (scrollPositionY >= bottomOfHome - 50 &&
-                scrollPositionY < bottomOfClasses - 50) ? "selected" : "" }
-            onClick={windowWidth > 600 ? null : () => handleNavClick()}>
+            to="#about"
+            className={(scrollPositionY >= bottomOfHome - heightOfStickyHeader &&
+                        scrollPositionY < bottomOfAbout - heightOfStickyHeader) ? "selected" : "" }
+            onClick={windowWidth > 600 ? null : () => handleNavClick()}
+            scroll={el => scrollWithOffset(el, heightOfStickyHeader)}>
             About
           </NavLink>
           <NavLink
             smooth
-            to="#about"
+            to="#news"
             className={
-              (scrollPositionY >= bottomOfClasses - 50 &&
-                scrollPositionY < bottomOfAbout - 50) ? "selected" : "" }
-            onClick={windowWidth > 600 ? null : () => handleNavClick()}>
+              (scrollPositionY >= bottomOfAbout - heightOfStickyHeader) &&
+               (scrollPositionY < bottomOfNews - heightOfStickyHeader) ? "selected" : "" }
+            onClick={windowWidth > 600 ? null : () => handleNavClick()}
+            scroll={el => scrollWithOffset(el, heightOfStickyHeader)}>
             News
+          </NavLink>
+          <NavLink
+            smooth
+            to="#projects"
+            className={
+              (scrollPositionY >= bottomOfNews - heightOfStickyHeader) &&
+               ((window.innerHeight + window.pageYOffset) < document.body.offsetHeight - 2) ? "selected" : "" }
+            onClick={windowWidth > 600 ? null : () => handleNavClick()}
+            scroll={el => scrollWithOffset(el, heightOfStickyHeader)}>
+            Projects
           </NavLink>
           <NavLink
             smooth
             to="#contact"
             className={
-              (scrollPositionY >= bottomOfAbout - 50) ? "selected" : "" }
-            onClick={windowWidth > 600 ? null : () => handleNavClick()}>
+              ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 2) ? "selected" : "" }
+            onClick={windowWidth > 600 ? null : () => handleNavClick()}
+            scroll={el => scrollWithOffset(el, heightOfStickyHeader)}>
             Contact
           </NavLink>
-          <a href="https://somemembersarea.xyz/hopefully-not-real-website"
-            onClick={windowWidth > 600 ? null : () => handleNavClick()}>
-            Shop
-          </a>
         </nav>
         <div
           className={ windowWidth > 600 ? "page-overlay hide-overlay"

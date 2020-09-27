@@ -1,5 +1,6 @@
 .NavMenu-container {
   display: flex;
+  overflow: visible;
 }
 
 .nav-menu a,
@@ -7,15 +8,20 @@
   color: #000;
   transition: color 0.5s ease;
   box-sizing: border-box;
+  filter: drop-shadow(-2px 7px 5px #666), drop-shadow(0 0 3px #fff);
 }
 
-.nav-menu a:hover,
-.nav-menu NavLink:hover{
+.nav-menu a:hover, .nav-menu a:focus,
+.nav-menu NavLink:hover, .nav-menu NavLink:focus {
   color: #ff3366;
   text-decoration: underline;
+  filter: drop-shadow(-2px 7px 5px #f8a), drop-shadow(0 0 3px #fff);
+  transition: all 0.3s ease;
+  transform: scale(1.1);
 }
 
 .nav-menu .selected {
   color: #ff3366;
   text-decoration: underline;
+  filter: drop-shadow(-2px 7px 5px #f8a);
 }

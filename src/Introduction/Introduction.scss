@@ -2,13 +2,12 @@
   margin: 0 auto;
   padding-bottom: 5px;
   width: 100%;
-  max-width: 800px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   position: relative;
-  border-bottom: 1px dotted #000;
-  background-color: #fff;
+  background-color: #b6b291;
 }
 
 .Introduction {
@@ -18,7 +17,7 @@
 
 .Introduction-container p {
   color: #000;
-  max-width: 80%;
+  width: 85%;
   margin: 10px auto;
   font-size: 1.2em;
 }
@@ -38,15 +37,71 @@
   box-sizing: border-box;
 }
 
+.Introduction-container p, .Introduction-container .triple-container {
+  max-width: 900px;
+}
+
+//Card code credit: https://3dtransforms.desandro.com/card-flip
+.card {
+  width: 250px;
+  max-width: 100%;
+  height: 250px;
+  perspective: 1000px;
+}
+
+.card-contents {
+  position: relative;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  transition: transform 1s;
+  display: inline-block;
+  transform-style: preserve-3d;
+  transition-delay: 0;
+}
+
+.card-contents.first-animated{
+  transition-delay: 0;
+}
+
+.card-contents.second-animated{
+  transition-delay: 0.5s;
+}
+
+.card-contents.third-animated{
+  transition-delay: 1s;
+}
+
+.card__face {
+  position: absolute;
+  height: auto;
+  width: 100%;
+  backface-visibility: hidden;;
+}
+
+.card__face--front {
+
+}
+
+.card__face--back {
+  transform: rotateY(180deg);
+}
+
+.flipped {
+  transform: rotateY(180deg);
+}
+
 
 .Introduction-container .Introduction-image-container {
-  box-shadow: inset 0 0 25px 6px #fff;
-  filter: drop-shadow(0 6px 2px rgba(16, 16, 16, 0.5));
+
+  filter: drop-shadow(-3px 7px 2px rgba(16, 16, 16, 0.5));
   border-radius: 50%;
   margin: 0 auto;
   padding: 0;
   border: 0;
-  width: 400px;
+  width: 100%;
+  height: 100%;
+  max-height: 10%;
   max-width: 30%;
   overflow: hidden;
 }
@@ -55,8 +110,16 @@
   background-color: rgba(60, 60, 60, 0.35);
 }
 
+.Introduction-image-container.second .light-dot{
+  background-color: rgba(255, 255, 255, 0.19);
+}
+
 .lighter-overlay {
   background-color: rgba(60, 60, 60, 0.25);
+}
+
+.Introduction-image-container.first .light-dot{
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 .light-blur {
@@ -67,12 +130,15 @@
 }
 
 
-.Introduction-image-container .Introduction-image {
+.Introduction-image-container .Introduction-image, .card .Introduction-image {
   margin: 0;
   padding: 0;
   border: 0;
-  width: 400px;
+  height: auto;
+  //width: 400px;
   max-width: 100%;
+  display: inline-block;
+  box-shadow: inset 0 0 25px 6px #fff;
 }
 
 
@@ -88,6 +154,31 @@
   box-shadow: inset 0 1px 25px 9px #fff;
 }
 
+.Introduction-image-container .droplet-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: inset -7px 8px 10px 7px rgba(0, 0, 0, 0.5),
+              inset 5px -12px 25px 5px rgba(255, 255, 255, 0.75);
+}
+
+.Introduction-image-container .light-dot, .card .light-dot {
+  position: absolute;
+  display: inline-block;
+  top: 12%;
+  right: 30%;
+  width: 13%;
+  height: 20%;
+  border-radius: 50%;
+  transform: rotate(-62deg);
+  background-color: rgba(255, 255, 255, 0.23);
+}
+
 .Introduction-container .circle {
   border-radius: 50%;
 }
@@ -98,5 +189,5 @@
 }
 
 .Introduction-container p em{
-  text-decoration: underline;
+  font-size: 1.1em;
 }

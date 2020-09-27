@@ -1,7 +1,9 @@
 html, body, #root, .App {
-  background-color: #fff;
+  background-color: #d5cdb9;
+  background: linear-gradient(-180deg, #d5cdb9, 80%, black);
   min-width: 100%;
   min-height: 100%;
+  overflow-x: hidden;
 }
 
 .App {

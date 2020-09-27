@@ -5,12 +5,21 @@ import './App.css';
 import ShrinkingHeader from './ShrinkingHeader/ShrinkingHeader'
 import HeroImage from './HeroImage/HeroImage'
 
+import ImageFocusAnimation from './ImageFocusAnimation/ImageFocusAnimation'
+
 import CallToAction from './CallToAction/CallToAction'
-import GlassTruckImage from './img/Mirrored-Glass-Truck-Hero-Large.jpg'
+import VibrantSkylineTurbines from './img/Sunset-Turbines-Narrow.jpg'
+import MirroredGlassTruck from './img/Mirrored-Glass-Truck-Hero-Large.jpg'
+import TrilliumImage from './img/Trillium-4032px-1530px.jpg'
+import NCSunsetImage from './img/Sunset-Edited-4032x1176.jpg'
 
 import Introduction from './Introduction/Introduction'
 
 import News from './News/News'
+
+import Projects from './Projects/Projects'
+
+import Footer from './Footer/Footer'
 
 class App extends Component {
 
@@ -51,11 +60,39 @@ class App extends Component {
   }
 
   updateHome = (bottom) => {
-    this.setState({ bottomOfHome : bottom})
+    this.setState({ bottomOfHome : bottom })
+  }
+
+  updateAbout = (bottom) => {
+    this.setState({ bottomOfAbout : bottom })
   }
 
   updateNews = (bottom) => {
     this.setState({ bottomOfNews : bottom })
+  }
+
+  updateProjects = (bottom) => {
+    this.setState({ bottomOfProjects : bottom })
+  }
+
+  updateImageFocusAnimation = (trigger_height) => {
+    this.setState({ triggerForImageFocusAnimation: trigger_height })
+  }
+
+  updateRepeatImageFocusAnimation = (bool) => {
+    this.setState ({ repeatImageFocusAnimation: bool })
+  }
+
+  updateRepeatCardFlipAnimation = (bool) => {
+    this.setState ({ repeatCardFlipAnimation: bool})
+  }
+
+  updateTriggerForCardFlipAnimation = (trigger_height) => {
+    this.setState({ triggerForCardFlipAnimation: trigger_height })
+  }
+
+  updateFlipCardDimensions = (width) => {
+    this.setState({ widthOfFlipCard: width})
   }
 
   updateStationaryHeader = (bottom) => {
@@ -63,13 +100,25 @@ class App extends Component {
     console.log(this.state.bottomOfStationaryHeader)
   }
 
+  updateHeightOfStickyHeader = (bottom) => {
+    this.setState({ heightOfStickyHeader : bottom})
+  }
+
   state = {
     scrollPositionY : 0,
     windowWidth : 0,
     bottomOfStationaryHeader : 80,
+    heightOfStickyHeader : 80,
     navIsOpen : false,
     bottomOfHome : 300,
-    bottomOfNews : 600
+    bottomOfAbout: 600,
+    bottomOfNews : 900,
+    bottomOfProjects : 3000,
+    triggerForImageFocusAnimation: 150,
+    repeatImageFocusAnimation: true,
+    repeatCardFlipAnimation: true,
+    triggerForCardFlipAnimation: 550,
+    widthOfFlipCard: 250
   }
 
   render() {
@@ -79,28 +128,75 @@ class App extends Component {
           scrollPositionY = { this.state.scrollPositionY }
           windowWidth = { this.state.windowWidth }
           bottomOfStationaryHeader = { this.state.bottomOfStationaryHeader }
+          heightOfStickyHeader = { this.state.heightOfStickyHeader }
           navIsOpen = { this.state.navIsOpen }
           bottomOfHome = { this.state.bottomOfHome }
+          bottomOfAbout = { this.state.bottomOfAbout }
+          bottomOfNews = { this.state.bottomOfNews }
+          bottomOfProjects = { this.state.bottomOfProjects }
           debounce = { this.debounce }
           updateStationaryHeader = { this.updateStationaryHeader }
+          updateHeightOfStickyHeader = { this.updateHeightOfStickyHeader }
           handleNavClick = { this.handleNavClick } />
-        <HeroImage
-          heroImageSrc = { GlassTruckImage }
-          heroImageAlt = "Mirrored glass reflecting sepia-tone trucks under blue sky"
-          pageName = "Your Image"
-          navIsOpen = { this.state.navIsOpen }/>
-        <CallToAction
+
+        <ImageFocusAnimation
+          repeatImageFocusAnimation = { this.state.repeatImageFocusAnimation }
+          updateRepeatImageFocusAnimation = { this.updateRepeatImageFocusAnimation }
           navIsOpen = { this.state.navIsOpen }
           />
-        <Introduction
+
+        <CallToAction
           navIsOpen = { this.state.navIsOpen }
           debounce = { this.debounce }
           bottomOfHome = { this.state.bottomOfHome }
-          updateHome = { this.updateHome }/>
+          updateHome = { this.updateHome }
+          />
+
+        <HeroImage
+          heroImageSrc = { VibrantSkylineTurbines }
+          heroImageAlt = "A vibrant Midwestern American skyline featuring turbines in the distance as the sun sets"
+          pageName = "About"
+          navIsOpen = { this.state.navIsOpen }
+          sectionId = "about"/>
+
+        <Introduction
+          navIsOpen = { this.state.navIsOpen }
+          scrollPositionY = {this.state.scrollPositionY }
+          debounce = { this.debounce }
+          bottomOfAbout = { this.state.bottomOfAbout }
+          widthOfFlipCard = { this.state.widthOfFlipCard }
+          repeatCardFlipAnimation = { this.state.repeatCardFlipAnimation }
+          updateAbout = { this.updateAbout }
+          triggerForCardFlipAnimation = { this.state.triggerForCardFlipAnimation }
+          updateTriggerForCardFlipAnimation = { this.updateTriggerForCardFlipAnimation }
+          updateFlipCardDimensions = { this.updateFlipCardDimensions }
+          updateRepeatCardFlipAnimation = { this.updateRepeatCardFlipAnimation }
+
+          />
+
         <News
           navIsOpen = { this.state.navIsOpen }
           debounce = { this.debounce }
-          updateNews = { this.updateNews }/>
+          updateNews = { this.updateNews }
+          MirroredGlassTruck = { MirroredGlassTruck }/>
+
+        <Projects
+          navIsOpen = { this.state.navIsOpen }
+          debounce = { this.debounce }
+          updateProjects = { this.updateProjects }
+          TrilliumImage = { TrilliumImage }
+          />
+
+        <HeroImage
+          heroImageSrc = { NCSunsetImage }
+          heroImageAlt = "A colorful sunset skyline featuring the woods and mountains of Western North Carolina"
+          pageName = "Contact"
+          navIsOpen = { this.state.navIsOpen }
+          sectionId = "contact-info"/>
+
+        <Footer
+          navIsOpen = { this.state.navIsOpen }/>
+
       </div>
     );
   }
