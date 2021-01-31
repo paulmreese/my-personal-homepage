@@ -34,7 +34,12 @@ class CallToAction extends Component {
           ...into the <em><strong>Cloud?</strong></em>
         </h3>
         <div className="button-container">
-          <button>Let me help, <strong>today!</strong></button>
+          
+          <a
+            href="http://www.linkedin.com/in/paul-m-reese"
+            className="button-style"
+            rel="noreferrer noopener"
+            target="_blank">Let me help, <strong>today!</strong></a>
           <div className="arrow-container">
             <div className="RightArrow">
               <div className="line"></div>
