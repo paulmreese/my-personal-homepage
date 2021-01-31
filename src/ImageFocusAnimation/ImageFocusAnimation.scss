@@ -43,6 +43,7 @@ $solid-line-color: #7a6f6a;
   box-sizing: border-box;
   border-top: 1px solid $solid-line-color;
   border-bottom: 1px solid $solid-line-color;
+  min-height: 100px;
 }
 
 
@@ -56,6 +57,7 @@ $solid-line-color: #7a6f6a;
   width: 400px;
   max-width: 20%;
   overflow: hidden;
+  min-height: 100%;
 }
 
 .ImageFocusAnimation-image-container .droplet-overlay {

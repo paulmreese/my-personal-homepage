@@ -1,0 +1,265 @@
+body, html {
+  width: 100%;
+  margin: 0 auto;
+}
+@font-face {
+  font-family: KeeponTruckin;
+  src: url(fonts/KeeponTruckin.ttf);
+}
+
+@font-face {
+    font-family: 'VI-Thuy-Tien-Hoa';
+    src:url('fonts/VI-Thuy-Tien-Hoa.ttf.woff') format('woff'),
+        url('fonts/VI-Thuy-Tien-Hoa.ttf.svg#VI-Thuy-Tien-Hoa') format('svg'),
+        url('fonts/VI-Thuy-Tien-Hoa.ttf.eot'),
+        url('fonts/VI-Thuy-Tien-Hoa.ttf.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+
+    text-align: center;
+    font-family: sans-serif;
+    color: rgba(0, 0, 0, 1);
+    background: #333 url('https://res.cloudinary.com/paulmreese/image/upload/v1532228631/seamless-tilable-bricks.jpg') repeat;
+}
+
+#container {
+  display:inline-block;
+  position: relative;
+  width: 505px;
+  margin: 0 auto;
+  max-width: 80%
+}
+
+h1{
+  font: 5em KeeponTruckin;
+  text-shadow: -3px 3px orange,
+               3px 3px orange,
+               -6px 6px yellow,
+               6px 6px yellow,
+               -10px 10px red,
+               0 10px red,
+               10px 10px red,
+               -14px 14px blue,
+               0 14px blue,
+               14px 14px blue;;
+  color: green;
+  margin: 0.2em auto 0 auto;
+  cursor: default;
+  text-align: center;
+}
+
+canvas{
+  margin: -35px auto -20px;
+  width: 90%;
+  position:relative;
+  z-index: -1;
+  -webkit-filter: drop-shadow(0 0 15px #000);
+  filter: drop-shadow(0 0 0 15px #000);
+}
+
+h2 {
+  font-family: KeeponTruckin;
+  text-shadow: 1px -1px white,
+               -2px 2px black;
+}
+
+h3 {
+  font-family: 'VI-Thuy-Tien-Hoa';
+  font-weight: 200;
+  font-size: 1.3em;
+  text-shadow: -2px 2px white;
+}
+
+h1,
+#restart-link,
+#info-link {
+  -webkit-filter: drop-shadow(0 0 8px #fff);
+  filter: drop-shadow(0 0 8px #fff);
+}
+
+#header-buttons {
+  position: absolute;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  top: 0;
+}
+
+#restart-link,
+#info-link {
+  text-decoration: none;
+  width: 101px;
+  height: 95px;
+
+  font-size: 4em;
+  position: absolute;
+  display: inline-block;
+  top: 15px;
+  padding: 0 20px 0 0;
+}
+
+#restart-link {
+  left: 0;
+}
+
+#info-link {
+  text-align: right;
+  right: 0;
+}
+
+#restart-link::after {
+  content: '\267B';
+}
+
+#info-link::after {
+  content: '\24D8';
+}
+
+#restart-link:visited,
+#info-link:visited {
+  color: blue;
+}
+
+#restart-link:focus,
+#restart-link:hover,
+#info-link:focus,
+#info-link:hover {
+  color: green;
+}
+
+#restart-link:active,
+#info-link:active {
+  color: red;
+}
+
+.tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /*Reset the Line height*/
+    font-size: 14px;
+    line-height: 14px;
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    top: 75%;
+    left: 50%;
+    margin-left: -60px;
+
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+#restart-link:hover .tooltiptext,
+#restart-link:focus .tooltiptext,
+#info-link:hover .tooltiptext,
+#info-link:focus .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+/*Style Controls*/
+#controls-container {
+  margin:0 auto;
+  width: 510px;
+  position:relative;
+}
+
+#controls-link {
+  position: absolute;
+  padding: 5px;
+  margin: 0;
+  top: -50px;
+  right: 14%;
+  border-radius: 5px;
+  font-size: 1.25em;
+  text-shadow: 1px 1px 1px #fff,
+               1px -1px 1px #fff,
+               -1px 1px 1px #fff,
+               -1px -1px 1px #fff;
+  background-color: rgba(180, 180, 180, 0.7);
+}
+
+#controls-container div {
+  width: 100%;
+}
+
+#controls-container div button {
+  font-size: 3em;
+  line-height: 30px;
+  font-weight: bolder;
+  margin: 10px;
+  padding: 30px;
+  background: none;
+  border: 3px solid black;
+  border-radius: 5px;
+  text-shadow: 1px 1px 1px #fff,
+               1px -1px 1px #fff,
+               -1px 1px 1px #fff,
+               -1px -1px 1px #fff;
+  background-color: rgba(180, 180, 180, 0.7);
+}
+
+.hide-controls::after {
+  content: '\2715';
+}
+
+.show-controls::after {
+  content: '\21f5';
+}
+
+#up::after {
+  content: '\2191';
+}
+
+#left::after {
+  content: '\2190';
+}
+
+#right::after {
+  content: '\2192';
+}
+
+#down::after {
+  content: '\2193';
+}
+
+.swal2-modal {
+    border: 2px #3085d6 solid;
+}
+
+/*Code to flip an images direction, used to make Turtlr's dancing that much
+ *More endearing
+ */
+.flipped {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+ }
+
+/*The dance routine*/
+
+#dance {
+  -moz-animation-iteration-count: 3;
+  -o-animation-iteration-count: 3;
+  -webkit-animation-iteration-count: 3;
+  animation-iteration-count: 3;
+}
+
+.plush {
+  margin: -60px auto -70px auto;
+  padding: 10px 0;
+}

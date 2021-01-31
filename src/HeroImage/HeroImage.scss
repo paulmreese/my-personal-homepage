@@ -6,7 +6,7 @@
   justify-content: center;
   position: relative;
   //box-shadow: 0 10px 10px -4px rgba(16, 16, 16, 0.5);
-  z-index: 1;
+  //z-index: 1;
   border-top: 1px solid #858585;
 }
 
@@ -56,5 +56,12 @@
   .HeroImage-caption {
     margin: 10px auto;
     font: 600 2.5em "Barlow Condensed", sans-serif;
+  }
+}
+
+@media screen and (min-width: 1001px) {
+  .HeroImage-caption {
+    top: 20px;
+    left: 20%;
   }
 }

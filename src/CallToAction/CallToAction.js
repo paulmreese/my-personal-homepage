@@ -28,12 +28,13 @@ class CallToAction extends Component {
           ? "CallToAction-container blurred"
           : "CallToAction-container"}>
         <h3>
-          Want to bring your business into <strong>
-            <em>focus?</em>
-          </strong>
+          Want to bring your ideas into <strong>focus?</strong>
+        </h3>
+        <h3>
+          ...into the <em><strong>Cloud?</strong></em>
         </h3>
         <div className="button-container">
-          <button>Create your website, <strong>today!</strong></button>
+          <button>Let me help, <strong>today!</strong></button>
           <div className="arrow-container">
             <div className="RightArrow">
               <div className="line"></div>

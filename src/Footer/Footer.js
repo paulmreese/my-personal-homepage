@@ -13,6 +13,10 @@ import udacityLogoLarge from './img/udacity-U-logo-120.png'
 
 class Footer extends Component {
 
+  showCurrentYear() {
+    return new Date().getFullYear();
+  }
+
   render() {
     const linkedInSrcSet = linkedInLogoLarge + " 128w"
     const gitHubSrcSet = gitHubLogoLarge + " 120w"
@@ -22,7 +26,7 @@ class Footer extends Component {
       <div className="Footer-container" id="contact">
         <footer className="Footer">
           <span className="footer-text">
-            &copy;<strong>2018-2020</strong> Paul M. Reese
+            &copy;<strong>2018-{this.showCurrentYear()}</strong> Paul M. Reese
           </span>
           <span className="social-buttons">
             <a
@@ -34,14 +38,14 @@ class Footer extends Component {
                 alt = "Udacity Logo"
                 className = "udacity-logo"/>
             </a>
-            <a href="http://www.linkedin.com" className="social-button">
+            <a href="http://www.linkedin.com/in/paul-m-reese" className="social-button">
               <img
                 src = { linkedInLogo }
                 srcSet = { linkedInSrcSet }
                 alt = 'LinkedIn "In" Logo'
                 className = "linkedIn-logo" />
             </a>
-            <a href="http://www.github.com" className="social-button">
+            <a href="https://github.com/paulmreese/" className="social-button">
               <img src = { gitHubLogo }
                 srcSet = { gitHubSrcSet }
                 alt = "GitHub Octocat Logo"

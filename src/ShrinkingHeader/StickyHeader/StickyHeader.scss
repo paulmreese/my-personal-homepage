@@ -8,9 +8,9 @@
   align-items: center;
   width: 100%;
   z-index: 7;
-  background-image: url(../Header/img/Scrub-Sky-Turbines-Hero-Large.jpg);
+  background-image: url(../Header/img/1920px-480px-Scrub-Sky-Turbines-Hero-Large.jpg);
   background-position: center 20%;
-  background-size: full 110%;
+  background-size: 110%;
   background-repeat: no-repeat;
   transition: all 0.5s ease;
   box-shadow: inset 0 -8px 10px 0 #d5cdb9,
@@ -21,13 +21,13 @@
 
 .StickyHeader {
   width: 115%;
-  left:-7.5%;
+  //left:-7.5%;
   //position: relative;
   align-items: center;
   justify-content: space-between;
   display: flex;
   height: 80px;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -38,7 +38,7 @@
               0 5px 8px -3px #000;
 }
 
-.StickyHeader-container.news-border {
+.StickyHeader-container.aiml-border {
   box-shadow: inset 0 -8px 8px 0 #d2a387,
               inset 0 -20px 10px 0 rgba(210, 163, 135, 0.7),
               inset 0 0 2px -1px #000,
@@ -110,7 +110,7 @@
 
 .StickyHeader .small-title:hover, .StickyHeader .small-logo:hover,
 .StickyHeader .small-title:focus, .StickyHeader .small-logo:focus {
-  filter: none;
+  filter: drop-shadow(0 0 5px #fff);
   transform: scale(1.05);
 }
 
@@ -131,22 +131,17 @@
   display: inline-block;
   flex-direction: row;
   font: 600 0.8em "Barlow Condensed", sans-serif;
-  line-height: 0.5em;
+  line-height: 1.05em;
   transition: all 0.5s ease;
   margin: 8px 2px;
   border: none;
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-color: rgba(50,50,50,0);
   color: #000;
   justify-content: space-between;
   filter: drop-shadow(-2px 7px 5px #666);
   text-shadow: 0 0 5px #fff;
-}
-
-.StickyHeader nav Navlink:hover, .StickyHeader nav Navlink:focus,
-.StickyHeader nav a:hover, .StickyHeader nav a:focus {
-  color: #ff3366;
-  filter: drop-shadow(-2px 7px 5px #f8a);
-  text-shadow: 0 0 3px #fff;
+  width: auto;
 }
 
 .StickyHeader .hamburger-button {
@@ -160,8 +155,7 @@
 }
 
 .StickyHeader .hamburger-button:hover, .StickyHeader .hamburger-button:focus {
-  filter:
-    drop-shadow(0 3px 1px rgba(16, 16, 16, 0.5));
+  filter: drop-shadow(0 0 5px #fff);
   transform: scale(1.05);
 }
 
@@ -215,12 +209,12 @@
 @media screen and (min-width: 601px) {
   .StickyHeader-container {
     justify-content: center;
-    padding-left: 7.5%;
+    //padding-left: 7.5%;
   }
   .StickyHeader .small-logo {
-    min-width: 74px;
-    height: 74px;
-    width: 74px;
+    min-width: 100px;
+    height: 100px;
+    width: 100px;
     box-sizing: border-box;
     position: relative;
 
@@ -235,21 +229,62 @@
     font-size: 1.05em;
 
   }
+
+  .StickyHeader NavLink,
+  .StickyHeader a {
+
+    margin: 10px 0;
+    display: inline-block;
+    font: 600 1em "Barlow Condensed", sans-serif;
+    line-height: 1.05em;
+    width: auto;
+    border: none;
+  }
+
+  .StickyHeader NavLink::before,
+  .StickyHeader a::before {
+
+
+    display: block;
+    font: 600 1em "Barlow Condensed", sans-serif;
+    line-height: 1.05em;
+    width: auto;
+    border: none;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+  }
+}
+
+@media screen and (min-width: 633px) {
+  .StickyHeader NavLink,
+  .StickyHeader a {
+    margin: 10px 0;
+  }
 }
 
 @media screen and (min-width: 636px) {
   .StickyHeader nav Navlink,
   .StickyHeader nav a {
-    font-size: 1.15em;
+    font-size: 1.1em;
 
   }
 }
 
-@media screen and (min-width: 657px) {
+@media screen and (min-width: 655px) {
   .StickyHeader nav Navlink,
   .StickyHeader nav a {
     font-size: 1.2em;
-    margin: 7px 2px;
+    margin: 7px 1px;
+  }
+}
+
+@media screen and (min-width: 675px) {
+  .StickyHeader NavLink,
+  .StickyHeader a {
+    margin: 10px 0;
+    font-size: 1em;
+    line-height: 1em;
   }
 }
 
@@ -257,19 +292,28 @@
   .StickyHeader nav Navlink,
   .StickyHeader nav a {
     font-size: 1.25em;
-    margin: 7px 3px;
+    margin: 7px 1px;
   }
 }
 
-@media screen and (min-width: 699px) {
+@media screen and (min-width: 710px) {
   .StickyHeader nav Navlink,
   .StickyHeader nav a {
     font-size: 1.3em;
-    margin: 8px 3px;
+    margin: 8px 1px;
   }
 
   .StickyHeader .NavMenu-container {
     max-width: 55%;
+  }
+}
+
+@media screen and (min-width: 723px) {
+  .StickyHeader NavLink,
+  .StickyHeader a {
+    margin: 10px 0;
+    font-size: 1.05em;
+    line-height: 1.05em;
   }
 }
 
@@ -331,6 +375,15 @@
   .StickyHeader nav a {
     font-size: 1.4em;
     line-height: 0.9em;
-    margin: 9px 11px;
+    margin: 9px 9px;
+  }
+}
+
+@media screen and (min-width: 950px) {
+  .StickyHeader nav Navlink,
+  .StickyHeader nav a {
+    font-size: 1.4em;
+    line-height: 0.9em;
+    margin: 9px 10px;
   }
 }

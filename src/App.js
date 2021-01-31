@@ -8,18 +8,49 @@ import HeroImage from './HeroImage/HeroImage'
 import ImageFocusAnimation from './ImageFocusAnimation/ImageFocusAnimation'
 
 import CallToAction from './CallToAction/CallToAction'
-import VibrantSkylineTurbines from './img/Sunset-Turbines-Narrow.jpg'
-import MirroredGlassTruck from './img/Mirrored-Glass-Truck-Hero-Large.jpg'
-import TrilliumImage from './img/Trillium-4032px-1530px.jpg'
-import NCSunsetImage from './img/Sunset-Edited-4032x1176.jpg'
+
+import smallVibrantSkylineTurbines from './img/Sunset-Turbines-Narrow-480px-180px.jpg'
+import mediumVibrantSkylineTurbines from './img/Sunset-Turbines-Narrow-960px-360px.jpg'
+import largeVibrantSkylineTurbines from './img/Sunset-Turbines-Narrow-1920px-720px.jpg'
+import highResVibrantSkylineTurbines from './img/Sunset-Turbines-Narrow-3840px-1440px-web.jpg'
+
+import smallMirroredGlassTruck from './img/Mirrored-Glass-Truck-Hero-480px-160px.jpg'
+import mediumMirroredGlassTruck from './img/Mirrored-Glass-Truck-Hero-960px-320px.jpg'
+import largeMirroredGlassTruck from './img/Mirrored-Glass-Truck-Hero-1920px-640px.jpg'
+
+import smallTrillium from './img/Trillium-480px-180px.jpg'
+import mediumTrillium from './img/Trillium-960px-360px.jpg'
+import largeTrillium from './img/Trillium-1920px-720px.jpg'
+import highResTrillium from './img/Trillium-3840px-1440px.jpg'
+
+import smallNCSunset from './img/Sunset-Edited-480px-147px.jpg'
+import mediumNCSunset from './img/Sunset-Edited-960px-294px.jpg'
+import largeNCSunset from './img/Sunset-Edited-1920px-588px.jpg'
+import highResNCSunset from './img/Sunset-Edited-3840px-1176px.jpg'
 
 import Introduction from './Introduction/Introduction'
 
-import News from './News/News'
+import AIML from './AIML/AIML'
 
 import Projects from './Projects/Projects'
 
 import Footer from './Footer/Footer'
+
+//SrcSets to pass for section headers
+const VibrantSkylineTurbinesSrcSet = smallVibrantSkylineTurbines + ' 480w, ' +
+   mediumVibrantSkylineTurbines + ' 960w, ' + largeVibrantSkylineTurbines +
+   ' 1920w, ' + highResVibrantSkylineTurbines + ' 2x'
+
+const MirroredGlassTruckSrcSet = smallMirroredGlassTruck + ' 480w, ' +
+   mediumMirroredGlassTruck + ' 960w, ' + largeMirroredGlassTruck + ' 1920w'
+
+const TrilliumSrcSet = smallTrillium + ' 480w, ' +
+   mediumTrillium + ' 960w, ' + largeTrillium +
+   ' 1920w, ' + highResTrillium + ' 2x'
+
+const NCSunsetSrcSet = smallNCSunset + ' 480w, ' +
+   mediumNCSunset + ' 960w, ' + largeNCSunset +
+   ' 1920w, ' + highResNCSunset + ' 2x'
 
 class App extends Component {
 
@@ -45,8 +76,14 @@ class App extends Component {
   }
 
   handleResize = () => {
-    const windowWidth = +window.innerWidth / +window.devicePixelRatio
-    console.log("window width: " + windowWidth)
+    const windowWidth = +window.innerWidth
+    //const windowOrientation = window.orientation
+    //const devicePixelRatio = window.devicePixelRatio
+    //console.log("window width: " + windowWidth)
+    //console.log("window orientation: " + windowOrientation)
+    //console.log("device pixel ratio: " + devicePixelRatio)
+
+
     //console.log("Y" + typeof this.state.scrollPositionY + " bottoms:" + typeof this.state.bottomOfHome)
     if (this.state.navIsOpen  && windowWidth > 600) {this.handleNavClick()}
     return this.setState({ windowWidth })
@@ -55,7 +92,7 @@ class App extends Component {
   handleScroll = () => {
     // + is unary operator, same as Number(scrollPositionY)
     const scrollPositionY = +window.scrollY
-    console.log(scrollPositionY)
+    //console.log(scrollPositionY)
     return this.setState({ scrollPositionY })
   }
 
@@ -67,8 +104,8 @@ class App extends Component {
     this.setState({ bottomOfAbout : bottom })
   }
 
-  updateNews = (bottom) => {
-    this.setState({ bottomOfNews : bottom })
+  updateAIML = (bottom) => {
+    this.setState({ bottomOfAIML : bottom })
   }
 
   updateProjects = (bottom) => {
@@ -97,7 +134,7 @@ class App extends Component {
 
   updateStationaryHeader = (bottom) => {
     this.setState({ bottomOfStationaryHeader : bottom })
-    console.log(this.state.bottomOfStationaryHeader)
+    //console.log(this.state.bottomOfStationaryHeader)
   }
 
   updateHeightOfStickyHeader = (bottom) => {
@@ -112,7 +149,7 @@ class App extends Component {
     navIsOpen : false,
     bottomOfHome : 300,
     bottomOfAbout: 600,
-    bottomOfNews : 900,
+    bottomOfAIML : 900,
     bottomOfProjects : 3000,
     triggerForImageFocusAnimation: 150,
     repeatImageFocusAnimation: true,
@@ -122,6 +159,7 @@ class App extends Component {
   }
 
   render() {
+
     return (
       <div className="App">
         <ShrinkingHeader
@@ -132,7 +170,7 @@ class App extends Component {
           navIsOpen = { this.state.navIsOpen }
           bottomOfHome = { this.state.bottomOfHome }
           bottomOfAbout = { this.state.bottomOfAbout }
-          bottomOfNews = { this.state.bottomOfNews }
+          bottomOfAIML = { this.state.bottomOfAIML }
           bottomOfProjects = { this.state.bottomOfProjects }
           debounce = { this.debounce }
           updateStationaryHeader = { this.updateStationaryHeader }
@@ -153,7 +191,8 @@ class App extends Component {
           />
 
         <HeroImage
-          heroImageSrc = { VibrantSkylineTurbines }
+          fallbackHeroImageSrc = { smallVibrantSkylineTurbines }
+          heroImageSrcSet = { VibrantSkylineTurbinesSrcSet }
           heroImageAlt = "A vibrant Midwestern American skyline featuring turbines in the distance as the sun sets"
           pageName = "About"
           navIsOpen = { this.state.navIsOpen }
@@ -174,21 +213,24 @@ class App extends Component {
 
           />
 
-        <News
+        <AIML
           navIsOpen = { this.state.navIsOpen }
           debounce = { this.debounce }
-          updateNews = { this.updateNews }
-          MirroredGlassTruck = { MirroredGlassTruck }/>
+          updateAIML = { this.updateAIML }
+          fallbackHeroImageSrc = { smallMirroredGlassTruck }
+          MirroredGlassTruckSrcSet = { MirroredGlassTruckSrcSet }/>
 
         <Projects
           navIsOpen = { this.state.navIsOpen }
           debounce = { this.debounce }
           updateProjects = { this.updateProjects }
-          TrilliumImage = { TrilliumImage }
+          fallbackHeroImageSrc = { smallTrillium }
+          TrilliumSrcSet = { TrilliumSrcSet }
           />
 
         <HeroImage
-          heroImageSrc = { NCSunsetImage }
+          fallbackHeroImageSrc = { smallNCSunset }
+          heroImageSrcSet = { NCSunsetSrcSet }
           heroImageAlt = "A colorful sunset skyline featuring the woods and mountains of Western North Carolina"
           pageName = "Contact"
           navIsOpen = { this.state.navIsOpen }

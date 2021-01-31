@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
 
 import './ImageFocusAnimation.scss';
-import kaleImage from './img/Kale-Closeup-800.jpg'
+import smallKaleImage from './img/Kale-Closeup-100px.jpg'
+import mediumKaleImage from './img/Kale-Closeup-200px.jpg'
+import largeKaleImage from './img/Kale-Closeup-400px.jpg'
+import highResKaleImage from './img/Kale-Closeup-800px.jpg'
+
+const kaleImageSrcSet = smallKaleImage + ' 100w, ' +
+   mediumKaleImage + ' 200w, ' + largeKaleImage +
+   ' 400w, ' + highResKaleImage + ' 2x'
 
 //This Component represents the Kale image set
 
@@ -23,7 +30,8 @@ class ImageFocusAnimation extends Component {
             ? "ImageFocusAnimation-image-container first-animated shown"
             : "ImageFocusAnimation-image-container first-animated hidden"}>
             <img
-              src={ kaleImage }
+              src={ smallKaleImage }
+              srcSet={ kaleImageSrcSet }
               alt="Close-up on the center of purple kale"
               className="circle ImageFocusAnimation-image medium-light-blur"/>
             <div className="image-overlay medium-light-overlay droplet-overlay"></div>
@@ -33,7 +41,8 @@ class ImageFocusAnimation extends Component {
             ? "ImageFocusAnimation-image-container second-animated shown"
             : "ImageFocusAnimation-image-container second-animated hidden"}>
             <img
-              src={ kaleImage }
+              src={ smallKaleImage }
+              srcSet={ kaleImageSrcSet }
               alt="Close-up on the center of purple kale"
               className="circle ImageFocusAnimation-image light-blur"/>
             <div className="image-overlay light-overlay droplet-overlay"></div>
@@ -43,7 +52,8 @@ class ImageFocusAnimation extends Component {
             ? "ImageFocusAnimation-image-container third-animated shown"
             : "ImageFocusAnimation-image-container third-animated hidden"}>
             <img
-              src={ kaleImage }
+              src={ smallKaleImage }
+              srcSet={ kaleImageSrcSet }
               alt="Close-up on the center of purple kale"
               className="circle ImageFocusAnimation-image lighter-blur"/>
             <div className="image-overlay lighter-overlay droplet-overlay"></div>
@@ -53,7 +63,8 @@ class ImageFocusAnimation extends Component {
             ? "ImageFocusAnimation-image-container fourth-animated shown"
             : "ImageFocusAnimation-image-container fourth-animated hidden"}>
             <img
-              src={ kaleImage }
+              src={ smallKaleImage }
+              srcSet={ kaleImageSrcSet }
               alt="Close-up on the center of purple kale"
               className="circle ImageFocusAnimation-image "/>
             <div className="image-overlay droplet-overlay"></div>
@@ -63,7 +74,8 @@ class ImageFocusAnimation extends Component {
             ? "ImageFocusAnimation-image-container third-animated shown"
             : "ImageFocusAnimation-image-container third-animated hidden"}>
             <img
-              src={ kaleImage }
+              src={ smallKaleImage }
+              srcSet={ kaleImageSrcSet }
               alt="Close-up on the center of purple kale"
               className="circle ImageFocusAnimation-image lighter-blur"/>
             <div className="image-overlay lighter-overlay droplet-overlay"></div>
@@ -73,7 +85,8 @@ class ImageFocusAnimation extends Component {
             ? "ImageFocusAnimation-image-container second-animated shown"
             : "ImageFocusAnimation-image-container second-animated hidden"}>
             <img
-              src={ kaleImage }
+              src={ smallKaleImage }
+              srcSet={ kaleImageSrcSet }
               alt="Close-up on the center of purple kale"
               className="circle ImageFocusAnimation-image light-blur"/>
             <div className="image-overlay light-overlay droplet-overlay"></div>
@@ -83,7 +96,8 @@ class ImageFocusAnimation extends Component {
             ? "ImageFocusAnimation-image-container first-animated shown"
             : "ImageFocusAnimation-image-container first-animated hidden"}>
             <img
-              src={ kaleImage }
+              src={ smallKaleImage }
+              srcSet={ kaleImageSrcSet }
               alt="Close-up on the center of purple kale"
               className="circle ImageFocusAnimation-image medium-light-blur"/>
             <div className="image-overlay medium-light-overlay droplet-overlay"></div>

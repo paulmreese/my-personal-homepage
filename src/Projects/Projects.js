@@ -4,7 +4,9 @@ import ReactDOM from 'react-dom'
 import './Projects.scss';
 import HeroImage from '../HeroImage/HeroImage';
 
-import TurtlrImage from './img/Turtlr-gameplay-screenshot-900px-600px.png';
+import smallTurtlrImage from './img/Turtlr-gameplay-screenshot-350px-233px.png';
+import mediumTurtlrImage from './img/Turtlr-gameplay-screenshot-450px-300px.png';
+import largeTurtlrImage from './img/Turtlr-gameplay-screenshot-900px-600px.png';
 
 class Projects extends Component {
 
@@ -28,7 +30,7 @@ class Projects extends Component {
   }
 
   render() {
-    const { navIsOpen, TrilliumImage } = this.props
+    const { navIsOpen, fallbackHeroImageSrc, TrilliumSrcSet } = this.props
     return (
 
       <section className={ navIsOpen
@@ -37,44 +39,56 @@ class Projects extends Component {
         id = "projects">
         <div className="Projects-image-container">
           <HeroImage
-            heroImageSrc = { TrilliumImage }
+            fallbackHeroImageSrc = { fallbackHeroImageSrc }
+            heroImageSrcSet = { TrilliumSrcSet }
             heroImageAlt = "A patch of painted Trillium with pink and white flowers in verdant North Carolina woods"
             pageName = "Projects"
             navIsOpen = { navIsOpen }
             />
         </div>
-        <p>
-          I believe that some of the biggest strides in knowledge come from its
-          application to interesting problems, especially when applied with
-          pure curiosity.
-        </p>
-        <p>
-          These projects represent breakthroughs and other interesting outcomes.
-          <br/>
-        </p>
-        <figure>
-          <img
-            src={ TurtlrImage }
-            alt="The GUI of Turtlr, the loggerhead turtle, showing a photorealistic
-                 Turtlr moving across a pixel-art beach towards the sea while
-                 dodging plastic litter and seagulls."/>
-          <figcaption>
-            Help Turtlr, the loggerhead sea turtle, escape to the sea!
-          </figcaption>
-        </figure>
-        <div className="article-description">
+        <div className="Projects-content">
+
           <p>
-            This JavaScript game uses the HTML canvas and custom sprites to
-            recreate a clone of the classic game Frogger featuring Turtlr,
-            the loggerhead sea turtle!</p>
+            I believe that some of the biggest strides in knowledge come from its
+            application to interesting problems, especially when applied with
+            pure curiosity.
+          </p>
+
+          <figure>
+            <a href={process.env.PUBLIC_URL + '/OldTurtlr/'}>
+              <img
+                src={ smallTurtlrImage }
+                srcSet={`${smallTurtlrImage} 350w,
+                         ${mediumTurtlrImage} 450w,
+                         ${largeTurtlrImage} 900w`}
+                alt="The GUI of Turtlr, the loggerhead turtle, showing a photorealistic
+                     Turtlr moving across a pixel-art beach towards the sea while
+                     dodging plastic litter and seagulls."/>
+              <figcaption>
+                Help Turtlr, the loggerhead sea turtle, escape to the sea!
+              </figcaption>
+            </a>
+          </figure>
           <p>
-            The goal is to help Turtlr escape the dangers of plastic litter and
-            natural predators to the safety of the open ocean.
+            Turtlr is a JavaScript game using the HTML canvas and custom sprites to
+            create a clone of the classic game Frogger, featuring Turtlr,
+            the loggerhead sea turtle! Help Turtlr escape the dangers of
+            plastic litter and natural predators, to the safety of the open
+            ocean.</p>
+          <p>
+            In addition to the HTML, JavaScript, and CSS required to
+            create the game engine, 3D transformations and graphical
+            flourishes improve the user experience.
           </p>
           <p>
-            In addition to the basic HTML, JavaScript, and CSS required to
-            create the game and its styling, 3D transformations and graphical
-            flourishes improve the user experience.
+            <a
+              href={process.env.PUBLIC_URL + '/OldTurtlr/'}
+              target="_blank"
+              rel="noopener noreferrer"
+              >Play Turtlr</a> | <a
+              href="https://github.com/paulmreese/frontend-nanodegree-arcade-game"
+              target="_blank"
+              rel="noopener noreferrer">View Turtlr Source</a>
           </p>
         </div>
       </section>

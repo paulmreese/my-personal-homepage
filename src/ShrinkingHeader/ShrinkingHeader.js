@@ -3,9 +3,21 @@ import React, { Component } from 'react';
 import Header from './Header/Header'
 import StickyHeader from './StickyHeader/StickyHeader'
 
+
+
+/*              *
+ *    Images    *
+ *              */
 //Import shared images and pass them as props to children
-import smallLogo from './img/130px-Headshot.png'
-import smallTitle from './img/360px-Sunset-Title-light-border.png'
+//add srcSets
+import smallStickyLogo from './img/70px-Headshot.png'
+import mediumStickyLogo from './img/130px-Headshot.png'
+import largeStickyLogo from './img/260px-Headshot.png'
+
+import smallStickyTitle from './img/180px-Sunset-Title-PMR-light-border.png'
+import mediumStickyTitle from './img/360px-Sunset-Title-PMR-light-border.png'
+import largeStickyTitle from './img/720px-Sunset-Title-PMR-light-border.png'
+
 import hamburgerButton from './img/if-black-hamburger-icon2.png'
 
 class ShrinkingHeader extends Component {
@@ -16,7 +28,7 @@ class ShrinkingHeader extends Component {
       scrollPositionY, windowWidth, bottomOfStationaryHeader, navIsOpen,
       bottomOfHome, debounce, updateStationaryHeader, handleNavClick,
       updateHeightOfStickyHeader, heightOfStickyHeader, bottomOfAbout,
-      bottomOfNews, bottomOfProjects
+      bottomOfAIML, bottomOfProjects
     } = this.props
 
     return (
@@ -27,15 +39,20 @@ class ShrinkingHeader extends Component {
           bottomOfStationaryHeader = { bottomOfStationaryHeader }
           bottomOfHome = { bottomOfHome }
           bottomOfAbout = { bottomOfAbout }
-          bottomOfNews = { bottomOfNews }
-          bottomOfProjects = { bottomOfProjects }
+          bottomOfAIML = { bottomOfAIML }
+          //For later, if there are added sections to make the page longer
+          //bottomOfProjects = { bottomOfProjects }
           debounce = { debounce }
           updateStationaryHeader = { updateStationaryHeader }
           navIsOpen = { navIsOpen }
           handleNavClick = { handleNavClick }
           heightOfStickyHeader = { heightOfStickyHeader }
-          smallLogo = { smallLogo }
-          smallTitle = { smallTitle }
+          smallStickyLogo = { smallStickyLogo }
+          mediumStickyLogo = { mediumStickyLogo }
+          largeStickyLogo = { largeStickyLogo }
+          smallStickyTitle = { smallStickyTitle }
+          mediumStickyTitle = { mediumStickyTitle }
+          largeStickyTitle = { largeStickyTitle }
           hamburgerButton = { hamburgerButton }
           />
         <StickyHeader
@@ -43,7 +60,7 @@ class ShrinkingHeader extends Component {
           windowWidth = { windowWidth }
           bottomOfStationaryHeader = { bottomOfStationaryHeader }
           bottomOfHome = { bottomOfHome }
-          bottomOfNews = { bottomOfNews }
+          bottomOfAIML = { bottomOfAIML }
           bottomOfProjects = { bottomOfProjects }
           debounce = { debounce }
           updateStationaryHeader = { updateStationaryHeader }
@@ -52,8 +69,12 @@ class ShrinkingHeader extends Component {
           navIsOpen = { navIsOpen }
           handleNavClick = { handleNavClick }
           bottomOfAbout = { bottomOfAbout }
-          smallLogo = { smallLogo }
-          smallTitle = { smallTitle }
+          smallStickyLogo = { smallStickyLogo }
+          mediumStickyLogo = { mediumStickyLogo }
+          largeStickyLogo = { largeStickyLogo }
+          smallStickyTitle = { smallStickyTitle }
+          mediumStickyTitle = { mediumStickyTitle }
+          largeStickyTitle = { largeStickyTitle }
           hamburgerButton = { hamburgerButton }
           />
       </section>

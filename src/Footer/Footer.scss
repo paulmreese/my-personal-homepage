@@ -94,6 +94,16 @@ Footer h1 span.subtitle {
           drop-shadow(0 0 2px #fff);
 }
 
+@media screen and (max-width: 600px) {
+  .footer-text {
+    order: 2;
+  }
+
+  .social-buttons {
+    order: 1;
+  }
+}
+
 @media screen and (min-width: 600px) {
 
   .Footer-container {

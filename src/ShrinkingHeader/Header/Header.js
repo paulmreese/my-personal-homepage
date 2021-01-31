@@ -6,8 +6,24 @@ import NavMenu from '../NavMenu/NavMenu'
 
 import './Header.scss';
 
+/*              *
+ *    Images    *
+ *              */
+//Logo src set
 import logo from './img/350px-Headshot.png'
-import title from './img/720px-440px-square-PMR-FEND-no-border.png'
+import highResLogo from './img/600px-Headshot.png'
+
+//Title src set
+import smallTitle from './img/270px-165px-square-PMR-Dev-no-border.png'
+import mediumTitle from './img/310px-190px-square-PMR-Dev-no-border.png'
+import largeTitle from './img/360px-220px-square-PMR-Dev-no-border.png'
+import highResTitle from './img/720px-440px-square-PMR-Dev-no-border.png'
+
+//Hero Image src set
+import largeHeroImage from './img/1920px-480px-Scrub-Sky-Turbines-Hero-Large.jpg'
+import mediumHeroImage from './img/1440px-360px-Scrub-Sky-Turbines-Hero-Large.jpg'
+import smallHeroImage from './img/960px-240px-Scrub-Sky-Turbines-Hero-Large.jpg'
+import xSmallHeroImage from './img/480px-120px-Scrub-Sky-Turbines-Hero-Large.jpg'
 
 class Header extends Component {
 
@@ -20,17 +36,33 @@ class Header extends Component {
     this.props.updateStationaryHeader(bottomOfStationaryHeader)
   }
 
+  //bottomOfProjects for later
   render() {
     const {
-      scrollPositionY, windowWidth, smallLogo, smallTitle, hamburgerButton,
+      scrollPositionY, windowWidth, hamburgerButton,
       handleNavClick, navIsOpen, bottomOfStationaryHeader, bottomOfHome,
-      bottomOfClasses, bottomOfAbout, bottomOfNews, bottomOfProjects,
-      heightOfStickyHeader
+      bottomOfClasses, bottomOfAbout, bottomOfAIML, heightOfStickyHeader,
+      smallStickyLogo, mediumStickyLogo, largeStickyLogo, smallStickyTitle,
+      mediumStickyTitle, largeStickyTitle
     } = this.props
+    //Alt text for images for D.R.Y.
+    const heroAltText = `Wide blue skies with modern wind turbines
+                         over earthen western scrublands`
 
     return (
       windowWidth > 600 ? (
         <div className="nav-container" id="home">
+        <img
+          className="pseudo-background"
+          src={xSmallHeroImage}
+          srcSet={`${xSmallHeroImage}  480w,
+                 ${smallHeroImage}  960w,
+                 ${mediumHeroImage}  1440w,
+                 ${largeHeroImage}  1920w`}
+          sizes="100vw"
+          alt={heroAltText}/>
+        <div className="pseudo-background-overlay">
+          </div>
           <div className="Header-container">
             <header className={scrollPositionY < bottomOfStationaryHeader
               ? navIsOpen
@@ -45,12 +77,19 @@ class Header extends Component {
                 activeClassName="selected">
                 <img
                   src={logo}
+                  srcSet={`${logo},
+                           ${highResLogo} 2x`}
                   className="logo large-display"
-                  alt="Your logo's description" />
+                  alt={`Profile headshot of Paul M Reese against a backdrop of
+                      trees`} />
               </NavLink>
               <div className="title-container">
                 <img
-                  src={title}
+                  src={smallTitle}
+                  srcSet= {`${smallTitle} 270w,
+                            ${mediumTitle} 310w,
+                            ${largeTitle} 360w,
+                            ${highResTitle} 2x`}
                   className="Header-image large-display"
                   alt="Large header for large displays" />
 
@@ -61,17 +100,30 @@ class Header extends Component {
                   bottomOfHome = { bottomOfHome }
                   bottomOfClasses = { bottomOfClasses }
                   bottomOfAbout = { bottomOfAbout }
-                  bottomOfNews = { bottomOfNews }
-                  bottomOfProjects = { bottomOfProjects }
+                  bottomOfAIML = { bottomOfAIML }
+                  //For later use, if the page lengthens
+                  //bottomOfProjects = { bottomOfProjects }
                   windowWidth = { windowWidth }
                   heightOfStickyHeader = { heightOfStickyHeader }/>
 
               </div>
             </header>
           </div>
+
         </div>
       ) : (
         <div className="nav-container" id="home">
+          <img
+            className="pseudo-background"
+            src={xSmallHeroImage}
+            srcSet={`${xSmallHeroImage}  480w,
+                   ${smallHeroImage}  960w,
+                   ${mediumHeroImage}  1440w,
+                   ${largeHeroImage}  1920w`}
+            sizes="100vw"
+            alt={heroAltText}/>
+          <div className="pseudo-background-overlay">
+          </div>
           <div className="Header-container">
             <header className={scrollPositionY < bottomOfStationaryHeader
               ? navIsOpen
@@ -83,24 +135,31 @@ class Header extends Component {
                 smooth
                 to="#home"
                 activeClassName="selected">
-                <div className="small-logo-container">
-                  <img src={smallLogo}
-                    className="small-logo"
-                    alt="Your logo's description" />
-                  <img src={smallTitle}
-                      className="small-title"
-                      alt="A small stylized title to your page" />
-                </div>
+                <img src={ smallStickyLogo }
+                     srcSet = {`${smallStickyLogo} 70w,
+                                ${mediumStickyLogo} 130w,
+                                ${largeStickyLogo} 2x`}
+                  className="small-logo"
+                  alt="Your logo's description" />
               </NavLink>
-
-              <div className="hamburger-container" onClick={ () => handleNavClick() }>
-                  <input
-                    type="image"
-                    src={ hamburgerButton }
-                    alt="Navigation menu button"
-                    className="hamburger-button"/>
-              </div>
-
+              <NavLink
+                smooth
+                to="#home"
+                activeClassName="selected"
+                tabIndex="-1">
+                <img src={ smallStickyTitle }
+                     srcSet = {`${smallStickyTitle} 180w,
+                                ${mediumStickyTitle} 360w,
+                                ${largeStickyTitle} 2x`}
+                    className="small-title"
+                    alt="Your page/business title" />
+              </NavLink>
+              <input
+                type="image"
+                onClick={ () => handleNavClick() }
+                src={ hamburgerButton }
+                alt="Nav-menu hamburger button"
+                className="hamburger-button"/>
             </header>
           </div>
 
@@ -111,8 +170,9 @@ class Header extends Component {
             bottomOfHome = { bottomOfHome }
             bottomOfClasses = { bottomOfClasses }
             bottomOfAbout = { bottomOfAbout }
-            bottomOfNews = { bottomOfNews }
-            bottomOfProjects = { bottomOfProjects }
+            bottomOfAIML = { bottomOfAIML }
+            //Same Reason, for later if the page gets longer
+            //bottomOfProjects = { bottomOfProjects }
             windowWidth = { windowWidth }
             heightOfStickyHeader = { heightOfStickyHeader }/>
 

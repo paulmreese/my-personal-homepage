@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=505, initial-scale=0.75, maximum-scale=0.75, shrink-to-fit=no, user-scalable=no">
+    <title>Turtlr</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animate.css">
+</head>
+<body>
+    <div id="container">
+      <h1 id="title" class="animated rubberBand">Turtlr</h1>
+      <div id="header-buttons">
+        <a href="#" id="restart-link" onclick="restartGame()">
+          <span class="tooltiptext">Restart the game!</span>
+        </a>
+        <a href="#" id="info-link" onclick="moreInfo()">
+          <span class="tooltiptext">Learn More!</span>
+        </a>
+      </div>
+    </div>
+    <div id="controls-container">
+      <button id="controls-link" class="hide-controls" onclick="toggleControls()">
+        Hide Controls
+      </button>
+      <div id="arrows">
+        <div>
+          <button id="up" onclick="player.handleInput('up')"></button>
+        </div>
+        <div>
+          <button id="left" onclick="player.handleInput('left')"></button>
+          <button id="down" onclick="player.handleInput('down')"></button>
+          <button id="right" onclick="player.handleInput('right')"></button>
+        </div>
+      </div>
+    </div>
+    <script src="js/resources.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/engine.js"></script>
+    <script src="https://unpkg.com/sweetalert2@7.22.2/dist/sweetalert2.all.js"></script>
+</body>
+</html>

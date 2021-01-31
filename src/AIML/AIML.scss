@@ -1,0 +1,180 @@
+$aiml-background-color: #d2a387;
+
+.AIML-container {
+  margin: 0 auto;
+  padding-bottom: 5px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: $aiml-background-color;
+}
+
+.AIML-content {
+  margin-top: -50px;
+  margin-bottom: 10px;
+  position: relative;
+  background-image: linear-gradient(180deg, rgba(0,0,0,0),
+                    $aiml-background-color 5%, $aiml-background-color);
+}
+
+.AIML-content p:first-of-type {
+  margin-top: 30px;
+}
+
+.AIML-container .HeroImage {
+  transform: none;
+}
+
+.AIML-container .HeroImage-overlay {
+  box-shadow: inset 0 -8px 8px 0 #d2a387,
+              inset 0 -20px 10px 0 rgba(210, 163, 135, 0.7);
+}
+
+.AIML-image-container {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.AIML-container p {
+  color: #000;
+  width: 85%;
+  margin: 15px auto;
+  font-size: 1.2em;
+}
+
+.AIML-container a {
+  font-size: 1em;
+  margin-top: 5px;
+  transition: all 0.5s ease;
+  color: #4257c3;
+  text-decoration-color: #5a89b7;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.AIML-container a:active {
+  text-decoration-color: #91acbf;
+  color: #91acbf;
+}
+
+.AIML-container a:visited {
+  color: #551A8B;
+  text-decoration-color: #944ebd;
+}
+
+.AIML-container a:hover, .AIML-container a:focus {
+  text-shadow: 0 0 3px #fff;
+  color: #f36;
+  text-decoration-color: #fff;
+}
+
+.AIML-container figure {
+  max-width: 80%;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+  padding: 10px 0;
+  background-color: #836959;
+  background: linear-gradient(#836959, rgba(255, 255, 255, 0.7));
+  border-radius: 5px;
+  filter: drop-shadow(-3px 7px 2px rgba(16, 16, 16, 0.5));
+}
+
+.AIML-container figure a {
+  font-size: 0.9em;
+}
+
+.AIML-container figure a img:hover,
+.AIML-container figure a:focus img{
+  box-shadow: 0 0 5px 5px #ccc;
+}
+
+.AIML-container figure img{
+  width: 90%;
+  box-shadow: 0 0 4px 2px #000;
+  margin-top: 10px;
+  transition: all 0.5s ease;
+}
+
+.AIML-container figure figcaption{
+  margin-top: 10px;
+}
+
+.AIML-container .article-description {
+  max-width: 85%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.AIML-container .article-description p{
+  max-width: 960px;
+}
+
+.AIML-header {
+  width: 95%;
+}
+
+.center-content {
+  justify-content: center;
+}
+
+.left-justify {
+  justify-content: flex-start;
+}
+
+.right-justify {
+  justify-content: flex-end;
+
+}
+
+.full-width {
+  max-width: 90%;
+  width: 90%;
+}
+
+//Media Queries
+@media screen and (min-width: 801px) {
+  .AIML-container figure {
+    max-width: 750px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .AIML-content {
+    margin-top: -250px;
+    margin-bottom: 10px;
+    position: relative;
+    max-width: 85%;
+    background-image: linear-gradient(180deg, rgba(0,0,0,0),
+                      $aiml-background-color 18%, $aiml-background-color);
+  }
+
+  .AIML-content p:first-of-type {
+    margin-top: 100px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .AIML-content {
+    margin-top: -300px;
+    margin-bottom: 10px;
+    background-image: linear-gradient(180deg, rgba(0,0,0,0),
+                      $aiml-background-color 22%, $aiml-background-color);
+  }
+
+  .AIML-content p:first-of-type {
+    margin-top: 125px;
+  }
+}

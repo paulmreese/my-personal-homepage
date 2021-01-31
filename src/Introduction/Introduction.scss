@@ -1,3 +1,5 @@
+$intro-background-color: #b6b291;
+
 .Introduction-container {
   margin: 0 auto;
   padding-bottom: 5px;
@@ -7,12 +9,24 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  background-color: #b6b291;
+  background-color: $intro-background-color;
 }
 
-.Introduction {
-  margin: 10px auto;
-  max-width: 90%;
+.Introduction-content {
+  margin: -70px auto 10px;
+  padding-bottom: 5px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-image: linear-gradient(180deg, rgba(0,0,0,0),
+                    $intro-background-color 15%, $intro-background-color);
+}
+
+.Introduction-content p:first-of-type {
+  margin-top: 50px;
 }
 
 .Introduction-container p {
@@ -31,7 +45,7 @@
 
 .Introduction-container .triple-container {
   width: 100%;
-  padding: 10px 20px;
+  padding: 10px 10px 10px 20px;
   display: flex;
   flex-direction: row;
   box-sizing: border-box;
@@ -190,4 +204,32 @@
 
 .Introduction-container p em{
   font-size: 1.1em;
+}
+
+@media screen and (min-width: 1000px) {
+  .Introduction-content {
+    margin-top: -250px;
+    margin-bottom: 10px;
+    max-width: 85%;
+    z-index: 2;
+
+    background-image: linear-gradient(180deg, rgba(0,0,0,0),
+                      $intro-background-color 64%, $intro-background-color);
+
+  }
+
+  .Introduction-content p:first-of-type {
+    margin-top: 100px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .Introduction-content {
+    margin-top: -400px;
+    margin-bottom: 10px;
+  }
+
+  .Introduction-content p:first-of-type {
+    margin-top: 150px;
+  }
 }

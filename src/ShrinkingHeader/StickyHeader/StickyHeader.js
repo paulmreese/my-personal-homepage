@@ -13,16 +13,17 @@ class StickyHeader extends Component {
       +ReactDOM.findDOMNode(this).getBoundingClientRect().height
     if (heightOfHeader > 0) {
       this.props.updateHeightOfStickyHeader(heightOfHeader)
-      console.log("HeightHeader:", heightOfHeader)
+      //console.log("HeightHeader:", heightOfHeader)
     }
   }
 
   render() {
     const {
-      scrollPositionY, windowWidth, smallLogo, smallTitle, hamburgerButton,
+      scrollPositionY, windowWidth, hamburgerButton,
       handleNavClick, bottomOfStationaryHeader, bottomOfHome, bottomOfClasses,
-      bottomOfAbout, bottomOfNews, bottomOfProjects, navIsOpen,
-      heightOfStickyHeader
+      bottomOfAbout, bottomOfAIML, bottomOfProjects, navIsOpen,
+      heightOfStickyHeader, smallStickyLogo, mediumStickyLogo,
+      largeStickyLogo, smallStickyTitle, mediumStickyTitle, largeStickyTitle
     } = this.props
 
     return (
@@ -33,9 +34,9 @@ class StickyHeader extends Component {
              (scrollPositionY < (bottomOfAbout - heightOfStickyHeader)))
              ? "StickyHeader-container full-height blurred about-border"
              : (scrollPositionY >= (bottomOfAbout - heightOfStickyHeader) &&
-              (scrollPositionY < (bottomOfNews - heightOfStickyHeader)))
-              ? "StickyHeader-container full-height blurred news-border"
-              : (scrollPositionY >= (bottomOfNews - heightOfStickyHeader - 30) &&
+              (scrollPositionY < (bottomOfAIML - heightOfStickyHeader)))
+              ? "StickyHeader-container full-height blurred aiml-border"
+              : (scrollPositionY >= (bottomOfAIML - heightOfStickyHeader - 30) &&
                (scrollPositionY < (bottomOfProjects - heightOfStickyHeader)))
                ? "StickyHeader-container full-height blurred golden-sand-border"
                : "StickyHeader-container full-height blurred"
@@ -43,9 +44,9 @@ class StickyHeader extends Component {
              (scrollPositionY < (bottomOfAbout - heightOfStickyHeader)))
              ? "StickyHeader-container full-height about-border"
              : (scrollPositionY >= (bottomOfAbout - heightOfStickyHeader) &&
-              (scrollPositionY < (bottomOfNews - heightOfStickyHeader)))
-              ? "StickyHeader-container full-height news-border"
-              : (scrollPositionY >= (bottomOfNews - heightOfStickyHeader - 30) &&
+              (scrollPositionY < (bottomOfAIML - heightOfStickyHeader)))
+              ? "StickyHeader-container full-height aiml-border"
+              : (scrollPositionY >= (bottomOfAIML - heightOfStickyHeader - 30) &&
                (scrollPositionY < (bottomOfProjects - heightOfStickyHeader)))
                ? "StickyHeader-container full-height golden-sand-border"
                : "StickyHeader-container full-height"
@@ -59,7 +60,10 @@ class StickyHeader extends Component {
                 to="#home"
                 className="round"
                 activeClassName="selected">
-                <img src={ smallLogo }
+                <img src={ smallStickyLogo }
+                  srcSet = {`${smallStickyLogo} 70w,
+                             ${mediumStickyLogo} 130w,
+                             ${largeStickyLogo} 2x`}
                   className="small-logo"
                   alt="Your logo's description" />
               </NavLink>
@@ -69,7 +73,10 @@ class StickyHeader extends Component {
                 className="square"
                 activeClassName="selected"
                 tabIndex="-1">
-                <img src={ smallTitle }
+                <img src={ smallStickyTitle }
+                  srcSet = {`${smallStickyTitle} 180w,
+                             ${mediumStickyTitle} 360w,
+                             ${largeStickyTitle} 2x`}
                     className="small-title"
                     alt="Your page/business title" />
               </NavLink>
@@ -81,8 +88,9 @@ class StickyHeader extends Component {
                 bottomOfHome = { bottomOfHome }
                 bottomOfClasses = { bottomOfClasses }
                 bottomOfAbout = { bottomOfAbout }
-                bottomOfNews = { bottomOfNews }
-                bottomOfProjects = { bottomOfProjects }
+                bottomOfAIML = { bottomOfAIML }
+                //If the page gets longer
+                //bottomOfProjects = { bottomOfProjects }
                 windowWidth = { windowWidth }
                 heightOfStickyHeader = { heightOfStickyHeader }/>
 
@@ -96,9 +104,9 @@ class StickyHeader extends Component {
                (scrollPositionY < (bottomOfAbout - heightOfStickyHeader)))
                ? "StickyHeader-container slim blurred about-border"
                : (scrollPositionY >= (bottomOfAbout - heightOfStickyHeader) &&
-                (scrollPositionY < (bottomOfNews - heightOfStickyHeader)))
-                ? "StickyHeader-container slim blurred news-border"
-                : (scrollPositionY >= (bottomOfNews - heightOfStickyHeader - 30) &&
+                (scrollPositionY < (bottomOfAIML - heightOfStickyHeader)))
+                ? "StickyHeader-container slim blurred aiml-border"
+                : (scrollPositionY >= (bottomOfAIML - heightOfStickyHeader - 30) &&
                  (scrollPositionY < (bottomOfProjects - heightOfStickyHeader)))
                  ? "StickyHeader-container slim blurred golden-sand-border"
                  : "StickyHeader-container slim blurred"
@@ -106,9 +114,9 @@ class StickyHeader extends Component {
                (scrollPositionY < (bottomOfAbout - heightOfStickyHeader)))
                ? "StickyHeader-container slim about-border"
                : (scrollPositionY >= (bottomOfAbout - heightOfStickyHeader) &&
-                (scrollPositionY < (bottomOfNews - heightOfStickyHeader)))
-                ? "StickyHeader-container slim news-border"
-                : (scrollPositionY >= (bottomOfNews - heightOfStickyHeader - 30) &&
+                (scrollPositionY < (bottomOfAIML - heightOfStickyHeader)))
+                ? "StickyHeader-container slim aiml-border"
+                : (scrollPositionY >= (bottomOfAIML - heightOfStickyHeader - 30) &&
                  (scrollPositionY < (bottomOfProjects - heightOfStickyHeader)))
                  ? "StickyHeader-container slim golden-sand-border"
                  : "StickyHeader-container slim"}>
@@ -120,7 +128,10 @@ class StickyHeader extends Component {
                 smooth
                 to="#home"
                 activeClassName="selected">
-                <img src={ smallLogo }
+                <img src={ smallStickyLogo }
+                     srcSet = {`${smallStickyLogo} 70w,
+                                ${mediumStickyLogo} 130w,
+                                ${largeStickyLogo} 2x`}
                   className="small-logo"
                   alt="Your logo's description" />
               </NavLink>
@@ -129,7 +140,10 @@ class StickyHeader extends Component {
                 to="#home"
                 activeClassName="selected"
                 tabIndex="-1">
-                <img src={ smallTitle }
+                <img src={ smallStickyTitle }
+                     srcSet = {`${smallStickyTitle} 180w,
+                                ${mediumStickyTitle} 360w,
+                                ${largeStickyTitle} 2x`}
                     className="small-title"
                     alt="Your page/business title" />
               </NavLink>

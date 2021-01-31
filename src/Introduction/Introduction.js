@@ -2,11 +2,25 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom'
 
 import './Introduction.scss';
-import PMRLogo from './img/800px-PMR-Sunset-Round.png'
+import smallPMRLogo from './img/PMR-Sunset-Round-100px.png'
+import mediumPMRLogo from './img/PMR-Sunset-Round-200px.png'
+import largePMRLogo from './img/PMR-Sunset-Round-350px.png'
+import highResPMRLogo from './img/PMR-Sunset-Round-700px.png'
 
-import RedHTML from './img/800px-HTMLCircularBackground-light-sepia.png'
-import GreenJS from './img/800px-JSCircularBackground-light-sepia.png'
-import BlueCSS from './img/800px-CSSCircularBackground-light-sepia.png'
+import smallRedHTML from './img/HTMLCircularBackground-light-sepia-100px.png'
+import mediumRedHTML from './img/HTMLCircularBackground-light-sepia-200px.png'
+import largeRedHTML from './img/HTMLCircularBackground-light-sepia-350px.png'
+import highResRedHTML from './img/HTMLCircularBackground-light-sepia-enlarged-700px.png'
+
+import smallGreenJS from './img/JSCircularBackground-light-sepia-100px.png'
+import mediumGreenJS from './img/JSCircularBackground-light-sepia-200px.png'
+import largeGreenJS from './img/JSCircularBackground-light-sepia-350px.png'
+import highResGreenJS from './img/JSCircularBackground-light-sepia-enlarged-700px.png'
+
+import smallBlueCSS from './img/CSSCircularBackground-light-sepia-100px.png'
+import mediumBlueCSS from './img/CSSCircularBackground-light-sepia-200px.png'
+import largeBlueCSS from './img/CSSCircularBackground-light-sepia-350px.png'
+import highResBlueCSS from './img/CSSCircularBackground-light-sepia-enlarged-700px.png'
 
 class Introduction extends Component {
 
@@ -15,24 +29,35 @@ class Introduction extends Component {
     const heightOfAbout =
       +ReactDOM.findDOMNode(this).getBoundingClientRect().height
     const bottomOfAbout = topOfAbout + heightOfAbout
-    console.log("bottomAbout: ", bottomOfAbout)
+    //console.log("bottomAbout: ", bottomOfAbout)
     this.props.updateAbout(bottomOfAbout)
 
     //Set animation trigger height
     const heightOfWindow = window.innerHeight
+    const widthOfWindow = window.innerWidth
+    //console.log("Height of Window: ", heightOfWindow)
     //const distanceFromTop = bottomOfAbout - (0.45 * heightOfWindow)
     const topOfFlipCards =
     +ReactDOM.findDOMNode(this).getElementsByClassName('card')[0].offsetTop
     const heightOfFlipCards =
       +ReactDOM.findDOMNode(this).querySelector('.card').getBoundingClientRect().height
     const bottomOfFlipCards = topOfAbout + topOfFlipCards + heightOfFlipCards
-    const triggerHeight = bottomOfFlipCards + (0.3 * heightOfWindow)
+    //console.log("bottomOfFlipCards: ", bottomOfFlipCards)
+    let triggerHeight
+    if (widthOfWindow < 600) { //likely mobile
+      triggerHeight = bottomOfFlipCards - (0.5 * heightOfWindow)
+    } else if (widthOfWindow < 800) {
+      triggerHeight = bottomOfFlipCards - (0.9 * heightOfWindow)
+    } else {
+      triggerHeight = bottomOfFlipCards - (0.1 * heightOfWindow)
+    }
+    //console.log("triggerHeight: ", triggerHeight)
     this.props.updateTriggerForCardFlipAnimation( Math.round(triggerHeight) )
 
     //dynamically set height of flip cards, they require a hard-coded height.
     const widthOfFlipCard =
       +ReactDOM.findDOMNode(this).getElementsByClassName('card')[0].getBoundingClientRect().width
-    console.log("Flip Card Width:", widthOfFlipCard)
+    //console.log("Flip Card Width:", widthOfFlipCard)
     this.props.updateFlipCardDimensions( Math.round(widthOfFlipCard) )
   }
 
@@ -62,99 +87,122 @@ class Introduction extends Component {
         ? "Introduction-container blurred" :
         "Introduction-container" }>
 
-        <p>
-          Introduce yourself with a beautiful page that reveals
-          the <em>authentic</em> image of your brand or business. Let me
-          help you tell your story to people– <strong> why</strong> you started
-          and <strong>where</strong> you plan to go!<br/>
-        </p>
+        <div className="Introduction-content">
 
-        <p>
-          You could never tell your audience every detail of your operations,
-          but you can be <em>sure</em> that you left nothing on the table.
-        </p>
+          <p>
+            By combining <strong>HTML</strong>, <strong>JavaScript</strong>,
+            and <strong>CSS</strong> together with modern extensions
+            like <strong>Sass</strong> and <strong>JSX</strong>, I create
+            bespoke web applications that are functional, beautiful, and
+            responsive.
+          </p>
 
-        <div className="triple-container">
-          <div className="Introduction-image-container first">
-            <div className="card" style={{height: widthOfFlipCard + 25}}>
-              <div className={!repeatCardFlipAnimation
-                  ? "card-contents flipped first-animated"
-                  : "card-contents"}>
-                <div className="card__face card__face--front">
-                  <img
-                    src={ PMRLogo }
-                    alt="Close-up on the center of purple kale"
-                    className="circle Introduction-image light-blur"/>
-                  <div className="image-overlay light-overlay droplet-overlay"></div>
-                  <div className="light-dot"></div>
+          <div className="triple-container">
+            <div className="Introduction-image-container first">
+              <div className="card" style={{height: widthOfFlipCard + 25}}>
+                <div className={!repeatCardFlipAnimation
+                    ? "card-contents flipped first-animated"
+                    : "card-contents"}>
+                  <div className="card__face card__face--front">
+                    <img
+                      src={ smallPMRLogo }
+                      srcSet={`${smallPMRLogo} 100w,
+                               ${mediumPMRLogo} 200w,
+                               ${largePMRLogo} 350w,
+                               ${highResPMRLogo} 2x`}
+                      alt="PMR logo against an orange sunset in a circular border"
+                      className="circle Introduction-image light-blur"/>
+                    <div className="image-overlay light-overlay droplet-overlay"></div>
+                    <div className="light-dot"></div>
+                  </div>
+                  <div className="card__face card__face--back">
+                    <img
+                      src={ smallRedHTML }
+                      srcSet={`${smallRedHTML} 100w,
+                               ${mediumRedHTML} 200w,
+                               ${largeRedHTML} 350w,
+                               ${highResRedHTML} 2x`}
+                      alt="Red-stylized sunset labelled 'HTML Structure'"
+                      className="circle Introduction-image"/>
+                    <div className="image-overlay droplet-overlay"></div>
+                    <div className="light-dot"></div>
+                  </div>
                 </div>
-                <div className="card__face card__face--back">
-                  <img
-                    src={ RedHTML }
-                    alt="Red-stylized sunset labelled 'HTML Structure'"
-                    className="circle Introduction-image"/>
-                  <div className="image-overlay droplet-overlay"></div>
-                  <div className="light-dot"></div>
+              </div>
+            </div>
+            <div className="Introduction-image-container second">
+              <div className="card" style={{height: widthOfFlipCard + 25}}>
+                <div className={!repeatCardFlipAnimation
+                    ? "card-contents flipped second-animated"
+                    : "card-contents"}>
+                  <div className="card__face card__face--front">
+                    <img
+                      src={ smallPMRLogo }
+                      srcSet={`${smallPMRLogo} 100w,
+                               ${mediumPMRLogo} 200w,
+                               ${largePMRLogo} 350w,
+                               ${highResPMRLogo} 2x`}
+                      alt="PMR logo against an orange sunset in a circular border"
+                      className="circle Introduction-image lighter-blur"/>
+                    <div className="image-overlay lighter-overlay droplet-overlay"></div>
+                    <div className="light-dot"></div>
+                  </div>
+                  <div className="card__face card__face--back">
+                    <img
+                      src={ smallGreenJS }
+                      srcSet={`${smallGreenJS} 100w,
+                               ${mediumGreenJS} 200w,
+                               ${largeGreenJS} 350w,
+                               ${highResGreenJS} 2x`}
+                      alt="Green-stylized sunset labelled 'JavaScript Function'"
+                      className="circle Introduction-image "/>
+                    <div className="image-overlay droplet-overlay"></div>
+                    <div className="light-dot"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="Introduction-image-container third">
+              <div className="card" style={{height: widthOfFlipCard + 25}}>
+                <div className={!repeatCardFlipAnimation
+                    ? "card-contents flipped third-animated"
+                    : "card-contents"}>
+                  <div className="card__face card__face--front">
+                    <img
+                      src={ smallPMRLogo }
+                      srcSet={`${smallPMRLogo} 100w,
+                               ${mediumPMRLogo} 200w,
+                               ${largePMRLogo} 350w,
+                               ${highResPMRLogo} 2x`}
+                      alt="PMR logo against an orange sunset in a circular border"
+                      className="circle Introduction-image"/>
+                    <div className="image-overlay droplet-overlay"></div>
+                    <div className="light-dot"></div>
+                  </div>
+                  <div className="card__face card__face--back">
+                    <img
+                      src={ smallBlueCSS }
+                      srcSet={`${smallBlueCSS} 100w,
+                               ${mediumBlueCSS} 200w,
+                               ${largeBlueCSS} 350w,
+                               ${highResBlueCSS} 2x`}
+                      alt="Blue-stylized sunset labeled 'CSS Style'"
+                      className="circle Introduction-image "/>
+                    <div className="image-overlay droplet-overlay"></div>
+                    <div className="light-dot"></div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="Introduction-image-container second">
-            <div className="card" style={{height: widthOfFlipCard + 25}}>
-              <div className={!repeatCardFlipAnimation
-                  ? "card-contents flipped second-animated"
-                  : "card-contents"}>
-                <div className="card__face card__face--front">
-                  <img
-                    src={ PMRLogo }
-                    alt="Close-up on the center of purple kale"
-                    className="circle Introduction-image lighter-blur"/>
-                  <div className="image-overlay lighter-overlay droplet-overlay"></div>
-                  <div className="light-dot"></div>
-                </div>
-                <div className="card__face card__face--back">
-                  <img
-                    src={ GreenJS }
-                    alt="Green-stylized sunset labelled 'JavaScript Function'"
-                    className="circle Introduction-image "/>
-                  <div className="image-overlay droplet-overlay"></div>
-                  <div className="light-dot"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="Introduction-image-container third">
-            <div className="card" style={{height: widthOfFlipCard + 25}}>
-              <div className={!repeatCardFlipAnimation
-                  ? "card-contents flipped third-animated"
-                  : "card-contents"}>
-                <div className="card__face card__face--front">
-                  <img
-                    src={ PMRLogo }
-                    alt="Close-up on the center of purple kale"
-                    className="circle Introduction-image"/>
-                  <div className="image-overlay droplet-overlay"></div>
-                  <div className="light-dot"></div>
-                </div>
-                <div className="card__face card__face--back">
-                  <img
-                    src={ BlueCSS }
-                    alt="Blue-stylized sunset labeled 'CSS Style'"
-                    className="circle Introduction-image "/>
-                  <div className="image-overlay droplet-overlay"></div>
-                  <div className="light-dot"></div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <p>
+            Tailor-made web apps come together with modern cloud architecture
+            techniques to create <strong>resilient</strong>
+            , <strong>highly-available</strong>, and <strong>
+            affordable</strong> solutions that leverage the <em>inherent
+            advantages of cloud computing</em>.
+          </p>
         </div>
-        <p>
-          By combining <strong>HTML</strong>, <strong>JavaScript</strong>,
-          and <strong>CSS</strong> together with modern extensions
-          like <strong>Sass</strong> and <strong>JSX</strong>, I create
-          bespoke web applications that are accessible, functional, and
-          responsive.
-        </p>
       </section>
     );
   }

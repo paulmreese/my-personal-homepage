@@ -5,20 +5,21 @@ import './NavMenu.scss'
 
 class NavMenu extends Component {
 
+  scrollWithOffset = (el, offset) => {
+    const elementPosition = el.offsetTop - offset;
+    window.scroll({
+      top: elementPosition,
+      left: 0,
+      behavior: "smooth"
+    });
+  }
+
   render() {
 
-    const scrollWithOffset = (el, offset) => {
-      const elementPosition = el.offsetTop - offset;
-      window.scroll({
-        top: elementPosition,
-        left: 0,
-        behavior: "smooth"
-      });
-    }
-
+    //bottomOfProjects for later
     const {
       navIsOpen, handleNavClick, scrollPositionY, bottomOfHome, bottomOfAbout,
-      bottomOfNews, bottomOfProjects, windowWidth, heightOfStickyHeader
+      bottomOfAIML, windowWidth, heightOfStickyHeader
     } = this.props
 
     return (
@@ -30,6 +31,7 @@ class NavMenu extends Component {
                 : "nav-menu hide-nav carbon-container"}>
           <NavLink
             smooth
+            title="Home"
             to="#home"
             className={(scrollPositionY < bottomOfHome - heightOfStickyHeader) ? "selected" : "" }
             onClick={windowWidth > 600 ? null : () => handleNavClick()}>
@@ -37,40 +39,44 @@ class NavMenu extends Component {
           </NavLink>
           <NavLink
             smooth
+            title="About"
             to="#about"
             className={(scrollPositionY >= bottomOfHome - heightOfStickyHeader &&
                         scrollPositionY < bottomOfAbout - heightOfStickyHeader) ? "selected" : "" }
             onClick={windowWidth > 600 ? null : () => handleNavClick()}
-            scroll={el => scrollWithOffset(el, heightOfStickyHeader)}>
+            scroll={el => this.scrollWithOffset(el, heightOfStickyHeader)}>
             About
           </NavLink>
           <NavLink
             smooth
-            to="#news"
+            title="AI/ML"
+            to="#aiml"
             className={
               (scrollPositionY >= bottomOfAbout - heightOfStickyHeader) &&
-               (scrollPositionY < bottomOfNews - heightOfStickyHeader) ? "selected" : "" }
+               (scrollPositionY < bottomOfAIML - heightOfStickyHeader) ? "selected" : "" }
             onClick={windowWidth > 600 ? null : () => handleNavClick()}
-            scroll={el => scrollWithOffset(el, heightOfStickyHeader)}>
-            News
+            scroll={el => this.scrollWithOffset(el, heightOfStickyHeader)}>
+            AI/ML
           </NavLink>
           <NavLink
             smooth
+            title="Projects"
             to="#projects"
             className={
-              (scrollPositionY >= bottomOfNews - heightOfStickyHeader) &&
+              (scrollPositionY >= bottomOfAIML - heightOfStickyHeader) &&
                ((window.innerHeight + window.pageYOffset) < document.body.offsetHeight - 2) ? "selected" : "" }
             onClick={windowWidth > 600 ? null : () => handleNavClick()}
-            scroll={el => scrollWithOffset(el, heightOfStickyHeader)}>
+            scroll={el => this.scrollWithOffset(el, heightOfStickyHeader)}>
             Projects
           </NavLink>
           <NavLink
             smooth
+            title="Contact"
             to="#contact"
             className={
               ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 2) ? "selected" : "" }
             onClick={windowWidth > 600 ? null : () => handleNavClick()}
-            scroll={el => scrollWithOffset(el, heightOfStickyHeader)}>
+            scroll={el => this.scrollWithOffset(el, heightOfStickyHeader)}>
             Contact
           </NavLink>
         </nav>
