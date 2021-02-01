@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It represents the actual code used to produce my personal homepage, as well as some additional image assets used in the creation of the site. Ownership of all image rights is retained by Paul M Reese.
 
 ## Available Scripts
 
