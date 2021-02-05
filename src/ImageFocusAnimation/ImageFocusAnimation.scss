@@ -35,7 +35,7 @@ $solid-line-color: #7a6f6a;
 
 .ImageFocusAnimation-container .septuple-container {
   width: 120%;
-  padding: 15px 20px;
+  padding: 16px 20px 17px;
   display: flex;
   margin-left: -10%;
   flex-direction: row;
@@ -199,6 +199,7 @@ $solid-line-color: #7a6f6a;
 
 .ImageFocusAnimation-container .circle {
   border-radius: 50%;
+  margin-bottom: -3px;
 }
 
 .ImageFocusAnimation-container p strong,

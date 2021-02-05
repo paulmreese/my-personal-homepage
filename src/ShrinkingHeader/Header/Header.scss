@@ -128,19 +128,20 @@ Header .hamburger-button:hover, Header .hamburger-button:focus{
 
 .Header Navlink.round img,
 .Header a.round img{
-
+  box-sizing: border-box;
   margin-bottom: -3px;
   border-radius: 50%;
   box-shadow: 0 0 7px #fff;
+  overflow: hidden;
   //transform: scale(1);
-  transform: translate3d(0px,0px,0px), scale(1);
+  //transform: translate3d(0px,0px,0px), scale(1);
 }
 
 logo:hover, logo:focus,
 Header Navlink.round:hover img, Header a.round:hover img,
 Header Navlink.round:focus img, Header a.round:focus img {
   transform: scale(1.05);
-  box-shadow: 0 0 10px #fff;
+  box-shadow: 0 0 20px #fff;
 }
 
 .nav-menu {
@@ -237,6 +238,7 @@ Header .small-logo {
   height: 68px;
   width: 68px;
   box-sizing: border-box;
+  border-radius: 50%;
   opacity: 1;
   transition: all 0.5s ease;
   filter: drop-shadow(0 0 2px #fff);

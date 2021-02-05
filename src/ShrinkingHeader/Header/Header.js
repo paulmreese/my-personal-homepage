@@ -10,8 +10,8 @@ import './Header.scss';
  *    Images    *
  *              */
 //Logo src set
-import logo from './img/350px-Headshot.png'
-import highResLogo from './img/600px-Headshot.png'
+import logo from './img/350px-Headshot.jpg'
+import highResLogo from './img/600px-Headshot.jpg'
 
 //Title src set
 import smallTitle from './img/270px-165px-square-PMR-Dev-no-border.jpg'
