@@ -2,25 +2,25 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom'
 
 import './Introduction.scss';
-import smallPMRLogo from './img/PMR-Sunset-Round-100px.png'
-import mediumPMRLogo from './img/PMR-Sunset-Round-200px.png'
-import largePMRLogo from './img/PMR-Sunset-Round-350px.png'
-import highResPMRLogo from './img/PMR-Sunset-Round-700px.png'
+import smallPMRLogo from './img/PMR-Sunset-Round-100px.jpg'
+import mediumPMRLogo from './img/PMR-Sunset-Round-200px.jpg'
+import largePMRLogo from './img/PMR-Sunset-Round-350px.jpg'
+import highResPMRLogo from './img/PMR-Sunset-Round-700px.jpg'
 
-import smallRedHTML from './img/HTMLCircularBackground-light-sepia-100px.png'
-import mediumRedHTML from './img/HTMLCircularBackground-light-sepia-200px.png'
-import largeRedHTML from './img/HTMLCircularBackground-light-sepia-350px.png'
-import highResRedHTML from './img/HTMLCircularBackground-light-sepia-enlarged-700px.png'
+import smallRedHTML from './img/HTMLCircularBackground-light-sepia-100px.jpg'
+import mediumRedHTML from './img/HTMLCircularBackground-light-sepia-200px.jpg'
+import largeRedHTML from './img/HTMLCircularBackground-light-sepia-350px.jpg'
+import highResRedHTML from './img/HTMLCircularBackground-light-sepia-enlarged-700px.jpg'
 
-import smallGreenJS from './img/JSCircularBackground-light-sepia-100px.png'
-import mediumGreenJS from './img/JSCircularBackground-light-sepia-200px.png'
-import largeGreenJS from './img/JSCircularBackground-light-sepia-350px.png'
-import highResGreenJS from './img/JSCircularBackground-light-sepia-enlarged-700px.png'
+import smallGreenJS from './img/JSCircularBackground-light-sepia-100px.jpg'
+import mediumGreenJS from './img/JSCircularBackground-light-sepia-200px.jpg'
+import largeGreenJS from './img/JSCircularBackground-light-sepia-350px.jpg'
+import highResGreenJS from './img/JSCircularBackground-light-sepia-enlarged-700px.jpg'
 
-import smallBlueCSS from './img/CSSCircularBackground-light-sepia-100px.png'
-import mediumBlueCSS from './img/CSSCircularBackground-light-sepia-200px.png'
-import largeBlueCSS from './img/CSSCircularBackground-light-sepia-350px.png'
-import highResBlueCSS from './img/CSSCircularBackground-light-sepia-enlarged-700px.png'
+import smallBlueCSS from './img/CSSCircularBackground-light-sepia-100px.jpg'
+import mediumBlueCSS from './img/CSSCircularBackground-light-sepia-200px.jpg'
+import largeBlueCSS from './img/CSSCircularBackground-light-sepia-350px.jpg'
+import highResBlueCSS from './img/CSSCircularBackground-light-sepia-enlarged-700px.jpg'
 
 class Introduction extends Component {
 
