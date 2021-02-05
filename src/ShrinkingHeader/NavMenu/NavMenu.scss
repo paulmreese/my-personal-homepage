@@ -39,7 +39,7 @@
   text-decoration: underline;
   text-decoration-color: #ff3366;
   //filter: drop-shadow(-2px 7px 5px #f69) drop-shadow(0 0 3px #fff);
-  text-shadow: 0 0 3px #fff, -2px 7px 5px #f69, 0 0 5px #fff;
+  text-shadow: 0 0 4px #fff, -2px 7px 5px #f69, 0 0 8px #fff;
   transition: all 0.3s ease;
   //transform: scale(1.1);
 }
@@ -51,5 +51,5 @@
   display: inline-block;
   text-decoration: underline;
   text-decoration-color: #ff3366;
-  text-shadow: 0 0 2px #fff, -2px 7px 5px #f8a, 0 0 4px #fff;
+  text-shadow: 0 0 2px #ccc, -2px 7px 5px #f8a, 0 0 4px #fff;
 }
