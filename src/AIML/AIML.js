@@ -4,9 +4,9 @@ import ReactDOM from 'react-dom'
 import './AIML.scss';
 import HeroImage from '../HeroImage/HeroImage';
 
-import smallDeepRacerMediumImage from './img/Medium-branded-DeepRacer-GUI-bordered-350px-224px.png';
-import mediumDeepRacerMediumImage from './img/Medium-branded-DeepRacer-GUI-bordered-450px-288px.png';
-import largeDeepRacerMediumImage from './img/Medium-branded-DeepRacer-GUI-bordered-945px-604px.png';
+import smallDeepRacerMediumImage from './img/Medium-branded-DeepRacer-GUI-bordered-350px-224px.jpg';
+import mediumDeepRacerMediumImage from './img/Medium-branded-DeepRacer-GUI-bordered-450px-288px.jpg';
+import largeDeepRacerMediumImage from './img/Medium-branded-DeepRacer-GUI-bordered-945px-604px.jpg';
 
 class AIML extends Component {
 

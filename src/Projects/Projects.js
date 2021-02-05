@@ -4,9 +4,9 @@ import ReactDOM from 'react-dom'
 import './Projects.scss';
 import HeroImage from '../HeroImage/HeroImage';
 
-import smallTurtlrImage from './img/Turtlr-gameplay-screenshot-350px-233px.png';
-import mediumTurtlrImage from './img/Turtlr-gameplay-screenshot-450px-300px.png';
-import largeTurtlrImage from './img/Turtlr-gameplay-screenshot-900px-600px.png';
+import smallTurtlrImage from './img/Turtlr-gameplay-screenshot-350px-233px.jpg';
+import mediumTurtlrImage from './img/Turtlr-gameplay-screenshot-450px-300px.jpg';
+import largeTurtlrImage from './img/Turtlr-gameplay-screenshot-900px-600px.jpg';
 
 class Projects extends Component {
 
