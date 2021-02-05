@@ -14,10 +14,10 @@ import logo from './img/350px-Headshot.png'
 import highResLogo from './img/600px-Headshot.png'
 
 //Title src set
-import smallTitle from './img/270px-165px-square-PMR-Dev-no-border.png'
-import mediumTitle from './img/310px-190px-square-PMR-Dev-no-border.png'
-import largeTitle from './img/360px-220px-square-PMR-Dev-no-border.png'
-import highResTitle from './img/720px-440px-square-PMR-Dev-no-border.png'
+import smallTitle from './img/270px-165px-square-PMR-Dev-no-border.jpg'
+import mediumTitle from './img/310px-190px-square-PMR-Dev-no-border.jpg'
+import largeTitle from './img/360px-220px-square-PMR-Dev-no-border.jpg'
+import highResTitle from './img/720px-440px-square-PMR-Dev-no-border.jpg'
 
 //Hero Image src set
 import largeHeroImage from './img/1920px-480px-Scrub-Sky-Turbines-Hero-Large.jpg'

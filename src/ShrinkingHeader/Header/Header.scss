@@ -92,11 +92,9 @@
   transition: all 0.5s ease;
 }
 
-.logo:hover, .logo:focus,
 Header .small-logo:hover, Header .small-logo:focus,
 Header .small-title:hover, Header .small-title:focus,
-Header .hamburger-button:hover, Header .hamburger-button:focus,
-.Header Navlink.round:focus img, .Header a.round:focus img {
+Header .hamburger-button:hover, Header .hamburger-button:focus{
   filter: drop-shadow(0 0 5px #fff);
   transform: scale(1.05);
 }
@@ -119,15 +117,30 @@ Header .hamburger-button:hover, Header .hamburger-button:focus,
 
 .Header Navlink.round,
 .Header a.round {
-  border-radius: 50%;
   display: inline-block;
-  position: relative;
   transition: all 0.5s ease;
   z-index: 7;
-  top: 10px;
-  left: 20px;
+  margin-top: 10px;
+  margin-left: 20px;
   border-radius: 50%;
-  filter: drop-shadow(0 0 2px #fff);
+
+}
+
+.Header Navlink.round img,
+.Header a.round img{
+
+  margin-bottom: -3px;
+  border-radius: 50%;
+  box-shadow: 0 0 7px #fff;
+  //transform: scale(1);
+  transform: translate3d(0px,0px,0px), scale(1);
+}
+
+logo:hover, logo:focus,
+Header Navlink.round:hover img, Header a.round:hover img,
+Header Navlink.round:focus img, Header a.round:focus img {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #fff;
 }
 
 .nav-menu {
