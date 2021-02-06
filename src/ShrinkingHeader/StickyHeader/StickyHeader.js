@@ -60,12 +60,14 @@ class StickyHeader extends Component {
                 to="#home"
                 className="round"
                 activeClassName="selected">
-                <img src={ smallStickyLogo }
+                <img
+                  src={ smallStickyLogo }
                   srcSet = {`${smallStickyLogo} 70w,
                              ${mediumStickyLogo} 130w,
                              ${largeStickyLogo} 2x`}
+                  sizes = "15vw"
                   className="small-logo"
-                  alt="Your logo's description" />
+                  alt="Profile headshot of Paul M Reese" />
               </NavLink>
               <NavLink
                 smooth
@@ -73,12 +75,14 @@ class StickyHeader extends Component {
                 className="square"
                 activeClassName="selected"
                 tabIndex="-1">
-                <img src={ smallStickyTitle }
+                <img
+                  src={ smallStickyTitle }
                   srcSet = {`${smallStickyTitle} 180w,
                              ${mediumStickyTitle} 360w,
                              ${largeStickyTitle} 2x`}
-                    className="small-title"
-                    alt="Your page/business title" />
+                  sizes="40vw"
+                  className="small-title"
+                  alt="Paul M Reese" />
               </NavLink>
 
               <NavMenu
@@ -128,24 +132,28 @@ class StickyHeader extends Component {
                 smooth
                 to="#home"
                 activeClassName="selected">
-                <img src={ smallStickyLogo }
-                     srcSet = {`${smallStickyLogo} 70w,
-                                ${mediumStickyLogo} 130w,
-                                ${largeStickyLogo} 2x`}
+                <img
+                  src={ smallStickyLogo }
+                  srcSet = {`${smallStickyLogo} 70w,
+                             ${mediumStickyLogo} 130w,
+                             ${largeStickyLogo} 2x`}
+                  sizes = "15vw"
                   className="small-logo"
-                  alt="Your logo's description" />
+                  alt="Profile headshot of Paul M Reese" />
               </NavLink>
               <NavLink
                 smooth
                 to="#home"
                 activeClassName="selected"
                 tabIndex="-1">
-                <img src={ smallStickyTitle }
-                     srcSet = {`${smallStickyTitle} 180w,
-                                ${mediumStickyTitle} 360w,
-                                ${largeStickyTitle} 2x`}
-                    className="small-title"
-                    alt="Your page/business title" />
+                <img
+                  src={ smallStickyTitle }
+                  srcSet = {`${smallStickyTitle} 180w,
+                             ${mediumStickyTitle} 360w,
+                             ${largeStickyTitle} 2x`}
+                  sizes="40vw"
+                  className="small-title"
+                  alt="Paul M Reese" />
               </NavLink>
               <input
                 type="image"

@@ -90,8 +90,10 @@ class Header extends Component {
                             ${mediumTitle} 310w,
                             ${largeTitle} 360w,
                             ${highResTitle} 2x`}
+                  sizes="35vw"
                   className="Header-image large-display"
-                  alt="Large header for large displays" />
+                  alt={`"Paul M Reese, Developer" over a golden North Carolina
+                      sunset`}/>
 
                 <NavMenu
                   navIsOpen = { navIsOpen }
@@ -135,30 +137,34 @@ class Header extends Component {
                 smooth
                 to="#home"
                 activeClassName="selected">
-                <img src={ smallStickyLogo }
-                     srcSet = {`${smallStickyLogo} 70w,
-                                ${mediumStickyLogo} 130w,
-                                ${largeStickyLogo} 2x`}
+                <img
+                  src={ smallStickyLogo }
+                  srcSet = {`${smallStickyLogo} 70w,
+                             ${mediumStickyLogo} 130w,
+                             ${largeStickyLogo} 2x`}
+                  sizes = "15vw"
                   className="small-logo"
-                  alt="Your logo's description" />
+                  alt="Profile headshot of Paul M Reese" />
               </NavLink>
               <NavLink
                 smooth
                 to="#home"
                 activeClassName="selected"
                 tabIndex="-1">
-                <img src={ smallStickyTitle }
-                     srcSet = {`${smallStickyTitle} 180w,
-                                ${mediumStickyTitle} 360w,
-                                ${largeStickyTitle} 2x`}
-                    className="small-title"
-                    alt="Your page/business title" />
+                <img
+                  src={ smallStickyTitle }
+                  srcSet = {`${smallStickyTitle} 180w,
+                             ${mediumStickyTitle} 360w,
+                             ${largeStickyTitle} 2x`}
+                  sizes = "40vw"
+                  className="small-title"
+                  alt="Paul M Reese" />
               </NavLink>
               <input
                 type="image"
                 onClick={ () => handleNavClick() }
                 src={ hamburgerButton }
-                alt="Nav-menu hamburger button"
+                alt="Navigation menu hamburger button"
                 className="hamburger-button"/>
             </header>
           </div>
