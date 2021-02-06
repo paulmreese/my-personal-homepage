@@ -32,6 +32,7 @@ class ImageFocusAnimation extends Component {
             <img
               src={ smallKaleImage }
               srcSet={ kaleImageSrcSet }
+              sizes="30vw"
               alt="Close-up on the center of purple kale"
               className="circle ImageFocusAnimation-image medium-light-blur"/>
             <div className="image-overlay medium-light-overlay droplet-overlay"></div>
@@ -43,6 +44,7 @@ class ImageFocusAnimation extends Component {
             <img
               src={ smallKaleImage }
               srcSet={ kaleImageSrcSet }
+              sizes="30vw"
               alt="Close-up on the center of purple kale"
               className="circle ImageFocusAnimation-image light-blur"/>
             <div className="image-overlay light-overlay droplet-overlay"></div>
@@ -54,6 +56,7 @@ class ImageFocusAnimation extends Component {
             <img
               src={ smallKaleImage }
               srcSet={ kaleImageSrcSet }
+              sizes="30vw"
               alt="Close-up on the center of purple kale"
               className="circle ImageFocusAnimation-image lighter-blur"/>
             <div className="image-overlay lighter-overlay droplet-overlay"></div>
@@ -65,6 +68,7 @@ class ImageFocusAnimation extends Component {
             <img
               src={ smallKaleImage }
               srcSet={ kaleImageSrcSet }
+              sizes="30vw"
               alt="Close-up on the center of purple kale"
               className="circle ImageFocusAnimation-image "/>
             <div className="image-overlay droplet-overlay"></div>
@@ -76,6 +80,7 @@ class ImageFocusAnimation extends Component {
             <img
               src={ smallKaleImage }
               srcSet={ kaleImageSrcSet }
+              sizes="30vw"
               alt="Close-up on the center of purple kale"
               className="circle ImageFocusAnimation-image lighter-blur"/>
             <div className="image-overlay lighter-overlay droplet-overlay"></div>
@@ -87,6 +92,7 @@ class ImageFocusAnimation extends Component {
             <img
               src={ smallKaleImage }
               srcSet={ kaleImageSrcSet }
+              sizes="30vw"
               alt="Close-up on the center of purple kale"
               className="circle ImageFocusAnimation-image light-blur"/>
             <div className="image-overlay light-overlay droplet-overlay"></div>
@@ -98,6 +104,7 @@ class ImageFocusAnimation extends Component {
             <img
               src={ smallKaleImage }
               srcSet={ kaleImageSrcSet }
+              sizes="30vw"
               alt="Close-up on the center of purple kale"
               className="circle ImageFocusAnimation-image medium-light-blur"/>
             <div className="image-overlay medium-light-overlay droplet-overlay"></div>
