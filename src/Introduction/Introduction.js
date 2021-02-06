@@ -110,6 +110,7 @@ class Introduction extends Component {
                                ${mediumPMRLogo} 200w,
                                ${largePMRLogo} 350w,
                                ${highResPMRLogo} 2x`}
+                      sizes="30vw"
                       alt="PMR logo against an orange sunset in a circular border"
                       className="circle Introduction-image light-blur"/>
                     <div className="image-overlay light-overlay droplet-overlay"></div>
@@ -122,6 +123,7 @@ class Introduction extends Component {
                                ${mediumRedHTML} 200w,
                                ${largeRedHTML} 350w,
                                ${highResRedHTML} 2x`}
+                      sizes="30vw"
                       alt="Red-stylized sunset labelled 'HTML Structure'"
                       className="circle Introduction-image"/>
                     <div className="image-overlay droplet-overlay"></div>
@@ -142,6 +144,7 @@ class Introduction extends Component {
                                ${mediumPMRLogo} 200w,
                                ${largePMRLogo} 350w,
                                ${highResPMRLogo} 2x`}
+                      sizes="30vw"
                       alt="PMR logo against an orange sunset in a circular border"
                       className="circle Introduction-image lighter-blur"/>
                     <div className="image-overlay lighter-overlay droplet-overlay"></div>
@@ -154,6 +157,7 @@ class Introduction extends Component {
                                ${mediumGreenJS} 200w,
                                ${largeGreenJS} 350w,
                                ${highResGreenJS} 2x`}
+                      sizes="30vw"
                       alt="Green-stylized sunset labelled 'JavaScript Function'"
                       className="circle Introduction-image "/>
                     <div className="image-overlay droplet-overlay"></div>
@@ -174,6 +178,7 @@ class Introduction extends Component {
                                ${mediumPMRLogo} 200w,
                                ${largePMRLogo} 350w,
                                ${highResPMRLogo} 2x`}
+                      sizes="30vw"
                       alt="PMR logo against an orange sunset in a circular border"
                       className="circle Introduction-image"/>
                     <div className="image-overlay droplet-overlay"></div>
@@ -186,6 +191,7 @@ class Introduction extends Component {
                                ${mediumBlueCSS} 200w,
                                ${largeBlueCSS} 350w,
                                ${highResBlueCSS} 2x`}
+                      sizes="30vw"
                       alt="Blue-stylized sunset labeled 'CSS Style'"
                       className="circle Introduction-image "/>
                     <div className="image-overlay droplet-overlay"></div>
