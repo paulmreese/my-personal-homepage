@@ -46,22 +46,21 @@ class Header extends Component {
       mediumStickyTitle, largeStickyTitle
     } = this.props
     //Alt text for images for D.R.Y.
-    const heroAltText = `Wide blue skies with modern wind turbines
-                         over earthen western scrublands`
+    const heroAltText = `Wide blue skies with modern wind turbines over earthen western scrublands`
 
     return (
       windowWidth > 600 ? (
         <div className="nav-container" id="home">
-        <img
-          className="pseudo-background"
-          src={xSmallHeroImage}
-          srcSet={`${xSmallHeroImage}  480w,
-                 ${smallHeroImage}  960w,
-                 ${mediumHeroImage}  1440w,
-                 ${largeHeroImage}  1920w`}
-          sizes="100vw"
-          alt={heroAltText}/>
-        <div className="pseudo-background-overlay">
+          <img
+            className="pseudo-background"
+            src={xSmallHeroImage}
+            srcSet={`${xSmallHeroImage}  480w,
+                     ${smallHeroImage}  960w,
+                     ${mediumHeroImage}  1440w,
+                     ${largeHeroImage}  2x`}
+            sizes="(max-width:479px) 480px, (max-width:959px) 960px, (max-width:1439px) 1440px, 100vw"
+            alt={heroAltText}/>
+          <div className="pseudo-background-overlay">
           </div>
           <div className="Header-container">
             <header className={scrollPositionY < bottomOfStationaryHeader
@@ -121,8 +120,8 @@ class Header extends Component {
             srcSet={`${xSmallHeroImage}  480w,
                    ${smallHeroImage}  960w,
                    ${mediumHeroImage}  1440w,
-                   ${largeHeroImage}  1920w`}
-            sizes="100vw"
+                   ${largeHeroImage}  2x`}
+            sizes="(max-width:479px) 480px, (max-width:959px) 960px, (max-width:1439px) 1440px, 100vw"
             alt={heroAltText}/>
           <div className="pseudo-background-overlay">
           </div>
