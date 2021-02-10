@@ -94,7 +94,7 @@ Footer h1 span.subtitle {
           drop-shadow(0 0 2px #fff);
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 574px) {
   .footer-text {
     order: 2;
   }
@@ -104,7 +104,7 @@ Footer h1 span.subtitle {
   }
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 575px) {
 
   .Footer-container {
     height: 80px;
