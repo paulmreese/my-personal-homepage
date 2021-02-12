@@ -1,0 +1,390 @@
+.StickyHeader-container {
+  position: fixed;
+  margin-right: 5px;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  z-index: 7;
+  background-image: url(../Header/img/1920px-480px-Scrub-Sky-Turbines-Hero-Large.jpg);
+  background-position: center 20%;
+  background-size: 110%;
+  background-repeat: no-repeat;
+  transition: all 0.5s ease;
+  box-shadow: inset 0 -8px 10px 0 #d5cdb9,
+              inset 0 -20px 10px 0 rgba(213, 205, 185, 0.7),
+              inset 0 0 2px -1px #000,
+              0 5px 8px -3px #000;
+}
+
+.StickyHeader {
+  width: 115%;
+  //left:-7.5%;
+  //position: relative;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  height: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.StickyHeader-container.about-border {
+  box-shadow: inset 0 -8px 10px 0 #b6b291,
+              inset 0 -20px 10px 0 rgba(182, 178, 145, 0.7),
+              inset 0 0 2px -1px #000,
+              0 5px 8px -3px #000;
+}
+
+.StickyHeader-container.aiml-border {
+  box-shadow: inset 0 -8px 8px 0 #d2a387,
+              inset 0 -20px 10px 0 rgba(210, 163, 135, 0.7),
+              inset 0 0 2px -1px #000,
+              0 5px 8px -3px #000;
+}
+
+.StickyHeader-container.projects-border {
+  box-shadow: inset 0 -8px 10px 0 #c5a0c5,
+              inset 0 -20px 10px 0 rgba(197, 160, 197, 0.7),
+              inset 0 0 2px -1px #000,
+              0 5px 8px -3px #000;
+}
+
+.StickyHeader-container.opal-border {
+  box-shadow: inset 0 -8px 10px 0 #a0c5c5,
+              inset 0 -20px 10px 0 rgba(160, 197, 197, 0.7),
+              inset 0 0 2px -1px #000,
+              0 5px 8px -3px #000;
+}
+
+.StickyHeader-container.golden-sand-border {
+  box-shadow: inset 0 -8px 10px 0 #f4d694,
+              inset 0 -20px 10px 0 rgba(244, 214, 148, 0.7),
+              inset 0 0 2px -1px #000,
+              0 5px 8px -3px #000;
+}
+
+.StickyHeader-container.full-height .StickyHeader.shown{
+  position: relative
+}
+
+.StickyHeader header {
+  display: flex;
+  height: 10%;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.StickyHeader Navlink.round,
+.StickyHeader a.round {
+  padding: 0;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.StickyHeader Navlink.square,
+.StickyHeader a.square {
+  padding: 0;
+  display: inline-block;
+}
+
+.StickyHeader .small-logo {
+  min-width: 68px;
+  height: 68px;
+  width: 68px;
+  box-sizing: border-box;
+}
+
+.StickyHeader .small-title {
+  display: flex;
+  max-height: 80px;
+  max-width: 200px;
+  box-sizing: border-box;
+  filter: drop-shadow(0 0 2px #fff);
+  transition: all 0.5s ease;
+  padding:0;
+  margin:0;
+}
+
+.StickyHeader .small-title:hover, .StickyHeader .small-logo:hover,
+.StickyHeader .small-title:focus, .StickyHeader .small-logo:focus {
+  filter: drop-shadow(0 0 5px #fff);
+  transform: scale(1.05);
+}
+
+.StickyHeader .NavMenu-container {
+  flex-direction: row;
+  justify-content: space-between;
+  border: none;
+  margin: 5px 15px 5px 0;
+  padding: 5;
+  position: static;
+  width: 600px;
+  max-width: 50%;
+}
+
+.StickyHeader nav Navlink,
+.StickyHeader nav a {
+  padding: 4px 5px;
+  display: inline-block;
+  flex-direction: row;
+  font: 600 0.8em "Barlow Condensed", sans-serif;
+  line-height: 1.05em;
+  transition: all 0.5s ease;
+  margin: 8px 2px;
+  border: none;
+  text-decoration: underline;
+  text-decoration-color: rgba(50,50,50,0);
+  color: #000;
+  justify-content: space-between;
+  filter: drop-shadow(-2px 7px 5px #666);
+  text-shadow: 0 0 5px #fff;
+  width: auto;
+}
+
+.StickyHeader .hamburger-button {
+  display: flex;
+  max-width: 20%;
+  height: 54px;
+  width: 54px;
+  border: 5px solid #000;
+  margin: 0;
+  transition: all 0.5s ease;
+}
+
+.StickyHeader .hamburger-button:hover, .StickyHeader .hamburger-button:focus {
+  filter: drop-shadow(0 0 5px #fff);
+  transform: scale(1.05);
+}
+
+.white-logo {
+  width: 128px;
+  height: 88px;
+  margin: 10px 25px;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.shown {
+  visibility: visible;
+  opacity: 1;
+  transition: all 2s ease;
+}
+
+.slim {
+  min-height: 40px;
+  max-height: 70px;
+  border-bottom: 2px solid #666;
+  padding: 0 5px 0 0;
+}
+
+.sticky-title-container {
+  margin: 10px 0;
+  padding: 0 30px;
+  transition: all 1s ease;
+  background-color: rgba(60, 60, 60, .6);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+@media screen and (max-width: 399px) {
+  .StickyHeader {
+
+    //position: relative;
+  }
+
+  .StickyHeader-container.slim {
+    width: 115%;
+    left:-7.5%;
+    top: -1px;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .StickyHeader-container {
+    justify-content: center;
+    //padding-left: 7.5%;
+  }
+  .StickyHeader .small-logo {
+    min-width: 100px;
+    height: 100px;
+    width: 100px;
+    box-sizing: border-box;
+    position: relative;
+
+  }
+
+  .StickyHeader .small-title{
+    max-height: 74px;
+  }
+
+  .StickyHeader nav Navlink,
+  .StickyHeader nav a {
+    font-size: 1.05em;
+
+  }
+
+  .StickyHeader NavLink,
+  .StickyHeader a {
+
+    margin: 10px 0;
+    display: inline-block;
+    font: 600 1em "Barlow Condensed", sans-serif;
+    line-height: 1.05em;
+    width: auto;
+    border: none;
+  }
+
+  .StickyHeader NavLink::before,
+  .StickyHeader a::before {
+
+
+    display: block;
+    font: 600 1em "Barlow Condensed", sans-serif;
+    line-height: 1.05em;
+    width: auto;
+    border: none;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+  }
+}
+
+@media screen and (min-width: 633px) {
+  .StickyHeader NavLink,
+  .StickyHeader a {
+    margin: 10px 0;
+  }
+}
+
+@media screen and (min-width: 636px) {
+  .StickyHeader nav Navlink,
+  .StickyHeader nav a {
+    font-size: 1.1em;
+
+  }
+}
+
+@media screen and (min-width: 655px) {
+  .StickyHeader nav Navlink,
+  .StickyHeader nav a {
+    font-size: 1.2em;
+    margin: 7px 1px;
+  }
+}
+
+@media screen and (min-width: 675px) {
+  .StickyHeader NavLink,
+  .StickyHeader a {
+    margin: 10px 0;
+    font-size: 1em;
+    line-height: 1em;
+  }
+}
+
+@media screen and (min-width: 694px) {
+  .StickyHeader nav Navlink,
+  .StickyHeader nav a {
+    font-size: 1.25em;
+    margin: 7px 1px;
+  }
+}
+
+@media screen and (min-width: 710px) {
+  .StickyHeader nav Navlink,
+  .StickyHeader nav a {
+    font-size: 1.3em;
+    margin: 8px 1px;
+  }
+
+  .StickyHeader .NavMenu-container {
+    max-width: 55%;
+  }
+}
+
+@media screen and (min-width: 723px) {
+  .StickyHeader NavLink,
+  .StickyHeader a {
+    margin: 10px 0;
+    font-size: 1.05em;
+    line-height: 1.05em;
+  }
+}
+
+@media screen and (min-width: 730px) {
+  .StickyHeader nav Navlink,
+  .StickyHeader nav a {
+    font-size: 1.35em;
+    line-height: 0.6em;
+    margin: 9px 5px;
+  }
+}
+
+@media screen and (min-width: 770px) {
+  .StickyHeader nav Navlink,
+  .StickyHeader nav a {
+    font-size: 1.4em;
+    line-height: 0.6em;
+    margin: 9px 6px;
+  }
+}
+
+@media screen and (min-width: 805px) {
+  .StickyHeader Navlink.round,
+  .StickyHeader a.round {
+    position: relative;
+    top: 40px;
+    //This should rightly be on an overlay(underlay) class like the kale discs
+    filter: drop-shadow(0 5px 8px #000);
+  }
+
+  .StickyHeader Navlink.round img,
+  .StickyHeader a.round img {
+    height: 148px;
+    width: 148px;
+  }
+}
+
+@media screen and (min-width: 820px) {
+
+  .StickyHeader nav Navlink,
+  .StickyHeader nav a {
+    font-size: 1.4em;
+    line-height: 0.7em;
+    margin: 9px 7px;
+  }
+}
+
+@media screen and (min-width: 870px) {
+  .StickyHeader nav Navlink,
+  .StickyHeader nav a {
+    font-size: 1.4em;
+    line-height: 0.8em;
+    margin: 9px 8px;
+  }
+}
+
+@media screen and (min-width: 920px) {
+  .StickyHeader nav Navlink,
+  .StickyHeader nav a {
+    font-size: 1.4em;
+    line-height: 0.9em;
+    margin: 9px 9px;
+  }
+}
+
+@media screen and (min-width: 950px) {
+  .StickyHeader nav Navlink,
+  .StickyHeader nav a {
+    font-size: 1.4em;
+    line-height: 0.9em;
+    margin: 9px 10px;
+  }
+}

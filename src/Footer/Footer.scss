@@ -1,0 +1,121 @@
+Footer h1 span.subtitle {
+  background: linear-gradient(90deg, #fff39b, #f2ac6f);
+  color: #fff39b;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 0.65em;
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.99))
+          drop-shadow(0 0 1px rgba(0, 0, 0, 1));
+}
+
+.Footer-container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 100px;
+  transition: all 0.5s ease;
+  background-color: #000;
+  overflow: visible;
+  margin: 5px 0 10px;
+}
+
+.Footer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: #fff;
+  align-items: center;
+  margin: 0 10px;
+  box-sizing: border-box;
+  max-width: 1000px;
+  width: 100%;
+  max-height: 150px;
+}
+
+.Footer span.footer-text {
+  text-align: center;
+  width: 300px;
+}
+
+.Footer span.social-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 240px;
+  position: relative;
+
+}
+
+.Footer span.social-buttons .social-button {
+  text-decoration: none;
+}
+
+.Footer span.social-buttons .social-button img {
+  width: 60px;
+  height: 60px;
+  margin: 10px;
+  transition: all 0.5s ease;
+}
+
+.Footer span.social-buttons .social-button:hover img,
+.Footer span.social-buttons .social-button:active img,
+.Footer span.social-buttons .social-button:focus img {
+  transform: scale(1.15);
+}
+
+.Footer span.social-buttons .social-button:hover .udacity-logo,
+.Footer span.social-buttons .social-button:active .udacity-logo,
+.Footer span.social-buttons .social-button:focus .udacity-logo{
+  filter: brightness(4.5)
+          sepia(0.6)
+          saturate(1500%)
+          drop-shadow(0 0 2px #fff);
+}
+
+.Footer span.social-buttons .social-button:hover .linkedIn-logo,
+.Footer span.social-buttons .social-button:active .linkedIn-logo,
+.Footer span.social-buttons .social-button:focus .linkedIn-logo{
+  filter: brightness(0.7)
+          sepia(0.8)
+          saturate(1500%)
+          hue-rotate(9deg)
+          drop-shadow(0 0 2px #fff);
+}
+
+.Footer span.social-buttons .social-button:hover .gitHub-logo,
+.Footer span.social-buttons .social-button:active .gitHub-logo,
+.Footer span.social-buttons .social-button:focus .gitHub-logo{
+  filter: brightness(0.6)
+          sepia(0.8)
+          saturate(1500%)
+          hue-rotate(1deg)
+          drop-shadow(0 0 2px #fff);
+}
+
+@media screen and (max-width: 574px) {
+  .footer-text {
+    order: 2;
+  }
+
+  .social-buttons {
+    order: 1;
+  }
+}
+
+@media screen and (min-width: 575px) {
+
+  .Footer-container {
+    height: 80px;
+  }
+
+  .Footer {
+    justify-content: space-between;
+    max-height: 80px;
+  }
+
+  .Footer span.footer-text {
+    text-align: left;
+  }
+}

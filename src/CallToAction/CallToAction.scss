@@ -1,0 +1,198 @@
+.CallToAction-container {
+  margin: 10px auto 0;
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.CallToAction-container h3 {
+  margin: 10px 20px;
+  text-align: center;
+  color: #000;
+  width: 90%;
+  font-size: 1.65em;
+  font-weight: 400;
+}
+
+.CallToAction-container h3 strong {
+  font-weight: 900;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  width: 100%;
+}
+
+.button-container:hover button{
+  color: #f36;
+  box-shadow: 0 0 8px #000;
+  background-color: rgba(255, 255, 255, 0.8);
+  transform: scale(1.02);
+}
+
+.button-container:hover a.button-style {
+  color: #f36;
+  box-shadow: 0 0 8px #000;
+  background-color: rgba(255, 255, 255, 0.8);
+  transform: scale(1.02);
+}
+
+.button-container a.button-style:hover, .button-container a.button-style:focus{
+  color: #f36;
+  box-shadow: 0 0 8px #f36;
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: scale(1.05);
+  border: 2px solid #000;
+}
+
+.button-container:hover .RightArrow, .button-container a.button-style:focus + .arrow-container .RightArrow{
+  animation: Stretch-arrow 1s infinite ease;
+}
+
+.CallToAction-container button {
+  margin: 0 20px;
+  padding: 10px 20px;
+  border: 2px solid #000;
+  background-color: rgba(255, 255, 255, 0.6);
+  color: #000;
+  font-size: 1.15em;
+  font-weight: 400;
+  border-radius: 5px;
+  width: 90%;
+  transition: all 0.5s ease;
+  box-shadow: 0 10px 10px -4px rgba(16, 16, 16, 0.5);
+}
+
+.CallToAction-container a.button-style {
+  display: inline-block;
+  margin: 0 20px;
+  padding: 10px 20px;
+  border: 2px solid #000;
+  background-color: rgba(255, 255, 255, 0.6);
+  color: #000;
+  font-size: 1.15em;
+  font-weight: 400;
+  border-radius: 5px;
+  width: 90%;
+  transition: all 0.5s ease;
+  box-shadow: 0 10px 10px -4px rgba(16, 16, 16, 0.5);
+}
+
+.CallToAction-container button strong{
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.CallToAction-container a.button-style strong{
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.arrow-container {
+  display: none;
+}
+
+.RightArrow {
+   width:85%;
+   position: relative;
+   margin: 0 0 20px 20px;
+   box-sizing: border-box;
+}
+
+.line {
+   margin-top:8px;
+   width:98%;
+   max-width: 98%;
+   background:#000;
+   height:0.4em;
+   float:left;
+   position: absolute;
+}
+
+.point::before {
+  position: relative;
+  /* top: 3pt; Uncomment this to lower the icons as requested in comments*/
+  content: "";
+  display: inline-block;
+  /* By using an em scale, the arrows will size with the font */
+  width: 1em;
+  height: 1em;
+  border-right: 0.4em solid #000;
+  border-top: 0.4em solid #000;
+  transform: rotate(45deg);
+  margin-right: 0.5em;
+}
+
+.point {
+  position: absolute;
+  right: 28px;
+   width: 0;
+   height: 0;
+   float:right;
+}
+
+p {
+  color: #000;
+  max-width: 80%;
+  margin: 10px auto;
+}
+
+@keyframes Stretch-arrow {
+  from {
+    width: 30%;
+  }
+  to {
+
+    width: 97%;
+  }
+}
+
+@media screen and (min-width: 442px) {
+  .arrow-container {
+    width: 45%;
+    display: flex;
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (min-width: 483px) {
+  .arrow-container {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 511px) {
+  .arrow-container {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 538px) {
+  .arrow-container {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 564px) {
+  .arrow-container {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .CallToAction-container {
+    padding-top: 5px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .CallToAction-container {
+    padding-top: 10px;
+  }
+}

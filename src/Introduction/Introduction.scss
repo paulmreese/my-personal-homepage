@@ -1,0 +1,236 @@
+$intro-background-color: #b6b291;
+
+.Introduction-container {
+  margin: 0 auto;
+  padding-bottom: 5px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: $intro-background-color;
+}
+
+.Introduction-content {
+  margin: -70px auto 10px;
+  padding-bottom: 5px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-image: linear-gradient(180deg, rgba(0,0,0,0),
+                    $intro-background-color 15%, $intro-background-color);
+}
+
+.Introduction-content p:first-of-type {
+  margin-top: 50px;
+}
+
+.Introduction-container p {
+  color: #000;
+  width: 85%;
+  margin: 10px auto;
+  font-size: 1.2em;
+}
+
+.Introduction-container h2 {
+  color: #000;
+  max-width: 80%;
+  margin: 10px auto;
+  font-size: 2.2em;
+}
+
+.Introduction-container .triple-container {
+  width: 100%;
+  padding: 10px 10px 10px 20px;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+
+.Introduction-container p, .Introduction-container .triple-container {
+  max-width: 900px;
+}
+
+//Card code credit: https://3dtransforms.desandro.com/card-flip
+.card {
+  width: 250px;
+  max-width: 100%;
+  height: 250px;
+  perspective: 1000px;
+}
+
+.card-contents {
+  position: relative;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  transition: transform 1s;
+  display: inline-block;
+  transform-style: preserve-3d;
+  transition-delay: 0;
+}
+
+.card-contents.first-animated{
+  transition-delay: 0;
+}
+
+.card-contents.second-animated{
+  transition-delay: 0.5s;
+}
+
+.card-contents.third-animated{
+  transition-delay: 1s;
+}
+
+.card__face {
+  position: absolute;
+  height: auto;
+  width: 100%;
+  backface-visibility: hidden;;
+}
+
+.card__face--front {
+
+}
+
+.card__face--back {
+  transform: rotateY(180deg);
+}
+
+.flipped {
+  transform: rotateY(180deg);
+}
+
+
+.Introduction-container .Introduction-image-container {
+
+  filter: drop-shadow(-3px 7px 2px rgba(16, 16, 16, 0.5));
+  border-radius: 50%;
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  width: 100%;
+  height: 100%;
+  max-height: 10%;
+  max-width: 30%;
+  overflow: hidden;
+}
+
+.light-overlay {
+  background-color: rgba(60, 60, 60, 0.35);
+}
+
+.Introduction-image-container.second .light-dot{
+  background-color: rgba(255, 255, 255, 0.19);
+}
+
+.lighter-overlay {
+  background-color: rgba(60, 60, 60, 0.25);
+}
+
+.Introduction-image-container.first .light-dot{
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.light-blur {
+  filter: blur(1.5px) grayscale(65%);
+}
+.lighter-blur {
+  filter: blur(1px) sepia(38%);
+}
+
+
+.Introduction-image-container .Introduction-image, .card .Introduction-image {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  height: auto;
+  //width: 400px;
+  max-width: 100%;
+  display: inline-block;
+  box-shadow: inset 0 0 25px 6px #fff;
+}
+
+
+.Introduction-image-container .image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: inset 0 1px 25px 9px #fff;
+}
+
+.Introduction-image-container .droplet-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: inset -7px 8px 10px 7px rgba(0, 0, 0, 0.5),
+              inset 5px -12px 25px 5px rgba(255, 255, 255, 0.75);
+}
+
+.Introduction-image-container .light-dot, .card .light-dot {
+  position: absolute;
+  display: inline-block;
+  top: 12%;
+  right: 30%;
+  width: 13%;
+  height: 20%;
+  border-radius: 50%;
+  transform: rotate(-62deg);
+  background-color: rgba(255, 255, 255, 0.23);
+}
+
+.Introduction-container .circle {
+  border-radius: 50%;
+  margin-bottom: -4px;
+}
+
+.Introduction-container p strong,
+.Introduction-container p em{
+  font-size: 1.05em;
+}
+
+.Introduction-container p em{
+  font-size: 1.1em;
+}
+
+@media screen and (min-width: 1000px) {
+  .Introduction-content {
+    margin-top: -250px;
+    margin-bottom: 10px;
+    max-width: 85%;
+    z-index: 2;
+
+    background-image: linear-gradient(180deg, rgba(0,0,0,0),
+                      $intro-background-color 64%, $intro-background-color);
+
+  }
+
+  .Introduction-content p:first-of-type {
+    margin-top: 100px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .Introduction-content {
+    margin-top: -400px;
+    margin-bottom: 10px;
+  }
+
+  .Introduction-content p:first-of-type {
+    margin-top: 150px;
+  }
+}

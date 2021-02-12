@@ -1,0 +1,67 @@
+.HeroImage-container {
+  margin: 0 auto;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  //box-shadow: 0 10px 10px -4px rgba(16, 16, 16, 0.5);
+  //z-index: 1;
+  border-top: 1px solid #858585;
+}
+
+.HeroImage {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  transform: scaleX(-1);
+}
+
+.HeroImage-caption {
+  position: absolute;
+  top: 5px;
+  left: 6%;
+  margin: 5px auto;
+  color: #fff;
+  text-shadow: 0 0 5px #444;
+  font: 600 2em "Barlow Condensed", sans-serif;
+}
+
+.HeroImage-caption .upper-text{
+
+}
+
+.HeroImage-caption .upper-text{
+
+}
+
+.HeroImage-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 -8px 10px 0 #b6b291, inset 0 -20px 10px 0 rgba(182, 178, 145, 0.7);
+}
+
+#contact-info .HeroImage-overlay {
+  box-shadow: none;
+}
+
+@media screen and (min-width: 601px) {
+  .HeroImage-caption {
+    margin: 10px auto;
+    font: 600 2.5em "Barlow Condensed", sans-serif;
+  }
+}
+
+@media screen and (min-width: 1001px) {
+  .HeroImage-caption {
+    top: 20px;
+    left: 20%;
+  }
+}

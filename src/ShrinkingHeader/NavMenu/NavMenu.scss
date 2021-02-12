@@ -1,0 +1,55 @@
+.NavMenu-container {
+  display: flex;
+  overflow: visible;
+}
+
+.nav-menu {
+  display: inline-flex;
+}
+
+.NavLink-container {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  height: 100%;
+  width: 100%;
+  overflow: visible;
+  min-height: 100%;
+  //min-width: 100%;
+  margin: 1px;
+}
+
+.nav-menu a,
+.nav-menu NavLink{
+  color: #000;
+  transition: all 0.5s ease;
+  box-sizing: border-box;
+  text-decoration: underline;
+  text-decoration-color: rgba(0,0,0,0);
+  text-shadow: 0 0 3px #fff, -2px 7px 5px #666;
+  //filter: drop-shadow(-2px 7px 5px #666) drop-shadow(0 0 3px #fff);
+  //width: auto;
+  overflow: hidden;
+  font-weight: 600;
+}
+
+.nav-menu a:hover, .nav-menu a:focus,
+.nav-menu NavLink:hover, .nav-menu NavLink:focus {
+  color: #ff3366;
+  text-decoration: underline;
+  text-decoration-color: #ff3366;
+  //filter: drop-shadow(-2px 7px 5px #f69) drop-shadow(0 0 3px #fff);
+  text-shadow: 0 0 4px #fff, -2px 7px 5px #f69, 0 0 8px #fff;
+  transition: all 0.3s ease;
+  //transform: scale(1.1);
+}
+
+
+
+.nav-menu .selected {
+  color: #ff3366;
+  display: inline-block;
+  text-decoration: underline;
+  text-decoration-color: #ff3366;
+  text-shadow: 0 0 2px #ccc, -2px 7px 5px #f8a, 0 0 4px #fff;
+}
