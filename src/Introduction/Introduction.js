@@ -3,24 +3,40 @@ import ReactDOM from 'react-dom'
 
 import './Introduction.scss';
 import smallPMRLogo from './img/PMR-Sunset-Round-100px.jpg'
+import smallPMRLogoWebp from './img/PMR-Sunset-Round-100px.jpg.webp'
 import mediumPMRLogo from './img/PMR-Sunset-Round-200px.jpg'
+import mediumPMRLogoWebp from './img/PMR-Sunset-Round-200px.jpg.webp'
 import largePMRLogo from './img/PMR-Sunset-Round-350px.jpg'
+import largePMRLogoWebp from './img/PMR-Sunset-Round-350px.jpg.webp'
 import highResPMRLogo from './img/PMR-Sunset-Round-700px.jpg'
+import highResPMRLogoWebp from './img/PMR-Sunset-Round-700px.jpg.webp'
 
 import smallRedHTML from './img/HTMLCircularBackground-light-sepia-100px.jpg'
+import smallRedHTMLWebp from './img/HTMLCircularBackground-light-sepia-100px.jpg.webp'
 import mediumRedHTML from './img/HTMLCircularBackground-light-sepia-200px.jpg'
+import mediumRedHTMLWebp from './img/HTMLCircularBackground-light-sepia-200px.jpg.webp'
 import largeRedHTML from './img/HTMLCircularBackground-light-sepia-350px.jpg'
+import largeRedHTMLWebp from './img/HTMLCircularBackground-light-sepia-350px.jpg.webp'
 import highResRedHTML from './img/HTMLCircularBackground-light-sepia-enlarged-700px.jpg'
+import highResRedHTMLWebp from './img/HTMLCircularBackground-light-sepia-enlarged-700px.jpg.webp'
 
 import smallGreenJS from './img/JSCircularBackground-light-sepia-100px.jpg'
+import smallGreenJSWebp from './img/JSCircularBackground-light-sepia-100px.jpg.webp'
 import mediumGreenJS from './img/JSCircularBackground-light-sepia-200px.jpg'
+import mediumGreenJSWebp from './img/JSCircularBackground-light-sepia-200px.jpg.webp'
 import largeGreenJS from './img/JSCircularBackground-light-sepia-350px.jpg'
+import largeGreenJSWebp from './img/JSCircularBackground-light-sepia-350px.jpg.webp'
 import highResGreenJS from './img/JSCircularBackground-light-sepia-enlarged-700px.jpg'
+import highResGreenJSWebp from './img/JSCircularBackground-light-sepia-enlarged-700px.jpg.webp'
 
 import smallBlueCSS from './img/CSSCircularBackground-light-sepia-100px.jpg'
+import smallBlueCSSWebp from './img/CSSCircularBackground-light-sepia-100px.jpg.webp'
 import mediumBlueCSS from './img/CSSCircularBackground-light-sepia-200px.jpg'
+import mediumBlueCSSWebp from './img/CSSCircularBackground-light-sepia-200px.jpg.webp'
 import largeBlueCSS from './img/CSSCircularBackground-light-sepia-350px.jpg'
+import largeBlueCSSWebp from './img/CSSCircularBackground-light-sepia-350px.jpg.webp'
 import highResBlueCSS from './img/CSSCircularBackground-light-sepia-enlarged-700px.jpg'
+import highResBlueCSSWebp from './img/CSSCircularBackground-light-sepia-enlarged-700px.jpg.webp'
 
 class Introduction extends Component {
 
@@ -104,28 +120,55 @@ class Introduction extends Component {
                     ? "card-contents flipped first-animated"
                     : "card-contents"}>
                   <div className="card__face card__face--front">
-                    <img
-                      src={ smallPMRLogo }
-                      srcSet={`${smallPMRLogo} 100w,
-                               ${mediumPMRLogo} 200w,
-                               ${largePMRLogo} 350w,
-                               ${highResPMRLogo} 2x`}
-                      sizes="30vw"
-                      alt="PMR logo against an orange sunset in a circular border"
-                      className="circle Introduction-image light-blur"/>
+
+                    <picture>
+                      <source media="(min-width: 736px) and (min-device-pixel-ratio: 1.5), (min-width: 736px) and (min-resolution: 1.5dppx)" srcSet={`${highResPMRLogoWebp}`} type="image/webp"/>
+                      <source media="(min-width: 736px)" srcSet={`${largePMRLogoWebp}`} type="image/webp"/>
+                      <source media="(min-width: 350px)" srcSet={`${mediumPMRLogoWebp}`} type="image/webp"/>
+                      <source media="(max-width: 349px)" srcSet={`${smallPMRLogoWebp}`} type="image/webp"/>
+
+                      <source media="(min-width: 736px) and (min-device-pixel-ratio: 1.5), (min-width: 736px) and (min-resolution: 1.5dppx)" srcSet={`${highResPMRLogo}`} type="image/jpeg"/>
+                      <source media="(min-width: 736px)" srcSet={`${largePMRLogo}`} type="image/jpeg"/>
+                      <source media="(min-width: 350px)" srcSet={`${mediumPMRLogo}`} type="image/jpeg"/>
+                      <source media="(max-width: 349px)" srcSet={`${smallPMRLogo}`} type="image/jpeg"/>
+
+                      <img
+                        src={ smallPMRLogo }
+                        srcSet={`${smallPMRLogo} 100w,
+                                 ${mediumPMRLogo} 200w,
+                                 ${largePMRLogo} 350w,
+                                 ${highResPMRLogo} 2x`}
+                        sizes="30vw"
+                        alt="PMR logo against an orange sunset in a circular border"
+                        className="circle Introduction-image light-blur"/>
+                    </picture>
                     <div className="image-overlay light-overlay droplet-overlay"></div>
                     <div className="light-dot"></div>
                   </div>
                   <div className="card__face card__face--back">
-                    <img
-                      src={ smallRedHTML }
-                      srcSet={`${smallRedHTML} 100w,
-                               ${mediumRedHTML} 200w,
-                               ${largeRedHTML} 350w,
-                               ${highResRedHTML} 2x`}
-                      sizes="30vw"
-                      alt="Red-stylized sunset labelled 'HTML Structure'"
-                      className="circle Introduction-image"/>
+
+                    <picture>
+                      <source media="(min-width: 736px) and (min-device-pixel-ratio: 1.5), (min-width: 736px) and (min-resolution: 1.5dppx)" srcSet={`${highResRedHTMLWebp}`} type="image/webp"/>
+                      <source media="(min-width: 736px)" srcSet={`${largeRedHTMLWebp}`} type="image/webp"/>
+                      <source media="(min-width: 350px)" srcSet={`${mediumRedHTMLWebp}`} type="image/webp"/>
+                      <source media="(max-width: 349px)" srcSet={`${smallRedHTMLWebp}`} type="image/webp"/>
+
+                      <source media="(min-width: 736px) and (min-device-pixel-ratio: 1.5), (min-width: 736px) and (min-resolution: 1.5dppx)" srcSet={`${highResRedHTML}`} type="image/jpeg"/>
+                      <source media="(min-width: 736px)" srcSet={`${largeRedHTML}`} type="image/jpeg"/>
+                      <source media="(min-width: 350px)" srcSet={`${mediumRedHTML}`} type="image/jpeg"/>
+                      <source media="(max-width: 349px)" srcSet={`${smallRedHTML}`} type="image/jpeg"/>
+
+                      <img
+                        src={ smallRedHTML }
+                        srcSet={`${smallRedHTML} 100w,
+                                 ${mediumRedHTML} 200w,
+                                 ${largeRedHTML} 350w,
+                                 ${highResRedHTML} 2x`}
+                        sizes="30vw"
+                        alt="Red-stylized sunset labelled 'HTML Structure'"
+                        className="circle Introduction-image"/>
+                    </picture>
+
                     <div className="image-overlay droplet-overlay"></div>
                     <div className="light-dot"></div>
                   </div>
@@ -138,28 +181,56 @@ class Introduction extends Component {
                     ? "card-contents flipped second-animated"
                     : "card-contents"}>
                   <div className="card__face card__face--front">
-                    <img
-                      src={ smallPMRLogo }
-                      srcSet={`${smallPMRLogo} 100w,
-                               ${mediumPMRLogo} 200w,
-                               ${largePMRLogo} 350w,
-                               ${highResPMRLogo} 2x`}
-                      sizes="30vw"
-                      alt="PMR logo against an orange sunset in a circular border"
-                      className="circle Introduction-image lighter-blur"/>
+
+                    <picture>
+                      <source media="(min-width: 736px) and (min-device-pixel-ratio: 1.5), (min-width: 736px) and (min-resolution: 1.5dppx)" srcSet={`${highResPMRLogoWebp}`} type="image/webp"/>
+                      <source media="(min-width: 736px)" srcSet={`${largePMRLogoWebp}`} type="image/webp"/>
+                      <source media="(min-width: 350px)" srcSet={`${mediumPMRLogoWebp}`} type="image/webp"/>
+                      <source media="(max-width: 349px)" srcSet={`${smallPMRLogoWebp}`} type="image/webp"/>
+
+                      <source media="(min-width: 736px) and (min-device-pixel-ratio: 1.5), (min-width: 736px) and (min-resolution: 1.5dppx)" srcSet={`${highResPMRLogo}`} type="image/jpeg"/>
+                      <source media="(min-width: 736px)" srcSet={`${largePMRLogo}`} type="image/jpeg"/>
+                      <source media="(min-width: 350px)" srcSet={`${mediumPMRLogo}`} type="image/jpeg"/>
+                      <source media="(max-width: 349px)" srcSet={`${smallPMRLogo}`} type="image/jpeg"/>
+
+                      <img
+                        src={ smallPMRLogo }
+                        srcSet={`${smallPMRLogo} 100w,
+                                 ${mediumPMRLogo} 200w,
+                                 ${largePMRLogo} 350w,
+                                 ${highResPMRLogo} 2x`}
+                        sizes="30vw"
+                        alt="PMR logo against an orange sunset in a circular border"
+                        className="circle Introduction-image lighter-blur"/>
+                    </picture>
+
                     <div className="image-overlay lighter-overlay droplet-overlay"></div>
                     <div className="light-dot"></div>
                   </div>
                   <div className="card__face card__face--back">
-                    <img
-                      src={ smallGreenJS }
-                      srcSet={`${smallGreenJS} 100w,
-                               ${mediumGreenJS} 200w,
-                               ${largeGreenJS} 350w,
-                               ${highResGreenJS} 2x`}
-                      sizes="30vw"
-                      alt="Green-stylized sunset labelled 'JavaScript Function'"
-                      className="circle Introduction-image "/>
+
+                    <picture>
+                      <source media="(min-width: 736px) and (min-device-pixel-ratio: 1.5), (min-width: 736px) and (min-resolution: 1.5dppx)" srcSet={`${highResGreenJSWebp}`} type="image/webp"/>
+                      <source media="(min-width: 736px)" srcSet={`${largeGreenJSWebp}`} type="image/webp"/>
+                      <source media="(min-width: 350px)" srcSet={`${mediumGreenJSWebp}`} type="image/webp"/>
+                      <source media="(max-width: 349px)" srcSet={`${smallGreenJSWebp}`} type="image/webp"/>
+
+                      <source media="(min-width: 736px) and (min-device-pixel-ratio: 1.5), (min-width: 736px) and (min-resolution: 1.5dppx)" srcSet={`${highResGreenJS}`} type="image/jpeg"/>
+                      <source media="(min-width: 736px)" srcSet={`${largeGreenJS}`} type="image/jpeg"/>
+                      <source media="(min-width: 350px)" srcSet={`${mediumGreenJS}`} type="image/jpeg"/>
+                      <source media="(max-width: 349px)" srcSet={`${smallGreenJS}`} type="image/jpeg"/>
+
+                      <img
+                        src={ smallGreenJS }
+                        srcSet={`${smallGreenJS} 100w,
+                                 ${mediumGreenJS} 200w,
+                                 ${largeGreenJS} 350w,
+                                 ${highResGreenJS} 2x`}
+                        sizes="30vw"
+                        alt="Green-stylized sunset labelled 'JavaScript Function'"
+                        className="circle Introduction-image "/>
+                    </picture>
+
                     <div className="image-overlay droplet-overlay"></div>
                     <div className="light-dot"></div>
                   </div>
@@ -172,28 +243,56 @@ class Introduction extends Component {
                     ? "card-contents flipped third-animated"
                     : "card-contents"}>
                   <div className="card__face card__face--front">
-                    <img
-                      src={ smallPMRLogo }
-                      srcSet={`${smallPMRLogo} 100w,
-                               ${mediumPMRLogo} 200w,
-                               ${largePMRLogo} 350w,
-                               ${highResPMRLogo} 2x`}
-                      sizes="30vw"
-                      alt="PMR logo against an orange sunset in a circular border"
-                      className="circle Introduction-image"/>
+
+                    <picture>
+                      <source media="(min-width: 736px) and (min-device-pixel-ratio: 1.5), (min-width: 736px) and (min-resolution: 1.5dppx)" srcSet={`${highResPMRLogoWebp}`} type="image/webp"/>
+                      <source media="(min-width: 736px)" srcSet={`${largePMRLogoWebp}`} type="image/webp"/>
+                      <source media="(min-width: 350px)" srcSet={`${mediumPMRLogoWebp}`} type="image/webp"/>
+                      <source media="(max-width: 349px)" srcSet={`${smallPMRLogoWebp}`} type="image/webp"/>
+
+                      <source media="(min-width: 736px) and (min-device-pixel-ratio: 1.5), (min-width: 736px) and (min-resolution: 1.5dppx)" srcSet={`${highResPMRLogo}`} type="image/jpeg"/>
+                      <source media="(min-width: 736px)" srcSet={`${largePMRLogo}`} type="image/jpeg"/>
+                      <source media="(min-width: 350px)" srcSet={`${mediumPMRLogo}`} type="image/jpeg"/>
+                      <source media="(max-width: 349px)" srcSet={`${smallPMRLogo}`} type="image/jpeg"/>
+
+                      <img
+                        src={ smallPMRLogo }
+                        srcSet={`${smallPMRLogo} 100w,
+                                 ${mediumPMRLogo} 200w,
+                                 ${largePMRLogo} 350w,
+                                 ${highResPMRLogo} 2x`}
+                        sizes="30vw"
+                        alt="PMR logo against an orange sunset in a circular border"
+                        className="circle Introduction-image"/>
+                    </picture>
+
                     <div className="image-overlay droplet-overlay"></div>
                     <div className="light-dot"></div>
                   </div>
                   <div className="card__face card__face--back">
-                    <img
-                      src={ smallBlueCSS }
-                      srcSet={`${smallBlueCSS} 100w,
-                               ${mediumBlueCSS} 200w,
-                               ${largeBlueCSS} 350w,
-                               ${highResBlueCSS} 2x`}
-                      sizes="30vw"
-                      alt="Blue-stylized sunset labeled 'CSS Style'"
-                      className="circle Introduction-image "/>
+
+                    <picture>
+                      <source media="(min-width: 736px) and (min-device-pixel-ratio: 1.5), (min-width: 736px) and (min-resolution: 1.5dppx)" srcSet={`${highResBlueCSSWebp}`} type="image/webp"/>
+                      <source media="(min-width: 736px)" srcSet={`${largeBlueCSSWebp}`} type="image/webp"/>
+                      <source media="(min-width: 350px)" srcSet={`${mediumBlueCSSWebp}`} type="image/webp"/>
+                      <source media="(max-width: 349px)" srcSet={`${smallBlueCSSWebp}`} type="image/webp"/>
+
+                      <source media="(min-width: 736px) and (min-device-pixel-ratio: 1.5), (min-width: 736px) and (min-resolution: 1.5dppx)" srcSet={`${highResBlueCSS}`} type="image/jpeg"/>
+                      <source media="(min-width: 736px)" srcSet={`${largeBlueCSS}`} type="image/jpeg"/>
+                      <source media="(min-width: 350px)" srcSet={`${mediumBlueCSS}`} type="image/jpeg"/>
+                      <source media="(max-width: 349px)" srcSet={`${smallBlueCSS}`} type="image/jpeg"/>
+
+                      <img
+                        src={ smallBlueCSS }
+                        srcSet={`${smallBlueCSS} 100w,
+                                 ${mediumBlueCSS} 200w,
+                                 ${largeBlueCSS} 350w,
+                                 ${highResBlueCSS} 2x`}
+                        sizes="30vw"
+                        alt="Blue-stylized sunset labeled 'CSS Style'"
+                        className="circle Introduction-image "/>
+                    </picture>
+
                     <div className="image-overlay droplet-overlay"></div>
                     <div className="light-dot"></div>
                   </div>

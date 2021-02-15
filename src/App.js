@@ -9,24 +9,9 @@ import ImageFocusAnimation from './ImageFocusAnimation/ImageFocusAnimation'
 
 import CallToAction from './CallToAction/CallToAction'
 
-import smallVibrantSkylineTurbines from './img/Sunset-Turbines-Narrow-480px-180px.jpg'
-import mediumVibrantSkylineTurbines from './img/Sunset-Turbines-Narrow-960px-360px.jpg'
-import largeVibrantSkylineTurbines from './img/Sunset-Turbines-Narrow-1920px-720px.jpg'
-import highResVibrantSkylineTurbines from './img/Sunset-Turbines-Narrow-3840px-1440px-web.jpg'
+import NCSunsetSources from './HeroSources/NCSunsetSources'
 
-import smallMirroredGlassTruck from './img/Mirrored-Glass-Truck-Hero-480px-160px.jpg'
-import mediumMirroredGlassTruck from './img/Mirrored-Glass-Truck-Hero-960px-320px.jpg'
-import largeMirroredGlassTruck from './img/Mirrored-Glass-Truck-Hero-1920px-640px.jpg'
-
-import smallTrillium from './img/Trillium-480px-180px.jpg'
-import mediumTrillium from './img/Trillium-960px-360px.jpg'
-import largeTrillium from './img/Trillium-1920px-720px.jpg'
-import highResTrillium from './img/Trillium-3840px-1440px.jpg'
-
-import smallNCSunset from './img/Sunset-Edited-480px-147px.jpg'
-import mediumNCSunset from './img/Sunset-Edited-960px-294px.jpg'
-import largeNCSunset from './img/Sunset-Edited-1920px-588px.jpg'
-import highResNCSunset from './img/Sunset-Edited-3840px-1176px.jpg'
+import VibrantSkylineTurbinesSources from './HeroSources/VibrantSkylineTurbinesSources'
 
 import Introduction from './Introduction/Introduction'
 
@@ -35,22 +20,6 @@ import AIML from './AIML/AIML'
 import Projects from './Projects/Projects'
 
 import Footer from './Footer/Footer'
-
-//SrcSets to pass for section headers
-const VibrantSkylineTurbinesSrcSet = smallVibrantSkylineTurbines + ' 480w, ' +
-   mediumVibrantSkylineTurbines + ' 960w, ' + largeVibrantSkylineTurbines +
-   ' 1920w, ' + highResVibrantSkylineTurbines + ' 2x'
-
-const MirroredGlassTruckSrcSet = smallMirroredGlassTruck + ' 480w, ' +
-   mediumMirroredGlassTruck + ' 960w, ' + largeMirroredGlassTruck + ' 1920w'
-
-const TrilliumSrcSet = smallTrillium + ' 480w, ' +
-   mediumTrillium + ' 960w, ' + largeTrillium +
-   ' 1920w, ' + highResTrillium + ' 2x'
-
-const NCSunsetSrcSet = smallNCSunset + ' 480w, ' +
-   mediumNCSunset + ' 960w, ' + largeNCSunset +
-   ' 1920w, ' + highResNCSunset + ' 2x'
 
 class App extends Component {
 
@@ -191,12 +160,11 @@ class App extends Component {
           />
 
         <HeroImage
-          fallbackHeroImageSrc = { smallVibrantSkylineTurbines }
-          heroImageSrcSet = { VibrantSkylineTurbinesSrcSet }
-          heroImageAlt = "A vibrant Midwestern American skyline featuring turbines in the distance as the sun sets"
           pageName = "About"
           navIsOpen = { this.state.navIsOpen }
-          sectionId = "about"/>
+          sectionId = "about">
+          <VibrantSkylineTurbinesSources />
+        </HeroImage>
 
         <Introduction
           navIsOpen = { this.state.navIsOpen }
@@ -217,24 +185,20 @@ class App extends Component {
           navIsOpen = { this.state.navIsOpen }
           debounce = { this.debounce }
           updateAIML = { this.updateAIML }
-          fallbackHeroImageSrc = { smallMirroredGlassTruck }
-          MirroredGlassTruckSrcSet = { MirroredGlassTruckSrcSet }/>
+          />
 
         <Projects
           navIsOpen = { this.state.navIsOpen }
           debounce = { this.debounce }
           updateProjects = { this.updateProjects }
-          fallbackHeroImageSrc = { smallTrillium }
-          TrilliumSrcSet = { TrilliumSrcSet }
           />
 
         <HeroImage
-          fallbackHeroImageSrc = { smallNCSunset }
-          heroImageSrcSet = { NCSunsetSrcSet }
-          heroImageAlt = "A colorful sunset skyline featuring the woods and mountains of Western North Carolina"
           pageName = "Contact"
           navIsOpen = { this.state.navIsOpen }
-          sectionId = "contact-info"/>
+          sectionId = "contact-info">
+          <NCSunsetSources />
+        </HeroImage>
 
         <Footer
           navIsOpen = { this.state.navIsOpen }/>

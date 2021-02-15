@@ -2,11 +2,15 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom'
 
 import './AIML.scss';
+import MirroredGlassTruckSources from '../HeroSources/MirroredGlassTruckSources'
 import HeroImage from '../HeroImage/HeroImage';
 
 import smallDeepRacerMediumImage from './img/Medium-branded-DeepRacer-GUI-bordered-350px-224px.jpg';
+import smallDeepRacerMediumImageWebp from './img/Medium-branded-DeepRacer-GUI-bordered-350px-224px.jpg.webp';
 import mediumDeepRacerMediumImage from './img/Medium-branded-DeepRacer-GUI-bordered-450px-288px.jpg';
+import mediumDeepRacerMediumImageWebp from './img/Medium-branded-DeepRacer-GUI-bordered-450px-288px.jpg.webp';
 import largeDeepRacerMediumImage from './img/Medium-branded-DeepRacer-GUI-bordered-945px-604px.jpg';
+import largeDeepRacerMediumImageWebp from './img/Medium-branded-DeepRacer-GUI-bordered-945px-604px.jpg.webp';
 
 class AIML extends Component {
 
@@ -30,7 +34,7 @@ class AIML extends Component {
   }
 
   render() {
-    const { navIsOpen, fallbackHeroImageSrc, MirroredGlassTruckSrcSet } = this.props
+    const { navIsOpen } = this.props
     return (
 
       <section className={ navIsOpen
@@ -39,11 +43,10 @@ class AIML extends Component {
         id = "aiml">
         <div className="AIML-image-container">
           <HeroImage
-            fallbackHeroImageSrc = { fallbackHeroImageSrc }
-            heroImageSrcSet = { MirroredGlassTruckSrcSet }
-            heroImageAlt = "Turbines working in scrublands"
             pageName = "AI/ML"
-            navIsOpen = { navIsOpen }/>
+            navIsOpen = { navIsOpen }>
+            <MirroredGlassTruckSources/>
+          </HeroImage>
         </div>
         <div className="AIML-content">
           <p>
@@ -60,13 +63,21 @@ class AIML extends Component {
               href="https://medium.com/@paul.m.reese/how-to-use-google-cloud-platform-to-train-an-aws-deepracer-ai-model-2a8b71c73593"
               target="_blank"
               rel="noopener noreferrer">
-              <img
-                src={ smallDeepRacerMediumImage }
-                srcSet={`${smallDeepRacerMediumImage}  350w,
-                       ${mediumDeepRacerMediumImage}  450w,
-                       ${largeDeepRacerMediumImage}  945w`}
-                alt="The GUI of Gazebo simulating the 'Shanghai Sudu' track from AWS
-                     DeepRacer, using a Google Cloud Platform(GCP) virtual machine."/>
+              <picture>
+                <source media="(max-width: 449px)" srcSet={`${smallDeepRacerMediumImageWebp}  350w`} type="image/webp"/>
+                <source media="(min-width: 945px)" srcSet={`${largeDeepRacerMediumImageWebp}  945w`} type="image/webp"/>
+                <source media="(min-width: 450px)" srcSet={`${mediumDeepRacerMediumImageWebp}  450w`} type="image/webp"/>
+                <source media="(max-width: 449px)" srcSet={`${smallDeepRacerMediumImage}  350w`} type="image/jpeg"/>
+                <source media="(min-width: 945px)" srcSet={`${largeDeepRacerMediumImage}  945w`} type="image/jpeg"/>
+                <source media="(min-width: 450px)" srcSet={`${mediumDeepRacerMediumImage}  450w`} type="image/jpeg"/>
+                <img
+                  src={ smallDeepRacerMediumImage }
+                  srcSet={`${smallDeepRacerMediumImage}  350w,
+                         ${mediumDeepRacerMediumImage}  450w,
+                         ${largeDeepRacerMediumImage}  2x`}
+                  alt="The GUI of Gazebo simulating the 'Shanghai Sudu' track from AWS
+                       DeepRacer, using a Google Cloud Platform(GCP) virtual machine."/>
+              </picture>
               <figcaption>
               Read my article on Medium to learn how to train your AWS DeepRacer
               on GCP infrastructure!

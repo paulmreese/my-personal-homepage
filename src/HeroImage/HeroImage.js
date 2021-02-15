@@ -5,8 +5,7 @@ import './HeroImage.scss';
 class HeroImage extends Component {
 
   render() {
-    const { fallbackHeroImageSrc, heroImageSrcSet, heroImageAlt, pageName,
-            navIsOpen, sectionId } = this.props
+    const {  pageName, navIsOpen, sectionId  } = this.props
     return (
       <section
         className={ navIsOpen
@@ -15,11 +14,7 @@ class HeroImage extends Component {
         id = { sectionId
           ? sectionId
           : ""}>
-        <img
-          src= { fallbackHeroImageSrc }
-          srcSet={ heroImageSrcSet }
-          alt={ heroImageAlt }
-          className="HeroImage"/>
+        {this.props.children}
         <div className="HeroImage-overlay">
           {pageName
             ? <h2 className="HeroImage-caption">{ pageName }</h2>

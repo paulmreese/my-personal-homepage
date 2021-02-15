@@ -2,11 +2,15 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom'
 
 import './Projects.scss';
+import TrilliumSources from '../HeroSources/TrilliumSources'
 import HeroImage from '../HeroImage/HeroImage';
 
 import smallTurtlrImage from './img/Turtlr-gameplay-screenshot-350px-233px.jpg';
+import smallTurtlrImageWebp from './img/Turtlr-gameplay-screenshot-350px-233px.jpg.webp';
 import mediumTurtlrImage from './img/Turtlr-gameplay-screenshot-450px-300px.jpg';
+import mediumTurtlrImageWebp from './img/Turtlr-gameplay-screenshot-450px-300px.jpg.webp';
 import largeTurtlrImage from './img/Turtlr-gameplay-screenshot-900px-600px.jpg';
+import largeTurtlrImageWebp from './img/Turtlr-gameplay-screenshot-900px-600px.jpg.webp';
 
 class Projects extends Component {
 
@@ -30,7 +34,8 @@ class Projects extends Component {
   }
 
   render() {
-    const { navIsOpen, fallbackHeroImageSrc, TrilliumSrcSet } = this.props
+    const { navIsOpen } = this.props
+
     return (
 
       <section className={ navIsOpen
@@ -39,12 +44,10 @@ class Projects extends Component {
         id = "projects">
         <div className="Projects-image-container">
           <HeroImage
-            fallbackHeroImageSrc = { fallbackHeroImageSrc }
-            heroImageSrcSet = { TrilliumSrcSet }
-            heroImageAlt = "A patch of painted Trillium with pink and white flowers in verdant North Carolina woods"
             pageName = "Projects"
-            navIsOpen = { navIsOpen }
-            />
+            navIsOpen = { navIsOpen }>
+            <TrilliumSources />
+          </HeroImage>
         </div>
         <div className="Projects-content">
 
@@ -56,14 +59,23 @@ class Projects extends Component {
 
           <figure>
             <a href={process.env.PUBLIC_URL + '/OldTurtlr/'}>
-              <img
-                src={ smallTurtlrImage }
-                srcSet={`${smallTurtlrImage} 350w,
-                         ${mediumTurtlrImage} 450w,
-                         ${largeTurtlrImage} 900w`}
-                alt="The GUI of Turtlr, the loggerhead turtle, showing a photorealistic
-                     Turtlr moving across a pixel-art beach towards the sea while
-                     dodging plastic litter and seagulls."/>
+
+              <picture>
+                <source media="(max-width: 449px)" srcSet={smallTurtlrImageWebp} type="image/webp"/>
+                <source media="(min-width: 900px)" srcSet={largeTurtlrImageWebp} type="image/webp"/>
+                <source media="(min-width: 450px)" srcSet={mediumTurtlrImageWebp} type="image/webp"/>
+                <source media="(max-width: 449px)" srcSet={smallTurtlrImage} type="image/jpeg"/>
+                <source media="(min-width: 900px)" srcSet={largeTurtlrImage} type="image/jpeg"/>
+                <source media="(min-width: 450px)" srcSet={mediumTurtlrImage} type="image/jpeg"/>
+                <img
+                  src={ smallTurtlrImage }
+                  srcSet={`${smallTurtlrImage} 350w,
+                           ${mediumTurtlrImage} 450w,
+                           ${largeTurtlrImage} 900w`}
+                  alt="The GUI of Turtlr, the loggerhead turtle, showing a photorealistic
+                       Turtlr moving across a pixel-art beach towards the sea while
+                       dodging plastic litter and seagulls."/>
+              </picture>
               <figcaption>
                 Help Turtlr, the loggerhead sea turtle, escape to the sea!
               </figcaption>
