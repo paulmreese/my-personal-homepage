@@ -40,6 +40,20 @@ import highResBlueCSSWebp from './img/CSSCircularBackground-light-sepia-enlarged
 
 class Introduction extends Component {
 
+  handleImageLoad() {
+    if (this.state.imageCount >= 5) {
+      this.setState({ imageStatus: "success" });
+    }
+    this.setState({ imageCount: this.state.imageCount + 1 })
+  }
+
+  handleImageError() {
+    if (this.state.imageCount >= 5) {
+      this.setState({ imageStatus: "error" });
+    }
+    this.setState({ imageCount: this.state.imageCount + 1 })
+  }
+
   handleResize = () => {
     const topOfAbout = +ReactDOM.findDOMNode(this).offsetTop
     const heightOfAbout =
@@ -59,14 +73,16 @@ class Introduction extends Component {
       +ReactDOM.findDOMNode(this).querySelector('.card').getBoundingClientRect().height
     const bottomOfFlipCards = topOfAbout + topOfFlipCards + heightOfFlipCards
     //console.log("bottomOfFlipCards: ", bottomOfFlipCards)
+
     let triggerHeight
     if (widthOfWindow < 600) { //likely mobile
       triggerHeight = bottomOfFlipCards - (0.5 * heightOfWindow)
     } else if (widthOfWindow < 800) {
-      triggerHeight = bottomOfFlipCards - (0.9 * heightOfWindow)
+      triggerHeight = bottomOfFlipCards - (0.3 * heightOfWindow)
     } else {
-      triggerHeight = bottomOfFlipCards - (0.1 * heightOfWindow)
+      triggerHeight = bottomOfFlipCards
     }
+
     //console.log("triggerHeight: ", triggerHeight)
     this.props.updateTriggerForCardFlipAnimation( Math.round(triggerHeight) )
 
@@ -91,6 +107,11 @@ class Introduction extends Component {
     if (this.props.bottomAbout !== bottomOfAbout) {
       this.props.updateAbout(bottomOfAbout)
     }
+  }
+
+  state = {
+    imageStatus: "loading",
+    imageCount: 0
   }
 
 
@@ -140,7 +161,9 @@ class Introduction extends Component {
                                  ${highResPMRLogo} 2x`}
                         sizes="30vw"
                         alt="PMR logo against an orange sunset in a circular border"
-                        className="circle Introduction-image light-blur"/>
+                        className="circle Introduction-image light-blur"
+                        onLoad={this.handleImageLoad.bind(this)}
+                        onError={this.handleImageError.bind(this)}/>
                     </picture>
                     <div className="image-overlay light-overlay droplet-overlay"></div>
                     <div className="light-dot"></div>
@@ -166,7 +189,9 @@ class Introduction extends Component {
                                  ${highResRedHTML} 2x`}
                         sizes="30vw"
                         alt="Red-stylized sunset labelled 'HTML Structure'"
-                        className="circle Introduction-image"/>
+                        className="circle Introduction-image"
+                        onLoad={this.handleImageLoad.bind(this)}
+                        onError={this.handleImageError.bind(this)}/>
                     </picture>
 
                     <div className="image-overlay droplet-overlay"></div>
@@ -201,7 +226,9 @@ class Introduction extends Component {
                                  ${highResPMRLogo} 2x`}
                         sizes="30vw"
                         alt="PMR logo against an orange sunset in a circular border"
-                        className="circle Introduction-image lighter-blur"/>
+                        className="circle Introduction-image lighter-blur"
+                        onLoad={this.handleImageLoad.bind(this)}
+                        onError={this.handleImageError.bind(this)}/>
                     </picture>
 
                     <div className="image-overlay lighter-overlay droplet-overlay"></div>
@@ -228,7 +255,9 @@ class Introduction extends Component {
                                  ${highResGreenJS} 2x`}
                         sizes="30vw"
                         alt="Green-stylized sunset labelled 'JavaScript Function'"
-                        className="circle Introduction-image "/>
+                        className="circle Introduction-image "
+                        onLoad={this.handleImageLoad.bind(this)}
+                        onError={this.handleImageError.bind(this)}/>
                     </picture>
 
                     <div className="image-overlay droplet-overlay"></div>
@@ -263,7 +292,9 @@ class Introduction extends Component {
                                  ${highResPMRLogo} 2x`}
                         sizes="30vw"
                         alt="PMR logo against an orange sunset in a circular border"
-                        className="circle Introduction-image"/>
+                        className="circle Introduction-image"
+                        onLoad={this.handleImageLoad.bind(this)}
+                        onError={this.handleImageError.bind(this)}/>
                     </picture>
 
                     <div className="image-overlay droplet-overlay"></div>
@@ -290,7 +321,9 @@ class Introduction extends Component {
                                  ${highResBlueCSS} 2x`}
                         sizes="30vw"
                         alt="Blue-stylized sunset labeled 'CSS Style'"
-                        className="circle Introduction-image "/>
+                        className="circle Introduction-image "
+                        onLoad={this.handleImageLoad.bind(this)}
+                        onError={this.handleImageError.bind(this)}/>
                     </picture>
 
                     <div className="image-overlay droplet-overlay"></div>
