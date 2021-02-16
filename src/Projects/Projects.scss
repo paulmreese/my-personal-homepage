@@ -102,8 +102,9 @@ $projects-background-color: #f4d694;
 
 .Projects-container figure img{
   width: 90%;
+  height: auto;
   box-shadow: 0 0 4px 2px #000;
-  margin-top: 10px;
+  margin-top: 5px;
   transition: all 0.5s ease;
 }
 

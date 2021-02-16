@@ -23,6 +23,11 @@ class ImageFocusAnimation extends Component {
 
   handleImageError() {
     this.setState({ imageStatus: "error" });
+
+    const imagesFromElement = document.querySelectorAll('.ImageFocusAnimation-image')
+    for (let i in imagesFromElement) {
+      i.style = {minHeight: i.innerWidth}
+    }
     this.startAnimation()
   }
 
@@ -139,6 +144,8 @@ class ImageFocusAnimation extends Component {
                 sizes="30vw"
                 alt="Close-up on the center of purple kale"
                 className="circle ImageFocusAnimation-image "
+
+                height="270px"
                 onLoad={this.handleImageLoad.bind(this)}
                 onError={this.handleImageError.bind(this)}/>
             </picture>

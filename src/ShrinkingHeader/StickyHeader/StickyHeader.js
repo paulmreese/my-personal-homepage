@@ -23,7 +23,9 @@ class StickyHeader extends Component {
       handleNavClick, bottomOfStationaryHeader, bottomOfHome, bottomOfClasses,
       bottomOfAbout, bottomOfAIML, bottomOfProjects, navIsOpen,
       heightOfStickyHeader, smallStickyLogo, mediumStickyLogo,
-      largeStickyLogo, smallStickyTitle, mediumStickyTitle, largeStickyTitle
+      largeStickyLogo, smallStickyTitle, mediumStickyTitle, largeStickyTitle,
+      smallStickyLogoWebp, mediumStickyLogoWebp, largeStickyLogoWebp,
+      smallStickyTitleWebp, mediumStickyTitleWebp, largeStickyTitleWebp
     } = this.props
 
     return (
@@ -60,14 +62,23 @@ class StickyHeader extends Component {
                 to="#home"
                 className="round"
                 activeClassName="selected">
-                <img
-                  src={ smallStickyLogo }
-                  srcSet = {`${smallStickyLogo} 70w,
-                             ${mediumStickyLogo} 130w,
-                             ${largeStickyLogo} 2x`}
-                  sizes = "15vw"
-                  className="small-logo"
-                  alt="Profile headshot of Paul M Reese" />
+                <picture>
+                  <source media="(max-width: 500px)" srcSet={smallStickyLogoWebp} type="image/webp"/>
+                  <source media="(min-width: 501px) and (min-device-pixel-ratio: 1.5), (min-width: 501px) and (min-resolution: 1.5dppx)" srcSet={largeStickyLogoWebp} type="image/webp"/>
+                  <source media="(min-width: 501px)" srcSet={mediumStickyLogoWebp} type="image/webp"/>
+                  <source media="(max-width: 500px)" srcSet={smallStickyLogo} type="image/jpeg"/>
+                  <source media="(min-width: 501px) and (min-device-pixel-ratio: 1.5), (min-width: 501px) and (min-resolution: 1.5dppx)" srcSet={largeStickyLogo} type="image/jpeg"/>
+                  <source media="(min-width: 501px)" srcSet={mediumStickyLogo} type="image/jpeg"/>
+                  <img
+                    src={ smallStickyLogo }
+                    srcSet = {`${smallStickyLogo} 70w,
+                               ${mediumStickyLogo} 130w,
+                               ${largeStickyLogo} 2x`}
+                    sizes = "15vw"
+                    className="small-logo"
+                    height="68px"
+                    alt="Profile headshot of Paul M Reese" />
+                </picture>
               </NavLink>
               <NavLink
                 smooth
@@ -75,14 +86,23 @@ class StickyHeader extends Component {
                 className="square"
                 activeClassName="selected"
                 tabIndex="-1">
-                <img
-                  src={ smallStickyTitle }
-                  srcSet = {`${smallStickyTitle} 180w,
-                             ${mediumStickyTitle} 360w,
-                             ${largeStickyTitle} 2x`}
-                  sizes="40vw"
-                  className="small-title"
-                  alt="Paul M Reese" />
+                <picture>
+                  <source media="(max-width: 450px)" srcSet={smallStickyTitleWebp} type="image/webp"/>
+                  <source media="(min-width: 451px)" srcSet={mediumStickyTitleWebp} type="image/webp"/>
+                  <source media="(min-width: 451px) and (min-device-pixel-ratio: 1.5), (min-width: 451px) and (min-resolution: 1.5dppx)" srcSet={largeStickyTitleWebp} type="image/webp"/>
+                  <source media="(max-width: 450px)" srcSet={smallStickyTitle} type="image/jpeg"/>
+                  <source media="(min-width: 451px)" srcSet={mediumStickyTitle} type="image/jpeg"/>
+                  <source media="(min-width: 451px) and (min-device-pixel-ratio: 1.5), (min-width: 451px) and (min-resolution: 1.5dppx)" srcSet={largeStickyTitle} type="image/jpeg"/>
+                  <img
+                    src={ smallStickyTitle }
+                    srcSet = {`${smallStickyTitle} 180w,
+                               ${mediumStickyTitle} 360w,
+                               ${largeStickyTitle} 2x`}
+                    sizes = "40vw"
+                    className="small-title"
+                    alt="Paul M Reese"
+                    height="80px"/>
+                </picture>
               </NavLink>
 
               <NavMenu
@@ -132,28 +152,46 @@ class StickyHeader extends Component {
                 smooth
                 to="#home"
                 activeClassName="selected">
-                <img
-                  src={ smallStickyLogo }
-                  srcSet = {`${smallStickyLogo} 70w,
-                             ${mediumStickyLogo} 130w,
-                             ${largeStickyLogo} 2x`}
-                  sizes = "15vw"
-                  className="small-logo"
-                  alt="Profile headshot of Paul M Reese" />
+                <picture>
+                  <source media="(max-width: 500px)" srcSet={smallStickyLogoWebp} type="image/webp"/>
+                  <source media="(min-width: 501px) and (min-device-pixel-ratio: 1.5), (min-width: 501px) and (min-resolution: 1.5dppx)" srcSet={largeStickyLogoWebp} type="image/webp"/>
+                  <source media="(min-width: 501px)" srcSet={mediumStickyLogoWebp} type="image/webp"/>
+                  <source media="(max-width: 500px)" srcSet={smallStickyLogo} type="image/jpeg"/>
+                  <source media="(min-width: 501px) and (min-device-pixel-ratio: 1.5), (min-width: 501px) and (min-resolution: 1.5dppx)" srcSet={largeStickyLogo} type="image/jpeg"/>
+                  <source media="(min-width: 501px)" srcSet={mediumStickyLogo} type="image/jpeg"/>
+                  <img
+                    src={ smallStickyLogo }
+                    srcSet = {`${smallStickyLogo} 70w,
+                               ${mediumStickyLogo} 130w,
+                               ${largeStickyLogo} 2x`}
+                    sizes = "15vw"
+                    className="small-logo"
+                    height="68px"
+                    alt="Profile headshot of Paul M Reese" />
+                </picture>
               </NavLink>
               <NavLink
                 smooth
                 to="#home"
                 activeClassName="selected"
                 tabIndex="-1">
-                <img
-                  src={ smallStickyTitle }
-                  srcSet = {`${smallStickyTitle} 180w,
-                             ${mediumStickyTitle} 360w,
-                             ${largeStickyTitle} 2x`}
-                  sizes="40vw"
-                  className="small-title"
-                  alt="Paul M Reese" />
+                <picture>
+                  <source media="(max-width: 450px)" srcSet={smallStickyTitleWebp} type="image/webp"/>
+                  <source media="(min-width: 451px)" srcSet={mediumStickyTitleWebp} type="image/webp"/>
+                  <source media="(min-width: 451px) and (min-device-pixel-ratio: 1.5), (min-width: 451px) and (min-resolution: 1.5dppx)" srcSet={largeStickyTitleWebp} type="image/webp"/>
+                  <source media="(max-width: 450px)" srcSet={smallStickyTitle} type="image/jpeg"/>
+                  <source media="(min-width: 451px)" srcSet={mediumStickyTitle} type="image/jpeg"/>
+                  <source media="(min-width: 451px) and (min-device-pixel-ratio: 1.5), (min-width: 451px) and (min-resolution: 1.5dppx)" srcSet={largeStickyTitle} type="image/jpeg"/>
+                  <img
+                    src={ smallStickyTitle }
+                    srcSet = {`${smallStickyTitle} 180w,
+                               ${mediumStickyTitle} 360w,
+                               ${largeStickyTitle} 2x`}
+                    sizes = "40vw"
+                    className="small-title"
+                    alt="Paul M Reese"
+                    height="80px"/>
+                </picture>
               </NavLink>
               <input
                 type="image"

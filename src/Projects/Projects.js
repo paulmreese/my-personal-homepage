@@ -74,7 +74,9 @@ class Projects extends Component {
                            ${largeTurtlrImage} 900w`}
                   alt="The GUI of Turtlr, the loggerhead turtle, showing a photorealistic
                        Turtlr moving across a pixel-art beach towards the sea while
-                       dodging plastic litter and seagulls."/>
+                       dodging plastic litter and seagulls."
+                  width="350px"
+                  height="233px"/>
               </picture>
               <figcaption>
                 Help Turtlr, the loggerhead sea turtle, escape to the sea!

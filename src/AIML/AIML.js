@@ -76,7 +76,9 @@ class AIML extends Component {
                          ${mediumDeepRacerMediumImage}  450w,
                          ${largeDeepRacerMediumImage}  2x`}
                   alt="The GUI of Gazebo simulating the 'Shanghai Sudu' track from AWS
-                       DeepRacer, using a Google Cloud Platform(GCP) virtual machine."/>
+                       DeepRacer, using a Google Cloud Platform(GCP) virtual machine."
+                  width="350px"
+                  height="224px"/>
               </picture>
               <figcaption>
               Read my article on Medium to learn how to train your AWS DeepRacer
