@@ -15,15 +15,30 @@ import highResKaleImageWebp from './img/Kale-Closeup-800px.jpg.webp'
 //This Component represents the Kale image set
 
 class ImageFocusAnimation extends Component {
+
+  handleImageLoad() {
+    this.setState({ imageStatus: "success" });
+    this.startAnimation()
+  }
+
+  handleImageError() {
+    this.setState({ imageStatus: "error" });
+    this.startAnimation()
+  }
+
   startAnimation = () => {
     setTimeout(function() {this.props.updateRepeatImageFocusAnimation(false)}.bind(this), 500)
+  }
+
+  state = {
+    imageStatus: "loading"
   }
 
   render() {
     const kaleImageSrcSet = smallKaleImage + ' 100w, ' +
        mediumKaleImage + ' 200w, ' + largeKaleImage +
        ' 400w, ' + highResKaleImage + ' 2x'
-       
+
     const {
             navIsOpen, repeatImageFocusAnimation
       } = this.props
@@ -123,7 +138,9 @@ class ImageFocusAnimation extends Component {
                 srcSet={ kaleImageSrcSet }
                 sizes="30vw"
                 alt="Close-up on the center of purple kale"
-                className="circle ImageFocusAnimation-image "/>
+                className="circle ImageFocusAnimation-image "
+                onLoad={this.handleImageLoad.bind(this)}
+                onError={this.handleImageError.bind(this)}/>
             </picture>
             <div className="image-overlay droplet-overlay"></div>
             <div className="light-dot"></div>
@@ -203,14 +220,6 @@ class ImageFocusAnimation extends Component {
         </div>
       </section>
     );
-  }
-
-  componentDidMount() {
-    window.addEventListener("DOMContentLoaded", this.startAnimation)
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("DOMContentLoaded", this.startAnimation)
   }
 }
 
