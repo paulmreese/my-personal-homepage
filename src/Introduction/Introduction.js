@@ -208,15 +208,15 @@ class Introduction extends Component {
                   <div className="card__face card__face--front">
 
                     <picture>
+                      <source media="(max-width: 349px)" srcSet={`${smallPMRLogoWebp}`} type="image/webp"/>
                       <source media="(min-width: 736px) and (min-device-pixel-ratio: 1.5), (min-width: 736px) and (min-resolution: 1.5dppx)" srcSet={`${highResPMRLogoWebp}`} type="image/webp"/>
                       <source media="(min-width: 736px)" srcSet={`${largePMRLogoWebp}`} type="image/webp"/>
                       <source media="(min-width: 350px)" srcSet={`${mediumPMRLogoWebp}`} type="image/webp"/>
-                      <source media="(max-width: 349px)" srcSet={`${smallPMRLogoWebp}`} type="image/webp"/>
 
+                      <source media="(max-width: 349px)" srcSet={`${smallPMRLogo}`} type="image/jpeg"/>
                       <source media="(min-width: 736px) and (min-device-pixel-ratio: 1.5), (min-width: 736px) and (min-resolution: 1.5dppx)" srcSet={`${highResPMRLogo}`} type="image/jpeg"/>
                       <source media="(min-width: 736px)" srcSet={`${largePMRLogo}`} type="image/jpeg"/>
                       <source media="(min-width: 350px)" srcSet={`${mediumPMRLogo}`} type="image/jpeg"/>
-                      <source media="(max-width: 349px)" srcSet={`${smallPMRLogo}`} type="image/jpeg"/>
 
                       <img
                         src={ smallPMRLogo }
@@ -237,15 +237,15 @@ class Introduction extends Component {
                   <div className="card__face card__face--back">
 
                     <picture>
+                      <source media="(max-width: 349px)" srcSet={`${smallGreenJSWebp}`} type="image/webp"/>
                       <source media="(min-width: 736px) and (min-device-pixel-ratio: 1.5), (min-width: 736px) and (min-resolution: 1.5dppx)" srcSet={`${highResGreenJSWebp}`} type="image/webp"/>
                       <source media="(min-width: 736px)" srcSet={`${largeGreenJSWebp}`} type="image/webp"/>
                       <source media="(min-width: 350px)" srcSet={`${mediumGreenJSWebp}`} type="image/webp"/>
-                      <source media="(max-width: 349px)" srcSet={`${smallGreenJSWebp}`} type="image/webp"/>
 
+                      <source media="(max-width: 349px)" srcSet={`${smallGreenJS}`} type="image/jpeg"/>
                       <source media="(min-width: 736px) and (min-device-pixel-ratio: 1.5), (min-width: 736px) and (min-resolution: 1.5dppx)" srcSet={`${highResGreenJS}`} type="image/jpeg"/>
                       <source media="(min-width: 736px)" srcSet={`${largeGreenJS}`} type="image/jpeg"/>
                       <source media="(min-width: 350px)" srcSet={`${mediumGreenJS}`} type="image/jpeg"/>
-                      <source media="(max-width: 349px)" srcSet={`${smallGreenJS}`} type="image/jpeg"/>
 
                       <img
                         src={ smallGreenJS }
@@ -274,15 +274,15 @@ class Introduction extends Component {
                   <div className="card__face card__face--front">
 
                     <picture>
+                      <source media="(max-width: 349px)" srcSet={`${smallPMRLogoWebp}`} type="image/webp"/>
                       <source media="(min-width: 736px) and (min-device-pixel-ratio: 1.5), (min-width: 736px) and (min-resolution: 1.5dppx)" srcSet={`${highResPMRLogoWebp}`} type="image/webp"/>
                       <source media="(min-width: 736px)" srcSet={`${largePMRLogoWebp}`} type="image/webp"/>
                       <source media="(min-width: 350px)" srcSet={`${mediumPMRLogoWebp}`} type="image/webp"/>
-                      <source media="(max-width: 349px)" srcSet={`${smallPMRLogoWebp}`} type="image/webp"/>
 
+                      <source media="(max-width: 349px)" srcSet={`${smallPMRLogo}`} type="image/jpeg"/>
                       <source media="(min-width: 736px) and (min-device-pixel-ratio: 1.5), (min-width: 736px) and (min-resolution: 1.5dppx)" srcSet={`${highResPMRLogo}`} type="image/jpeg"/>
                       <source media="(min-width: 736px)" srcSet={`${largePMRLogo}`} type="image/jpeg"/>
                       <source media="(min-width: 350px)" srcSet={`${mediumPMRLogo}`} type="image/jpeg"/>
-                      <source media="(max-width: 349px)" srcSet={`${smallPMRLogo}`} type="image/jpeg"/>
 
                       <img
                         src={ smallPMRLogo }
@@ -303,15 +303,15 @@ class Introduction extends Component {
                   <div className="card__face card__face--back">
 
                     <picture>
+                      <source media="(max-width: 349px)" srcSet={`${smallBlueCSSWebp}`} type="image/webp"/>
                       <source media="(min-width: 736px) and (min-device-pixel-ratio: 1.5), (min-width: 736px) and (min-resolution: 1.5dppx)" srcSet={`${highResBlueCSSWebp}`} type="image/webp"/>
                       <source media="(min-width: 736px)" srcSet={`${largeBlueCSSWebp}`} type="image/webp"/>
                       <source media="(min-width: 350px)" srcSet={`${mediumBlueCSSWebp}`} type="image/webp"/>
-                      <source media="(max-width: 349px)" srcSet={`${smallBlueCSSWebp}`} type="image/webp"/>
 
+                      <source media="(max-width: 349px)" srcSet={`${smallBlueCSS}`} type="image/jpeg"/>
                       <source media="(min-width: 736px) and (min-device-pixel-ratio: 1.5), (min-width: 736px) and (min-resolution: 1.5dppx)" srcSet={`${highResBlueCSS}`} type="image/jpeg"/>
                       <source media="(min-width: 736px)" srcSet={`${largeBlueCSS}`} type="image/jpeg"/>
                       <source media="(min-width: 350px)" srcSet={`${mediumBlueCSS}`} type="image/jpeg"/>
-                      <source media="(max-width: 349px)" srcSet={`${smallBlueCSS}`} type="image/jpeg"/>
 
                       <img
                         src={ smallBlueCSS }
