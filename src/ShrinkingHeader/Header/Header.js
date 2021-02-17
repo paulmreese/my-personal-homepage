@@ -65,13 +65,13 @@ class Header extends Component {
         <div className="nav-container" id="home">
           <picture>
             <source media="(max-width: 480px)" srcSet={xSmallHeroImageWebp} type="image/webp"/>
-            <source media="(min-width: 481px)" srcSet={smallHeroImageWebp} type="image/webp"/>
-            <source media="(min-width: 961px)" srcSet={mediumHeroImageWebp} type="image/webp"/>
             <source media="(min-width: 961px) and (min-device-pixel-ratio: 1.5), (min-width: 961px) and (min-resolution: 1.5dppx)" srcSet={largeHeroImageWebp} type="image/webp"/>
+            <source media="(min-width: 961px)" srcSet={mediumHeroImageWebp} type="image/webp"/>
+            <source media="(min-width: 481px)" srcSet={smallHeroImageWebp} type="image/webp"/>
             <source media="(max-width: 480px)" srcSet={xSmallHeroImage} type="image/jpeg"/>
-            <source media="(min-width: 481px)" srcSet={smallHeroImage} type="image/jpeg"/>
-            <source media="(min-width: 961px)" srcSet={mediumHeroImage} type="image/jpeg"/>
             <source media="(min-width: 961px) and (min-device-pixel-ratio: 1.5), (min-width: 961px) and (min-resolution: 1.5dppx)" srcSet={largeHeroImage} type="image/jpeg"/>
+            <source media="(min-width: 961px)" srcSet={mediumHeroImage} type="image/jpeg"/>
+            <source media="(min-width: 481px)" srcSet={smallHeroImage} type="image/jpeg"/>
             <img
               className="pseudo-background"
               src={xSmallHeroImage}
