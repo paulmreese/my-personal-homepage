@@ -19,6 +19,12 @@
               0 5px 8px -3px #000;
 }
 
+.StickyHeader-container.zero-height, .StickyHeader-container.hidden{
+  justify-content: center;
+  left: -7.5%;
+  width: 115%;
+}
+
 .StickyHeader {
   width: 115%;
   //left:-7.5%;

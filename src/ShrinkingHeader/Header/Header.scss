@@ -54,7 +54,7 @@
   justify-content: space-between;
   align-items: center;
   max-height: 350px;
-  padding: 0 5px;
+  padding: 0 10px 0 0;
   box-sizing: border-box;
   min-width: 115%;
   position: relative;
@@ -72,7 +72,6 @@
   border: 0;
   padding: 0;
   z-index: 0;
-  left: -7.5%;
 }
 
 .full-height {
@@ -299,10 +298,11 @@ Header .small-title a img {
     width: 74px;
     box-sizing: border-box;
     position: relative;
+    padding: 0 5px;
   }
   .Header {
     justify-content: space-between;
-    left: -7.5%
+    //left: -7.5%
   }
 
   .Header-container {
