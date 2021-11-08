@@ -74,6 +74,17 @@ class Introduction extends Component {
     const bottomOfFlipCards = topOfAbout + topOfFlipCards + heightOfFlipCards
     //console.log("bottomOfFlipCards: ", bottomOfFlipCards)
 
+    /*
+      This version uses the center of the cards as a trigger point, which will
+      still be debounced. This will at least be more consistent
+    */
+      let triggerHeight = (topOfFlipCards+bottomOfFlipCards)/2
+      if (triggerHeight < heightOfWindow) {
+        triggerHeight = 0
+      }
+
+    /*
+    //Original Trigger Logic
     let triggerHeight
     if (widthOfWindow < 600) { //likely mobile
       triggerHeight = bottomOfFlipCards - (0.5 * heightOfWindow)
@@ -82,6 +93,7 @@ class Introduction extends Component {
     } else {
       triggerHeight = bottomOfFlipCards
     }
+    */
 
     //console.log("triggerHeight: ", triggerHeight)
     this.props.updateTriggerForCardFlipAnimation( Math.round(triggerHeight) )
