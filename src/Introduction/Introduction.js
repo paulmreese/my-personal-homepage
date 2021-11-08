@@ -64,7 +64,7 @@ class Introduction extends Component {
 
     //Set animation trigger height
     const heightOfWindow = window.innerHeight
-    const widthOfWindow = window.innerWidth
+    //const widthOfWindow = window.innerWidth
     //console.log("Height of Window: ", heightOfWindow)
     //const distanceFromTop = bottomOfAbout - (0.45 * heightOfWindow)
     const topOfFlipCards =
