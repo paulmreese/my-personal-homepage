@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
@@ -8,6 +8,7 @@ import * as serviceWorker from './serviceWorker';
 ReactDOM.render(
   <BrowserRouter basename="/">
     <App />
+    <Route path="/OldTurtlr" render={() => {window.location.href=process.env.PUBLIC_URL + '/OldTurtlr/index.html'}} />
   </BrowserRouter>,
   document.getElementById('root'));
 
