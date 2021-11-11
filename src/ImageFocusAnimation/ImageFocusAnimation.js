@@ -23,11 +23,6 @@ class ImageFocusAnimation extends Component {
 
   handleImageError() {
     this.setState({ imageStatus: "error" });
-
-    const imagesFromElement = document.querySelectorAll('.ImageFocusAnimation-image')
-    for (let i in imagesFromElement) {
-      i.style = {minHeight: i.innerWidth}
-    }
     this.startAnimation()
   }
 
