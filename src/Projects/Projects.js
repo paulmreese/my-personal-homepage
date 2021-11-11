@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom'
+import { NavLink } from 'react-router-dom';
 
 import './Projects.scss';
 import TrilliumSources from '../HeroSources/TrilliumSources'
@@ -58,7 +59,7 @@ class Projects extends Component {
           </p>
 
           <figure>
-            <a href={process.env.PUBLIC_URL + '/OldTurtlr/index.html'}>
+            <NavLink to='/OldTurtlr'>
 
               <picture>
                 <source media="(max-width: 449px)" srcSet={smallTurtlrImageWebp} type="image/webp"/>
@@ -81,7 +82,7 @@ class Projects extends Component {
               <figcaption>
                 Help Turtlr, the loggerhead sea turtle, escape to the sea!
               </figcaption>
-            </a>
+            </NavLink>
           </figure>
           <p>
             Turtlr is a JavaScript game using the HTML canvas and custom sprites to
