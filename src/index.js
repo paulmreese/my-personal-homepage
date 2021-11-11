@@ -8,7 +8,7 @@ import * as serviceWorker from './serviceWorker';
 ReactDOM.render(
   <BrowserRouter basename="/">
     <App />
-    <Route path="/OldTurtlr" render={() => {window.location.href=process.env.PUBLIC_URL + '/OldTurtlr/index.html'}} />
+    <Route exact path="/OldTurtlr" render={() => {window.location.href=process.env.PUBLIC_URL + '/OldTurtlr/index.html'}} />
   </BrowserRouter>,
   document.getElementById('root'));
 

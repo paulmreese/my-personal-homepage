@@ -58,7 +58,7 @@ class Projects extends Component {
           </p>
 
           <figure>
-            <a target="_blank" href={process.env.PUBLIC_URL + '/OldTurtlr/index.html'}>
+            <a href={process.env.PUBLIC_URL + '/OldTurtlr/index.html'}>
 
               <picture>
                 <source media="(max-width: 449px)" srcSet={smallTurtlrImageWebp} type="image/webp"/>
