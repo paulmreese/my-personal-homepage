@@ -72,13 +72,13 @@ class Introduction extends Component {
     const heightOfFlipCards =
       +ReactDOM.findDOMNode(this).querySelector('.card').getBoundingClientRect().height
     const bottomOfFlipCards = topOfAbout + topOfFlipCards + heightOfFlipCards
-    //console.log("bottomOfFlipCards: ", bottomOfFlipCards)
+    console.log("bottomOfFlipCards: ", bottomOfFlipCards)
 
     /*
       This version uses the center of the cards as a trigger point, which will
       still be debounced. This will at least be more consistent
     */
-      let triggerHeight = (topOfFlipCards+bottomOfFlipCards)/2
+      let triggerHeight = bottomOfFlipCards + (heightOfFlipCards/2)
       if (triggerHeight < heightOfWindow) {
         triggerHeight = 0
       }
@@ -106,10 +106,9 @@ class Introduction extends Component {
   }
 
   handleScroll = () => {
-    if (this.props.scrollPositionY >= this.props.triggerForCardFlipAnimation) {
+    if ((this.props.scrollPositionY + window.innerHeight) >= this.props.triggerForCardFlipAnimation) {
       this.props.updateRepeatCardFlipAnimation(false)
     }
-
 
     const topOfAbout = +ReactDOM.findDOMNode(this).offsetTop
     const heightOfAbout =
