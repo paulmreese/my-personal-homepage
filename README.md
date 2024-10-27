@@ -1,6 +1,6 @@
 # My Personal Website
 
-This repository contains the source code for my personal website, for version control and CI/CD.This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains the source code for my personal website, for version control and CI/CD. The project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
