@@ -357,3 +357,8 @@ document.addEventListener('click', function(e) {
     });
   }
 });
+
+//Removes the onscreen controls unless they're requested
+document.addEventListener('DOMContentLoaded', function(e) {
+  toggleControls();
+})

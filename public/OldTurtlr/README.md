@@ -1,7 +1,7 @@
 **Turtlr**, the Loggerhead Turtle
 =============================
 
-![Turtlr, the Loggerhead Turtle](/images/turtlr-4-dancing.png "Turtlr")
+![Turtlr, the Loggerhead Turtle](/public/OldTurtlr/images/turtlr-4-dancing.png "Turtlr")
 
 - #### [Running Turtlr](#running-turtlr)
 - #### [Playing Turtlr](#playing-turtlr)
@@ -15,7 +15,7 @@
 
 To Run Turtlr, download a copy of this repository, and then open the included index.html file in your preferred browser.
 
-Alternatively, you may simply visit [my portfolio](http://paulmreese.com/turtlr) to see it live online.
+Alternatively, you may simply visit [my portfolio](http://paulmreese.com/OldTurtlr/index.html) to see it live online.
 
 ### Playing Turtlr
 
@@ -56,4 +56,4 @@ Once all 5 water tiles have been occupied by a baby turtle, **You Win!**
 
 I would like to extend a special thanks to the [World Wildlife Fund](https://www.worldwildlife.org/) for funding the continued research and preservation of the [Loggerhead turtle](https://www.worldwildlife.org/species/loggerhead-turtle), as well as many other endangered or threatened species. I would strongly encourage anyone who is considering donating to do so by [symbolically adopting a sea turtle of your own](https://gifts.worldwildlife.org/gift-center/gifts/Species-Adoptions/Sea-Turtle.aspx?sc=AWY1705OQ18316A01275RX&_ga=2.121776579.996250194.1531768344-605966387.1531768344).
 
-![Turtlr, the Loggerhead Turtle](/images/turtlr-4-dancing.png "Turtlr")
+![Turtlr, the Loggerhead Turtle](/public/OldTurtlr/images/turtlr-4-dancing.png "Turtlr")
