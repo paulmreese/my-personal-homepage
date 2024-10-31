@@ -58,7 +58,7 @@ class Projects extends Component {
           </p>
 
           <figure>
-            <a href={process.env.PUBLIC_URL + '/OldTurtlr/'}>
+            <a href={process.env.PUBLIC_URL + '/OldTurtlr/index.html'}>
 
               <picture>
                 <source media="(max-width: 449px)" srcSet={smallTurtlrImageWebp} type="image/webp"/>
@@ -96,9 +96,7 @@ class Projects extends Component {
           </p>
           <p>
             <a
-              href={process.env.PUBLIC_URL + '/OldTurtlr/'}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={process.env.PUBLIC_URL + '/OldTurtlr/index.html'}
               >Play Turtlr</a> | <a
               href="https://github.com/paulmreese/frontend-nanodegree-arcade-game"
               target="_blank"
